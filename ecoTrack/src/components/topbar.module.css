@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2rem;
+  padding-right: 3rem;
+}
+
+.completeRightSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rightSideContainer {
+  display: flex;
+  gap: 3rem;
+}
+
+.completeProfile {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.nameInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+.userProfile {
+  display: flex;
+}
+
+.userName {
+  font-size: 1rem;
+  color: #100d0d;
+}
+
+.userMail {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #b0b0b0;
+}
+
+.dropDown {
+  width: 24px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  display: flex;
+  justify-content: end;
+  width: 306px;
+  height: 32px;
+  padding: 0.125rem 1rem;
+  border: 1px solid #b4aeae;
+  border-radius: 8px;
+}
+
+.search {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.searchIcon {
+  width: 24px;
+}
+
+.leftSideContainer {
+  display: flex;
+  gap: 0.75rem;
+}

@@ -1,0 +1,40 @@
+.sideBar {
+  background-color: #b4b6bb;
+  max-width: 105px;
+  height: 100vh;
+  place-items: center;
+  padding: 0 2rem;
+}
+
+.sideBarWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 75%;
+  padding-top: 0.75rem;
+}
+
+.logo {
+  width: 38px;
+  margin-top: 2rem;
+}
+
+.icons {
+  width: 32px;
+  cursor: pointer;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40%;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 30%;
+}
