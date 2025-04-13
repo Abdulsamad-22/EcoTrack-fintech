@@ -7,7 +7,7 @@ defaults.responsive = true;
 export default function ChartGraph() {
   return (
     <div>
-      <div className="h-300 mt-[40px] bg-[#000]">
+      <div style={{ height: 300, marginTop: "40px" }}>
         <Line
           data={{
             labels: budget.map((time) => time.label),
@@ -19,8 +19,8 @@ export default function ChartGraph() {
                 backgroundColor: "rgba(255, 165, 0, 0.1)", // For shading between lines
                 fill: "+1", // Fills the area between this dataset and the next
                 tension: 0.4, // Smooth curve
-                // pointRadius: 0,
-                // pointHoverRadius: 5,
+                pointRadius: 0,
+                pointHoverRadius: 5,
               },
 
               {
@@ -30,8 +30,8 @@ export default function ChartGraph() {
                 backgroundColor: "rgba(0, 0, 255, 0.1)", // For shading between lines
                 // fill: "-1", // Fills the area between this dataset and the previous
                 tension: 0.4, // Smooth curve
-                pointRadius: 0,
-                pointHoverRadius: 5,
+                // pointRadius: 0,
+                // pointHoverRadius: 5,
               },
             ],
           }}
@@ -45,6 +45,9 @@ export default function ChartGraph() {
               x: {
                 grid: {
                   display: false, // Removes vertical grid lines
+                },
+                ticks: {
+                  display: false,
                 },
               },
               y: {

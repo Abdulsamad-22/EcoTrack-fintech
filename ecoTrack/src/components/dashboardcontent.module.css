@@ -4,8 +4,8 @@
 
 .imageContainer {
   position: relative;
-  width: 715px;
-  height: 145px;
+  width: 70%;
+  /* height: auto; */
 }
 
 .headerImage {

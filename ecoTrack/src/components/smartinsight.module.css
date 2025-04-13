@@ -1,0 +1,22 @@
+.smartInsightConatiner {
+  border: 1px solid #c8c8c8;
+  padding: 1rem;
+}
+
+.header {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #444242;
+  margin-bottom: 1.25rem;
+}
+
+.insightsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.insights {
+  color: #444242;
+  font-size: 0.875rem;
+}
