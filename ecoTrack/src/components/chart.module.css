@@ -1,0 +1,87 @@
+.category {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  /* width: 50%; */
+  /* width: 300px; */
+  border: 1px solid #dadada;
+  border-radius: 8px;
+}
+
+.topChartBar {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 122px;
+  /* display: grid;
+  grid-template-columns: 580px 1fr; */
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 42px;
+  color: #444242;
+  font-size: 0.875rem;
+  padding: 0.625rem;
+  border-radius: 8px;
+}
+
+.item:first-child {
+  background-color: #8bc34a;
+  color: #f9f9f9;
+}
+
+.chartFrame {
+  margin-top: 1rem;
+  padding: 1rem 0.75rem;
+  background-color: #f9f9f9;
+  width: 715px;
+}
+
+.alertButton {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid #dadada;
+  background-color: transparent;
+  border-radius: 8px;
+  color: #444242;
+  font-size: 0.875rem;
+}
+
+.indicatorWrapper {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.625rem;
+}
+
+.indicatorContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+}
+
+.indicator1,
+.indicator2 {
+  background-color: #f87a54;
+  height: 13px;
+  width: 13px;
+  /* min-width: 50px; */
+  border-radius: 13px;
+}
+
+.indicator2 {
+  background-color: #1c2d5e;
+}
+
+.indicatorContainer p {
+  font-size: 0.875rem;
+  color: #292828;
+}

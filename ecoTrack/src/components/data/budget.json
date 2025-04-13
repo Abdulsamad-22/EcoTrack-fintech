@@ -1,0 +1,31 @@
+[
+  {
+    "label": "2 weeks",
+    "budget": 26267,
+    "inflation": 25253
+  },
+
+  {
+    "label": "1 month",
+    "budget": 26267,
+    "inflation": 25253
+  },
+
+  {
+    "label": "3 month",
+    "budget": 36378,
+    "inflation": 73653
+  },
+
+  {
+    "label": "6 month",
+    "budget": 26278,
+    "inflation": 36262
+  },
+
+  {
+    "label": "1 year",
+    "budget": 28753,
+    "inflation": 26367
+  }
+]
