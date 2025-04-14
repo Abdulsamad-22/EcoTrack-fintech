@@ -1,0 +1,54 @@
+.completeRightSide {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2.25rem;
+  margin-top: 2rem;
+  padding-right: 1.5rem;
+}
+
+.completeProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nameInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userProfile {
+  display: flex;
+}
+
+.avatarContainer {
+  width: 50px;
+  height: 44px;
+}
+
+.avatar {
+  width: auto;
+  height: 100%;
+}
+
+.userName {
+  font-size: 1rem;
+  color: #100d0d;
+}
+
+.userMail {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #b0b0b0;
+}
+
+.dropDown {
+  width: 24px;
+}
+
+.leftSideContainer {
+  display: flex;
+  gap: 1rem;
+}

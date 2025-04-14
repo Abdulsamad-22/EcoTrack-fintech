@@ -4,6 +4,7 @@
   padding: 1.25rem;
   background-color: #f9f9f9;
   border-radius: 8px;
+  margin-top: 2.4375rem;
 }
 
 .cardsFrame h2 {
@@ -22,6 +23,7 @@
   border-radius: 16px;
   padding: 0.75rem;
   background: linear-gradient(90deg, #1c2d5e -26.26%, #e1631c 121.04%);
+  margin-top: 1.5rem;
 }
 
 .heading {
@@ -51,7 +53,7 @@
 }
 
 .cardType {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: #f9f9f9;

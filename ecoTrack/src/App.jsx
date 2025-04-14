@@ -11,6 +11,7 @@ import RightSideSection from "./components/RightSideSection";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 import Transaction from "./components/Transaction";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
@@ -22,12 +23,14 @@ function App() {
 
           <OuterContainer>
             <InnerContainer>
+              <TopBar />
               <DashboardContent />
               <Chart />
               <Transaction />
             </InnerContainer>
 
             <RightSideSection>
+              <UserProfile />
               <Cards />
               <NewPrice />
             </RightSideSection>
