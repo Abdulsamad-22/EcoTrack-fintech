@@ -1,0 +1,94 @@
+.cardsFrame {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1.25rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.cardsFrame h2 {
+  font-size: 1.25rem;
+  color: #444242;
+}
+
+.cardContainer {
+  width: 100%;
+}
+
+.card {
+  /* height: 10.875rem;
+  width: 18.9375rem; */
+  width: 100%;
+  border-radius: 16px;
+  padding: 0.75rem;
+  background: linear-gradient(90deg, #1c2d5e -26.26%, #e1631c 121.04%);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading h3 {
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f9f9f9;
+}
+
+.balance {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #f9f9f9;
+}
+
+.cardNumber {
+  font-size: 0.75rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+  color: #f9f9f9;
+}
+
+.cardType {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #f9f9f9;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  color: #f9f9f9;
+  background-color: #1c2d5e;
+  padding: 0.625rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.875rem;
+  margin-top: 1rem;
+}
+
+.actionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 30px;
+  background-color: #dae3ff;
+
+  font-size: 0.75rem;
+  color: #444242;
+}

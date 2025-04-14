@@ -1,0 +1,96 @@
+/* AI generated */
+
+.transactionHistory {
+  width: 100%;
+  margin: 1rem 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort label {
+  font-size: 14px;
+  color: #666;
+}
+
+.sort select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f9f9f9;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+th {
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  border-bottom: 1px solid #eee;
+}
+
+.status {
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.amount {
+  color: #444242;
+  font-weight: 700;
+}
+
+.statusSuccessful {
+  /* background-color: #e6f4ea; */
+  color: #2e7d32;
+}
+
+.statusPending {
+  /* background-color: #fff3e0; */
+  color: #f57c00;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}

@@ -1,3 +1,4 @@
+import styles from "./innercontainer.module.css";
 export default function InnerContainer({ children }) {
-  return <div>{children}</div>;
+  return <div className={styles.inner}>{children}</div>;
 }

@@ -17,7 +17,7 @@ export default function LeftSideChart() {
         </button>
       </div>
 
-      {/* <div className={styles.indicatorWrapper}>
+      <div className={styles.indicatorWrapper}>
         <div className={styles.indicatorContainer}>
           <span className={styles.indicator1}></span>
           <p>Budget</p>
@@ -27,7 +27,7 @@ export default function LeftSideChart() {
           <span className={styles.indicator2}></span>
           <p>Inflation</p>
         </div>
-      </div> */}
+      </div>
 
       <div>
         <ChartGraph />

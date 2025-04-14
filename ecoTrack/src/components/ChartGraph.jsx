@@ -7,7 +7,7 @@ defaults.responsive = true;
 export default function ChartGraph() {
   return (
     <div>
-      <div style={{ height: 300, marginTop: "40px" }}>
+      <div style={{}}>
         <Line
           data={{
             labels: budget.map((time) => time.label),
@@ -67,6 +67,7 @@ export default function ChartGraph() {
             },
             plugins: {
               legend: {
+                display: false,
                 position: "top", // Legend at the top
                 labels: {
                   boxWidth: 10,
