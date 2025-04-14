@@ -5,6 +5,7 @@ import Chart from "./components/Chart";
 import Dashboard from "./components/Dashboard";
 import DashboardContent from "./components/DashboardContent";
 import InnerContainer from "./components/InnerContainer";
+import NewPrice from "./components/NewPrice";
 import OuterContainer from "./components/OuterContainer";
 import RightSideSection from "./components/RightSideSection";
 import SideBar from "./components/SideBar";
@@ -17,7 +18,7 @@ function App() {
       <Dashboard>
         <SideBar />
         <BodyContent>
-          <TopBar />
+          {/* <TopBar /> */}
 
           <OuterContainer>
             <InnerContainer>
@@ -28,6 +29,7 @@ function App() {
 
             <RightSideSection>
               <Cards />
+              <NewPrice />
             </RightSideSection>
           </OuterContainer>
         </BodyContent>

@@ -1,0 +1,8 @@
+.itemHead {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.currentPrice {
+  place-content: end;
+}
