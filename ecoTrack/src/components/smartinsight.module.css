@@ -5,7 +5,7 @@
 }
 
 .header {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #444242;
   margin-bottom: 1.25rem;
@@ -19,5 +19,9 @@
 
 .insights {
   color: #444242;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+}
+
+.insights {
+  list-style-position: outside;
 }

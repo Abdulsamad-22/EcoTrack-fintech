@@ -1,13 +1,14 @@
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import budget from "./data/budget.json";
+import styles from "./chartgraph.module.css";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 export default function ChartGraph() {
   return (
     <div>
-      <div style={{}}>
+      <div className={styles.graphCanvas}>
         <Line
           data={{
             labels: budget.map((time) => time.label),

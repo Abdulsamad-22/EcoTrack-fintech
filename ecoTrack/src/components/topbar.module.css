@@ -1,12 +1,15 @@
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin-top: 2rem;
 }
 
 .container h1 {
-  font-size: 1.875rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #252424;
 }
 
 .rightSideContainer {
@@ -38,5 +41,5 @@
 }
 
 .searchIcon {
-  width: 24px;
+  width: 20px;
 }

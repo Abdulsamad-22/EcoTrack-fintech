@@ -12,67 +12,69 @@ export default function SideBar() {
 
       <div className={styles.sideBarWrapper}>
         <div className={styles.topContainer}>
-          <div>
+          <div className={styles.navInactive}>
             <img
               className={styles.icons}
               src="/src/images/List.svg"
-              alt="logo"
+              alt="menu"
             ></img>
           </div>
 
-          <div>
+          <div className={styles.navIcons}>
             <img
               className={styles.icons}
               src="/src/images/SquaresFour.svg"
-              alt="logo"
+              alt="dashboard icon"
             ></img>
           </div>
 
-          <div>
+          <div className={styles.navInactive}>
             <img
               className={styles.icons}
               src="/src/images/database.svg"
-              alt="logo"
+              alt="budget icon"
             ></img>
           </div>
-          <div>
+
+          <div className={styles.navInactive}>
             <img
               className={styles.icons}
               src="/src/images/ChartLine.svg"
-              alt="logo"
+              alt="analytics icon"
             ></img>
           </div>
-          <div>
+
+          <div className={styles.navInactive}>
             <img
               className={styles.icons}
               src="/src/images/card.svg"
-              alt="logo"
+              alt="savings icon"
             ></img>
           </div>
         </div>
 
         <div className={styles.bottomContainer}>
-          <div>
+          <div className={styles.navInactive}>
             <img
               className={styles.icons}
               src="/src/images/Gear.svg"
-              alt="logo"
+              alt="settings icon"
             ></img>
           </div>
 
-          <div>
+          <div className={styles.navInactive}>
             <img
               className={styles.icons}
               src="/src/images/Question.svg"
-              alt="logo"
+              alt="help icon"
             ></img>
           </div>
 
-          <div>
+          <div className={styles.navInactive}>
             <img
               className={styles.icons}
               src="/src/images/SignOut.svg"
-              alt="logo"
+              alt="logOut icon"
             ></img>
           </div>
         </div>

@@ -20,19 +20,26 @@ export default function NewPrice() {
         <tbody>
           <tr class="align-bottom">
             <td className={styles.itemCol1}>
-              <span class="item-name">Tomatoes</span>
-              <div class="price-container">
+              <span className={styles.itemName}>Tomatoes</span>
+              <div>
                 <span className={styles.oldPrice}>₦12,000</span>
               </div>
             </td>
             <td className={styles.newPrice1}>₦8,000</td>
-            <td className={styles.rateDecrease1}>↓ 5%</td>
+            <td className={styles.rateDecrease1}>
+              <img
+                className={styles.rateIcon}
+                src="/src/images/arrow-down.svg"
+                alt=""
+              />
+              5%
+            </td>
           </tr>
 
           <tr class="align-bottom">
             <td className={styles.itemCol}>
-              <span class="item-name">Rice</span>
-              <div class="price-container">
+              <span className={styles.itemName}>Rice</span>
+              <div>
                 <span className={styles.oldPrice}>₦90,000</span>
               </div>
             </td>
@@ -42,8 +49,8 @@ export default function NewPrice() {
 
           <tr class="align-bottom">
             <td className={styles.itemCol}>
-              <span class="item-name">Noodles</span>
-              <div class="price-container">
+              <span className={styles.itemName}>Noodles</span>
+              <div>
                 <span className={styles.oldPrice}>₦9,000</span>
               </div>
             </td>
@@ -53,8 +60,8 @@ export default function NewPrice() {
 
           <tr class="align-bottom">
             <td className={styles.itemCol}>
-              <span class="item-name">Spaghetti</span>
-              <div class="price-container">
+              <span className={styles.itemName}>Spaghetti</span>
+              <div>
                 <span className={styles.oldPrice}>₦4,000</span>
               </div>
             </td>
@@ -64,8 +71,8 @@ export default function NewPrice() {
 
           <tr class="align-bottom">
             <td className={styles.itemCol}>
-              <span class="item-name">potatoes</span>
-              <div class="price-container">
+              <span className={styles.itemName}>Potatoes</span>
+              <div>
                 <span className={styles.oldPrice}>₦4,000</span>
               </div>
             </td>
@@ -75,8 +82,8 @@ export default function NewPrice() {
 
           <tr class="align-bottom">
             <td className={styles.itemColLast}>
-              <span class="item-name">Beans</span>
-              <div class="price-container">
+              <span className={styles.itemName}>Beans</span>
+              <div>
                 <span className={styles.oldPrice}>₦12,000</span>
               </div>
             </td>

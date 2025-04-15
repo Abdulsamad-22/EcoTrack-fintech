@@ -1,5 +1,4 @@
 import "./App.css";
-import BodyContent from "./components/BodyContent";
 import Cards from "./components/Cards";
 import Chart from "./components/Chart";
 import Dashboard from "./components/Dashboard";
@@ -13,29 +12,27 @@ import TopBar from "./components/TopBar";
 import Transaction from "./components/Transaction";
 import UserProfile from "./components/UserProfile";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
       <Dashboard>
         <SideBar />
-        <BodyContent>
-          {/* <TopBar /> */}
+        <OuterContainer>
+          <InnerContainer>
+            <TopBar />
+            <DashboardContent />
+            <Chart />
+            <Transaction />
+          </InnerContainer>
 
-          <OuterContainer>
-            <InnerContainer>
-              <TopBar />
-              <DashboardContent />
-              <Chart />
-              <Transaction />
-            </InnerContainer>
-
-            <RightSideSection>
-              <UserProfile />
-              <Cards />
-              <NewPrice />
-            </RightSideSection>
-          </OuterContainer>
-        </BodyContent>
+          <RightSideSection>
+            <UserProfile />
+            <Cards />
+            <NewPrice />
+          </RightSideSection>
+        </OuterContainer>
       </Dashboard>
     </div>
   );

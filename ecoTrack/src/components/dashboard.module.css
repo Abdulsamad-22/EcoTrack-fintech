@@ -1,5 +1,6 @@
 .dashboard {
   display: flex;
-  align-items: start;
+  flex-direction: row;
+  /* align-items: start; */
   gap: 2rem;
 }

@@ -4,12 +4,20 @@ export default function UserProfile() {
     <div>
       <div className={styles.completeRightSide}>
         <div className={styles.leftSideContainer}>
-          <div>
-            <img src="/src/images/ChatCircle.svg" alt="chat icon" />
+          <div className={styles.chatIcon}>
+            <img
+              className={styles.chat}
+              src="/src/images/ChatCircle.svg"
+              alt="chat icon"
+            />
           </div>
 
-          <div>
-            <img src="/src/images/bell.svg" alt="notification icon" />
+          <div className={styles.bellIcon}>
+            <img
+              className={styles.bell}
+              src="/src/images/bell.svg"
+              alt="notification icon"
+            />
           </div>
         </div>
 
