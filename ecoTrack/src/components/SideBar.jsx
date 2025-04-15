@@ -1,4 +1,5 @@
 import styles from "./sidebar.module.css";
+import { Link } from "react-router-dom";
 export default function SideBar() {
   return (
     <nav className={styles.sideBar}>
