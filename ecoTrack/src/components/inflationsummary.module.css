@@ -17,6 +17,16 @@
   color: #444242;
 }
 
+select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+}
+
 .rateIncrease {
   padding: 0 15px;
   font-weight: 500;

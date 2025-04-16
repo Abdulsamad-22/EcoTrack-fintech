@@ -12,10 +12,12 @@ import DashboardBody from "../components/DashboardBody";
 import RightSideSection from "../components/RightSideSection";
 import BudgetInnerContainer from "../components/BudgetInnerContainer";
 import InflationSummary from "../components/InflationSummary";
+import BudgetWrapper from "../components/BudgetWrapper";
+
 export default function Budget() {
   return (
     <div>
-      <Dashboard>
+      <BudgetWrapper>
         <SideBar />
         <DashboardBody>
           <TopBar />
@@ -35,8 +37,7 @@ export default function Budget() {
             </RightSideSection>
           </OuterContainer>
         </DashboardBody>
-      </Dashboard>
-      <Link to="/">Dashboard</Link>
+      </BudgetWrapper>
     </div>
   );
 }

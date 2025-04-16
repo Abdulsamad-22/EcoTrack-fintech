@@ -21,13 +21,15 @@ export default function SideBar() {
             ></img>
           </div>
 
-          <div className={styles.navIcons}>
-            <img
-              className={styles.icons}
-              src="/src/images/SquaresFour.svg"
-              alt="dashboard icon"
-            ></img>
-          </div>
+          <Link to="/">
+            <div className={styles.navIcons}>
+              <img
+                className={styles.icons}
+                src="/src/images/SquaresFour.svg"
+                alt="dashboard icon"
+              ></img>
+            </div>
+          </Link>
 
           <Link to="/budget">
             <div className={styles.navInactive}>

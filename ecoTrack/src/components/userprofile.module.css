@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: end;
   gap: 2.25rem;
-  /* margin-top: 2rem; */
-  padding-right: 1.5rem;
+  padding-right: 1rem;
 }
 
 .completeProfile {

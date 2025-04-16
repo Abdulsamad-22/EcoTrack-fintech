@@ -4,6 +4,7 @@ import budget from "./data/budget.json";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
+// ChartJS.register(ArcElement, Tooltip, Legend);
 export default function SavingsChart() {
   return (
     <div>
@@ -13,7 +14,7 @@ export default function SavingsChart() {
           datasets: [
             {
               label: "Budget",
-              data: [38, 36, 48, 58, 54], // Sample data for Budget
+              data: [48, 30, 68, 72], // Sample data for Budget
               borderColor: "#F87A54",
               backgroundColor: "rgba(255, 165, 0, 0.1)", // For shading between lines
               fill: "+1", // Fills the area between this dataset and the next
@@ -64,3 +65,5 @@ export default function SavingsChart() {
     </div>
   );
 }
+
+/* */
