@@ -1,0 +1,52 @@
+.savingsContainer {
+  background-color: #f9f9f9;
+  margin-top: 3rem;
+  padding: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title h1 {
+  font-size: 1.25rem;
+  color: #444242;
+}
+
+.subHeading {
+  font-size: 0.875rem;
+  color: #726e6e;
+  margin-top: 1.5rem;
+}
+
+.targetHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.target {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.target h2 {
+  font-size: 0.875rem;
+  color: #615e5e;
+}
+
+.targetAmount {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1c2d5e;
+}
+
+.monthlySaving {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444242;
+  text-align: center;
+}

@@ -7,6 +7,7 @@ import SideBar from "../components/SideBar";
 import UserProfile from "../components/UserProfile";
 import BudgetSetting from "../components/BudgetSetting";
 import BudgetSummary from "../components/BudgetSummary";
+import SavingGoals from "../components/SavingGoals";
 export default function Budget() {
   return (
     <div>
@@ -17,6 +18,10 @@ export default function Budget() {
             <TopBar />
             <BudgetSetting />
             <BudgetSummary />
+          </InnerContainer>
+
+          <InnerContainer>
+            <SavingGoals />
           </InnerContainer>
 
           <InnerContainer>
