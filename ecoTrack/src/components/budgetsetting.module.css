@@ -24,7 +24,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #1c2d5e;
+  font-weight: 200;
+  background: #6275ad;
   color: #f9f9f9;
   margin-top: 2.625rem;
 }

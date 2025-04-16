@@ -1,4 +1,5 @@
 import styles from "./savinggoals.module.css";
+import SavingsChart from "./SavingsChart";
 export default function SavingGoals() {
   return (
     <section className={styles.savingsContainer}>
@@ -23,7 +24,18 @@ export default function SavingGoals() {
         <p className={styles.targetAmount}>₦270,000</p>
       </div>
 
+      <SavingsChart />
+
+      <div className={styles.weeksX}>
+        <div>Week 1</div>
+        <div>Week 2</div>
+        <div>Week 3</div>
+        <div>Week 4</div>
+      </div>
+
       <p className={styles.monthlySaving}>₦70,000 Monthly Savings</p>
+
+      <button className={styles.goalButton}>Set Next Goal</button>
     </section>
   );
 }

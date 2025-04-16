@@ -1,6 +1,6 @@
 .savingsContainer {
   background-color: #f9f9f9;
-  margin-top: 3rem;
+  margin-top: 2.25rem;
   padding: 1rem;
 }
 
@@ -44,9 +44,32 @@
   color: #1c2d5e;
 }
 
+.weeksX {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+.weeksX div {
+  font-size: 0.75rem;
+  color: #444242;
+}
+
 .monthlySaving {
   font-size: 1rem;
   font-weight: 500;
   color: #444242;
   text-align: center;
+  margin-top: 1rem;
+}
+
+.goalButton {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding: 0.625rem 0.75rem;
+  background-color: #1c2d5e;
+  color: #f9f9f9;
+  border-radius: 8px;
 }

@@ -1,0 +1,108 @@
+.container {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.topContainer h1 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #444242;
+}
+
+.rateIncrease {
+  padding: 0 15px;
+  font-weight: 500;
+  color: #d32f2f;
+}
+
+.rateDecrease {
+  padding: 0 15px;
+  font-weight: 500;
+  color: #388e3c;
+}
+
+.itemCol1,
+.newPrice1,
+.rateDecrease1 {
+  padding-top: 0.625rem;
+}
+
+.newPrice1,
+.newPriceLast {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.rateDecrease1,
+.rateDecreaseLast {
+  color: #388e3c;
+  font-weight: 500;
+}
+
+.newPrice,
+.oldPrice {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.itemColLast,
+.newPriceLast,
+.rateDecreaseLast {
+  padding: 0rem 15px 0 15px;
+}
+
+.newPrice,
+.itemCol,
+.rateIncrease,
+.rateDecrease {
+  padding: 0 15px 0.75rem 15px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.header select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 0rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rateDecrease1 {
+  display: flex;
+  align-items: end;
+}
+
+.rateIcon {
+  width: 12px; /* Adjust size as needed */
+  height: 12px;
+  vertical-align: middle; /* Aligns the icon with the text */
+}
+
+.cta {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding: 0.625rem 0.75rem;
+  background-color: #1c2d5e;
+  color: #f9f9f9;
+  border-radius: 8px;
+}

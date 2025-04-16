@@ -15,6 +15,7 @@ import Budget from "./pages/Budget";
 // import Dashboardp from "./pages/Dashboardp";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DashboardBody from "./components/DashboardBody";
 
 function App() {
   return (
@@ -25,20 +26,21 @@ function App() {
           element={
             <Dashboard>
               <SideBar />
-              <OuterContainer>
-                <InnerContainer>
-                  <TopBar />
-                  <DashboardContent />
-                  <Chart />
-                  <Transaction />
-                </InnerContainer>
+              <DashboardBody>
+                <TopBar />
+                <OuterContainer>
+                  <InnerContainer>
+                    <DashboardContent />
+                    <Chart />
+                    <Transaction />
+                  </InnerContainer>
 
-                <RightSideSection>
-                  <UserProfile />
-                  <Cards />
-                  <NewPrice />
-                </RightSideSection>
-              </OuterContainer>
+                  <RightSideSection>
+                    <Cards />
+                    <NewPrice />
+                  </RightSideSection>
+                </OuterContainer>
+              </DashboardBody>
             </Dashboard>
           }
         />

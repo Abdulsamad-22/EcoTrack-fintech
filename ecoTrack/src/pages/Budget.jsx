@@ -1,33 +1,40 @@
 import { Link } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import OuterContainer from "../components/OuterContainer";
-import InnerContainer from "../components/InnerContainer";
 import Dashboard from "./Dashboard";
 import SideBar from "../components/SideBar";
-import UserProfile from "../components/UserProfile";
 import BudgetSetting from "../components/BudgetSetting";
 import BudgetSummary from "../components/BudgetSummary";
 import SavingGoals from "../components/SavingGoals";
+import TipsAdvice from "../components/TipsAdvice";
+import DashboardBody from "../components/DashboardBody";
+
+import RightSideSection from "../components/RightSideSection";
+import BudgetInnerContainer from "../components/BudgetInnerContainer";
+import InflationSummary from "../components/InflationSummary";
 export default function Budget() {
   return (
     <div>
       <Dashboard>
         <SideBar />
-        <OuterContainer>
-          <InnerContainer>
-            <TopBar />
-            <BudgetSetting />
-            <BudgetSummary />
-          </InnerContainer>
+        <DashboardBody>
+          <TopBar />
+          <OuterContainer>
+            <BudgetInnerContainer>
+              <BudgetSetting />
+              <BudgetSummary />
+            </BudgetInnerContainer>
 
-          <InnerContainer>
-            <SavingGoals />
-          </InnerContainer>
+            <RightSideSection>
+              <SavingGoals />
+              <TipsAdvice />
+            </RightSideSection>
 
-          <InnerContainer>
-            <UserProfile />
-          </InnerContainer>
-        </OuterContainer>
+            <RightSideSection>
+              <InflationSummary />
+            </RightSideSection>
+          </OuterContainer>
+        </DashboardBody>
       </Dashboard>
       <Link to="/">Dashboard</Link>
     </div>

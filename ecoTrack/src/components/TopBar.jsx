@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./topbar.module.css";
+import UserProfile from "./UserProfile";
 export default function TopBar() {
   const [query, setQuery] = useState("");
   return (
@@ -21,6 +22,8 @@ export default function TopBar() {
             />
           </div>
         </div>
+
+        <UserProfile />
       </div>
     </div>
   );
