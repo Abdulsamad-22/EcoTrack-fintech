@@ -1,6 +1,8 @@
 .summaryContainer {
   margin-top: 1rem;
   background-color: #f9f9f9;
+  padding: 1.25rem;
+  border-radius: 8px;
 }
 
 .summaryHeader {

@@ -8,6 +8,7 @@ import {
 import { Bar, Doughnut } from "react-chartjs-2";
 import { useEffect } from "react";
 import budget from "./data/budget.json";
+import styles from "./budgetchart.module.css";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -48,7 +49,7 @@ export default function BudgetChart() {
   }, []);
 
   return (
-    <div style={{ width: "200px", height: "200px", margin: "0 auto" }}>
+    <div className={styles.budgetPie}>
       <Doughnut
         data={{
           datasets: [
@@ -58,14 +59,14 @@ export default function BudgetChart() {
               borderWidth: 0,
 
               //   cutout: "70%",
-              weight: 1, // Adjust thickness of the base circle
+              weight: 0.7, // Adjust thickness of the base circle
             },
             {
               data: [20, 80], // 20% spent
               backgroundColor: ["#0D1B75", "transparent"], // Spent portion and transparent for rest
               borderWidth: 0,
               borderRadius: 8,
-              //   cutout: "90%",
+              cutout: "90%",
               weight: 1,
               circumference: 360,
               rotation: -270,
@@ -81,7 +82,7 @@ export default function BudgetChart() {
               display: false, // Hide legend
             },
             tooltip: {
-              enabled: true, // Disable tooltips
+              enabled: false, // Disable tooltips
             },
           },
         }}

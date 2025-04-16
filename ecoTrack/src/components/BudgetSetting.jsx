@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./budgetsetting.module.css";
 export default function BudgetSetting() {
   const [budget, setBudget] = useState("");
+  const [amount, setAmount] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,8 +22,8 @@ export default function BudgetSetting() {
 
         <div className={styles.budgetAmountContainer}>
           <input
-            onChange={(e) => setBudget(e.target.value)}
-            value={budget}
+            onChange={(e) => setAmount(e.target.value)}
+            value={amount}
             className={styles.budgetAmount}
             type="text"
             placeholder="Enter budget amount"
