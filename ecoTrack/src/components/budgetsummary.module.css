@@ -1,0 +1,10 @@
+.summaryContainer {
+  margin-top: 1rem;
+  background-color: #f9f9f9;
+}
+
+.summaryHeader {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #444242;
+}

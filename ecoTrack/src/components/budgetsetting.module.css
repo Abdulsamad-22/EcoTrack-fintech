@@ -1,0 +1,30 @@
+.budgetForm {
+  margin-top: 2.25rem;
+}
+
+.budgetNameContainer {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.budgetName,
+.budgetAmount,
+.addBudget {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  outline: none;
+  border: none;
+  border: 1px solid #c8c8c8;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.addBudget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #1c2d5e;
+  color: #f9f9f9;
+  margin-top: 2.625rem;
+}
