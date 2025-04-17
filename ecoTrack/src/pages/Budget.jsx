@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 import TopBar from "../components/TopBar";
-import OuterContainer from "../components/OuterContainer";
+import OuterContainer from "../components/dashboardUno/OuterContainer";
 import Dashboard from "./Dashboard";
 import SideBar from "../components/SideBar";
-import BudgetSetting from "../components/BudgetSetting";
-import BudgetSummary from "../components/BudgetSummary";
-import SavingGoals from "../components/SavingGoals";
-import TipsAdvice from "../components/TipsAdvice";
-import DashboardBody from "../components/DashboardBody";
+import BudgetSetting from "../components/budget/BudgetSetting";
+import BudgetSummary from "../components/budget/BudgetSummary";
+import SavingGoals from "../components/budget/SavingGoals";
+import TipsAdvice from "../components/budget/TipsAdvice";
+import DashboardBody from "../components/dashboardUno/DashboardBody";
 
-import RightSideSection from "../components/RightSideSection";
-import BudgetInnerContainer from "../components/BudgetInnerContainer";
-import InflationSummary from "../components/InflationSummary";
-import BudgetWrapper from "../components/BudgetWrapper";
+import RightSideSection from "../components/dashboardUno/RightSideSection";
+import BudgetInnerContainer from "../components/budget/BudgetInnerContainer";
+import InflationSummary from "../components/budget/InflationSummary";
+import BudgetWrapper from "../components/budget/BudgetWrapper";
 
 export default function Budget() {
   return (

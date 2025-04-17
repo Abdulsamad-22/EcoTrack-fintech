@@ -45,18 +45,18 @@ export default function BudgetChart() {
     datasets: [
       {
         data: [100], // 100% for the base circle
-        backgroundColor: "rgba(144, 202, 249, 0.3)", // Light blue shade
+        backgroundColor: "#DAE3FF", // Light blue shade
         borderWidth: 0,
+        circumference: 360,
 
         //   cutout: "70%",
-        weight: 0.7, // Adjust thickness of the base circle
+        weight: 1, // Adjust thickness of the base circle
       },
       {
         data: [20, 80], // 20% spent
-        backgroundColor: ["#0D1B75", "transparent"], // Spent portion and transparent for rest
+        backgroundColor: ["#1C2D5E", "transparent"], // Spent portion and transparent for rest
         borderWidth: 0,
         borderRadius: 8,
-        cutout: "90%",
         weight: 1,
         circumference: 360,
         rotation: -270,
@@ -65,7 +65,7 @@ export default function BudgetChart() {
   };
 
   const options = {
-    cutout: "70%", // Makes the doughnut chart thinner
+    cutout: "80%", // Makes the doughnut chart thinner
     responsive: true,
     maintainAspectRatio: false,
     plugins: {

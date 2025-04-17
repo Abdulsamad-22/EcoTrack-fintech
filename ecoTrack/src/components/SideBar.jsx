@@ -41,13 +41,15 @@ export default function SideBar() {
             </div>
           </Link>
 
-          <div className={styles.navInactive}>
-            <img
-              className={styles.icons}
-              src="/src/images/ChartLine.svg"
-              alt="analytics icon"
-            ></img>
-          </div>
+          <Link to="/tracking">
+            <div className={styles.navInactive}>
+              <img
+                className={styles.icons}
+                src="/src/images/ChartLine.svg"
+                alt="analytics icon"
+              ></img>
+            </div>
+          </Link>
 
           <div className={styles.navInactive}>
             <img
