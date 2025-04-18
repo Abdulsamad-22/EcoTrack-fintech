@@ -19,7 +19,7 @@ export default function InflationSummary() {
         <thead>
           <tr>
             <th>Item</th>
-            <th>Current prices</th>
+            <th className={styles.head}>Current prices</th>
             <th>Rate (%)</th>
           </tr>
         </thead>

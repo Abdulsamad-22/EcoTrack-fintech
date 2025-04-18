@@ -22,7 +22,7 @@ export default function SideBar() {
           </div>
 
           <Link to="/">
-            <div className={styles.navIcons}>
+            <div className={styles.navInactive}>
               <img
                 className={styles.icons}
                 src="/src/images/SquaresFour.svg"
@@ -32,7 +32,7 @@ export default function SideBar() {
           </Link>
 
           <Link to="/budget">
-            <div className={styles.navInactive}>
+            <div className={styles.navIcons}>
               <img
                 className={styles.icons}
                 src="/src/images/database.svg"

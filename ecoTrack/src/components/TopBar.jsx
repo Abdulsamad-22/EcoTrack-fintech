@@ -5,7 +5,10 @@ export default function TopBar() {
   const [query, setQuery] = useState("");
   return (
     <div className={styles.container}>
-      <h1>Dashboard</h1>
+      <div>
+        <h1>Budget</h1>
+      </div>
+
       <div className={styles.rightSideContainer}>
         <div className={styles.searchContainer}>
           <div className={styles.searchInput}>

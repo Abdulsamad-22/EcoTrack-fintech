@@ -49,7 +49,6 @@ export default function BudgetChart() {
         borderWidth: 0,
         circumference: 360,
 
-        //   cutout: "70%",
         weight: 1, // Adjust thickness of the base circle
       },
       {
@@ -59,13 +58,13 @@ export default function BudgetChart() {
         borderRadius: 8,
         weight: 1,
         circumference: 360,
-        rotation: -270,
+        rotation: 270,
       },
     ],
   };
 
   const options = {
-    cutout: "80%", // Makes the doughnut chart thinner
+    cutout: "75%", // Makes the doughnut chart thinner
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
