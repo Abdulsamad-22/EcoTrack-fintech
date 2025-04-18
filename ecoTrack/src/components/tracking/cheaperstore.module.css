@@ -1,8 +1,15 @@
+.cheapStoreContainer {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
 .topContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .topContainer h1 {
@@ -17,17 +24,35 @@
   gap: 0.75rem;
 }
 
-.storeContainer {
+.storeContainer1,
+.storeContainer2,
+.storeContainer3 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   text-align: center;
-  border: 1px solid #444242;
   border-radius: 8px;
-  padding: 1rem;
+  width: 50%;
+  height: 250px;
+  padding: 0 0.75rem;
 }
 
-.storeContainer p {
+.storeContainer1 p,
+.storeContainer2 p,
+.storeContainer3 p {
   font-size: 0.75rem;
+}
+
+.storeContainer1 {
+  background-color: #d7e1ff;
+}
+
+.storeContainer2 {
+  background-color: #c5fffc;
+}
+
+.storeContainer3 {
+  background-color: #ffe7c0;
 }

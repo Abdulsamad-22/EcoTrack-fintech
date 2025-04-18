@@ -1,7 +1,7 @@
 import styles from "./cheaperstore.module.css";
 export default function CheaperStore() {
   return (
-    <div>
+    <div className={styles.cheapStoreContainer}>
       <div className={styles.topContainer}>
         <h1>Get Cheaper Products Here</h1>
         <div>
@@ -15,28 +15,22 @@ export default function CheaperStore() {
       </div>
 
       <div className={styles.storeWrapper}>
-        <div className={styles.storeContainer}>
-          <img src="" alt="item-image" />
+        <div className={styles.storeContainer1}>
+          <img src="/src/images/BowlSteam.svg" alt="item-image" />
+          <p>Fresh food items at Die-Die market on Tuesdays</p>
+        </div>
+
+        <div className={styles.storeContainer2}>
+          <img src="/src/images/Tote.svg" alt="item-image" />
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum aut
-            cum voluptates voluptatem
+            Get your foodstuff at Detyms supermarket they offer 10% for Easter
+            sales.
           </p>
         </div>
 
-        <div className={styles.storeContainer}>
-          <img src="" alt="item-image" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum aut
-            cum voluptates voluptatem
-          </p>
-        </div>
-
-        <div className={styles.storeContainer}>
-          <img src="" alt="item-image" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum aut
-            cum voluptates voluptatem
-          </p>
+        <div className={styles.storeContainer3}>
+          <img src="/src/images/GasPump.svg" alt="item-image" />
+          <p>Refuel From any MRS Fuel Station sells @870/liter</p>
         </div>
       </div>
     </div>

@@ -26,16 +26,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1c2d5e;
   border-radius: 8px;
 }
 
-.navInactive {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.active {
+  background-color: #1c2d5e;
 }
 
 .icons {

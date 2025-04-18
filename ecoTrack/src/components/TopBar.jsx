@@ -6,7 +6,7 @@ export default function TopBar() {
   return (
     <div className={styles.container}>
       <div>
-        <h1>Budget</h1>
+        <h1>Dashboard</h1>
       </div>
 
       <div className={styles.rightSideContainer}>
