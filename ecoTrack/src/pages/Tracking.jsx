@@ -5,9 +5,10 @@ import TopBar from "../components/TopBar";
 import AnalysisSummary from "../components/tracking/AnalysisSummary";
 import TrackingBody from "../components/tracking/TrackingBody";
 import TrackingContentHolder from "../components/tracking/TrackingContentHolder";
-import ChartGraph from "../components/dashboardUno/ChartGraph";
 import CheaperStore from "../components/tracking/CheaperStore";
 import EcoBotInsights from "../components/tracking/EcoBotInsights";
+import DefenseExpenseContainer from "../components/tracking/DefenseExpenseContainer";
+import TrendChartContainer from "../components/tracking/TrendChartContainer";
 
 export default function Tracking() {
   return (
@@ -20,21 +21,16 @@ export default function Tracking() {
           <OuterContainer>
             <TrackingContentHolder>
               <AnalysisSummary />
-              <ChartGraph />
+              <TrendChartContainer />
               <CheaperStore />
             </TrackingContentHolder>
 
             <TrackingContentHolder>
               <EcoBotInsights />
+              <DefenseExpenseContainer />
             </TrackingContentHolder>
           </OuterContainer>
         </DashboardBody>
-        {/* <DashboardBody>
-          <TopBar />
-          <OuterContainer>
-            <AnalysisSummary />
-          </OuterContainer>
-        </DashboardBody> */}
       </TrackingBody>
     </div>
   );

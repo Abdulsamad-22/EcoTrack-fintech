@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.topExpense {
+  margin-top: 1.25rem;
+}
+
+.topExpense h2 {
+  font-size: 1.25rem;
+  color: #444242;
+}
+
+.expenseContainer {
+  padding: 0.75rem;
+  background-color: #e9eeff;
+  border-radius: 8px;
+  width: 48%;
+}
+
+.expenseContainer p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444242;
+  margin-top: 0.25rem;
+}
+
+.heading {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #444242;
+}

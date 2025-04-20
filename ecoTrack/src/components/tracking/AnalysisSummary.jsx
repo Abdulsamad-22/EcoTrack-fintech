@@ -5,7 +5,9 @@ export default function AnalysisSummary() {
       <div className={styles.sectionContainer}>
         <div className={styles.title}>
           <h1>My Budget</h1>
-          <img src="/src/images/budget-icon.svg" alt="budget-icon" />
+          <div className={styles.icon}>
+            <img src="/src/images/budget-icon.svg" alt="budget-icon" />
+          </div>
         </div>
 
         <p>₦220,000</p>
@@ -14,7 +16,9 @@ export default function AnalysisSummary() {
       <div className={styles.sectionContainer}>
         <div className={styles.title}>
           <h1>My Earnings</h1>
-          <img src="/src/images/budget-icon.svg" alt="budget-icon" />
+          <div className={styles.icon}>
+            <img src="/src/images/savings-icon.svg" alt="savings-icon" />
+          </div>
         </div>
 
         <p>₦220,000</p>
@@ -23,7 +27,9 @@ export default function AnalysisSummary() {
       <div className={styles.sectionContainer}>
         <div className={styles.title}>
           <h1>My Spendings</h1>
-          <img src="/src/images/spending-icon.svg" alt="budget-icon" />
+          <div className={styles.icon}>
+            <img src="/src/images/spending-icon.svg" alt="spending-icon" />
+          </div>
         </div>
 
         <p>₦220,000</p>

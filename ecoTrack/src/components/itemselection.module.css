@@ -1,0 +1,45 @@
+.category {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+}
+
+.topChartBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.item,
+.label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 42px;
+  color: #444242;
+  font-size: 0.875rem;
+  padding: 0.625rem;
+  border-radius: 8px;
+}
+
+.item:first-child {
+  background-color: #8bc34a;
+  color: #f9f9f9;
+}
+
+.alertButton {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #dadada;
+  background-color: transparent;
+  border-radius: 8px;
+  color: #444242;
+  font-size: 0.875rem;
+}

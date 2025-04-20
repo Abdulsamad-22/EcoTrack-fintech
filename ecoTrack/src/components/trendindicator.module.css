@@ -1,0 +1,32 @@
+.indicatorWrapper {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.indicatorContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+}
+
+.indicator1,
+.indicator2 {
+  background-color: #f87a54;
+  height: 13px;
+  width: 13px;
+  /* min-width: 50px; */
+  border-radius: 13px;
+}
+
+.indicator2 {
+  background-color: #1c2d5e;
+}
+
+.indicatorContainer p {
+  font-size: 0.875rem;
+  color: #292828;
+}

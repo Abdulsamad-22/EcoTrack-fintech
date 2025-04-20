@@ -1,5 +1,7 @@
 import styles from "./leftsidechart.module.css";
 import ChartGraph from "./ChartGraph";
+import TimeAxis from "../TimeAxis";
+// import ItemSelection from "../ItemSelection";
 
 export default function LeftSideChart() {
   return (
@@ -16,6 +18,7 @@ export default function LeftSideChart() {
           Set Alert
         </button>
       </div>
+      {/* <ItemSelection /> */}
 
       <div className={styles.indicatorWrapper}>
         <div className={styles.indicatorContainer}>
@@ -33,13 +36,14 @@ export default function LeftSideChart() {
         <ChartGraph />
       </div>
 
-      <div className={styles.category2}>
+      {/* <div className={styles.category2}>
         <div className={styles.label}>2 Weeks</div>
         <div className={styles.label}>1 Month</div>
         <div className={styles.label}>3 Month</div>
         <div className={styles.label}>6 Month</div>
         <div className={styles.label}>1 Year</div>
-      </div>
+      </div> */}
+      <TimeAxis />
     </div>
   );
 }

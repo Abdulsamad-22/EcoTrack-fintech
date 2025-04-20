@@ -1,0 +1,25 @@
+.category2 {
+  display: flex;
+  margin-top: 1.125rem;
+  /* margin-left: 45px; */
+  border-radius: 8px;
+  border: 1px solid #dadada;
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 42px;
+  color: #444242;
+  font-size: 0.875rem;
+  padding: 0.625rem;
+  border-radius: 8px;
+}
+
+.label:first-child {
+  background-color: #1c2d5e;
+  color: #f9f9f9;
+}

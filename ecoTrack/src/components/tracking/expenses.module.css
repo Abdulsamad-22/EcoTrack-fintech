@@ -1,0 +1,22 @@
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.topContainer h1 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #444242;
+}
+
+.expenseContainer {
+  padding: 1rem 0.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.expenseNSummary {
+  display: flex;
+  align-items: start;
+}

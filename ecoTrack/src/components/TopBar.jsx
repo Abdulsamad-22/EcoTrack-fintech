@@ -3,10 +3,11 @@ import styles from "./topbar.module.css";
 import UserProfile from "./UserProfile";
 export default function TopBar() {
   const [query, setQuery] = useState("");
+  const [title, setTitle] = useState("Dashboard");
   return (
     <div className={styles.container}>
       <div>
-        <h1>Dashboard</h1>
+        <h1>{title}</h1>
       </div>
 
       <div className={styles.rightSideContainer}>

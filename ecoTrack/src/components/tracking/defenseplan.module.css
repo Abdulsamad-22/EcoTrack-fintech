@@ -1,0 +1,33 @@
+.planContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.inflationWrapper {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.inflationWrapper h1 {
+  font-size: 1.25rem;
+  color: #444242;
+}
+
+.plan {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  gap: 1rem;
+  padding: 1rem 0.75rem;
+  background-color: #e5ebff;
+  border-radius: 8px;
+}
+
+.plan p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #1c2d5e;
+}

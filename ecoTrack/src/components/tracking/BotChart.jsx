@@ -1,10 +1,10 @@
-import ChartGraph from "../dashboardUno/ChartGraph";
 import SavingsChart from "../budget/SavingsChart";
+import styles from "./botsummary.module.css";
 
 export default function BotChart() {
   return (
     <div>
-      <h1>EcoBot Predictions</h1>
+      <h1 className={styles.predictionHeader}>EcoBot Predictions</h1>
       <SavingsChart />
     </div>
   );
