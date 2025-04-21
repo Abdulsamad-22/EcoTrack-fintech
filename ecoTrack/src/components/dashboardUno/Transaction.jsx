@@ -1,5 +1,34 @@
 import styles from "./transaction.module.css";
 export default function Transaction() {
+  const transaction = [
+    {
+      name: "Wisdom Obinna Hart",
+      type: "Debit",
+      date: "12 Dec, 2024",
+      amount: "₦120,000",
+      category: "Food and Groceries",
+      status: "Successful",
+    },
+    {
+      name: "Choli Frank",
+      type: "Credit",
+      date: "12 Dec, 2024",
+      amount: "₦120,000",
+      category: "Food and Groceries",
+      status: "Successful",
+    },
+    {
+      name: "AEDC",
+      type: "Debit",
+      date: "12 Dec, 2024",
+      amount: "₦120,000",
+      category: "Food and Groceries",
+      status: "Pending",
+    },
+  ];
+  const status = (transaction.status = "Successful"
+    ? styles.statusSuccessful
+    : styles.statusPending);
   return (
     <div className={styles.transactionHistory}>
       <div className={styles.header}>
@@ -25,30 +54,16 @@ export default function Transaction() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Wisdom Obinna Hart</td>
-            <td>Debit</td>
-            <td>12 Dec, 2024</td>
-            <td className={styles.amount}>₦120,000</td>
-            <td>Food and Groceries</td>
-            <td className={styles.statusSuccessful}>Successful</td>
-          </tr>
-          <tr>
-            <td>Choli Frank</td>
-            <td>Credit</td>
-            <td>12 Dec, 2024</td>
-            <td className={styles.amount}>₦120,000</td>
-            <td>Food and Groceries</td>
-            <td className={styles.statusSuccessful}>Successful</td>
-          </tr>
-          <tr>
-            <td>AEDC</td>
-            <td>Debit</td>
-            <td>12 Dec, 2024</td>
-            <td className={styles.amount}>₦120,000</td>
-            <td>Food and Groceries</td>
-            <td className={styles.statusPending}>Pending</td>
-          </tr>
+          {transaction.map((info) => (
+            <tr>
+              <td>{info.name}</td>
+              <td>{info.type}</td>
+              <td>{info.date}</td>
+              <td className={styles.amount}>{info.amount}</td>
+              <td>{info.category}</td>
+              <td className={status}>{info.status}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

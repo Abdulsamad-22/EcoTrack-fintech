@@ -18,13 +18,13 @@
 .subHeading {
   font-size: 0.875rem;
   color: #726e6e;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
 }
 
 .targetHeader {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0;
+  margin: 0.875rem 0;
 }
 
 .target {

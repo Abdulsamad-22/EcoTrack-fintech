@@ -1,13 +1,14 @@
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import budget from "../data/budget.json";
+import styles from "./budgetChart.module.css";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 // ChartJS.register(ArcElement, Tooltip, Legend);
 export default function SavingsChart() {
   return (
-    <div>
+    <div className={styles.lineChart}>
       <Line
         data={{
           labels: budget.map((time) => time.label),

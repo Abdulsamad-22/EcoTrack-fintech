@@ -2,7 +2,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: #444242;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .predictionHeader {
@@ -15,10 +15,50 @@
 .subHeading {
   font-size: 0.875rem;
   color: #726e6e;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+ul {
+  list-style-type: disc;
 }
 
 li {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #726e6e;
+  margin-bottom: 0.5rem;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.topChartBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.item,
+.label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 42px;
+  color: #444242;
+  font-size: 0.875rem;
+  padding: 0.625rem;
+  border-radius: 8px;
+}
+
+.item:first-child {
+  background-color: #8bc34a;
+  color: #f9f9f9;
 }

@@ -87,47 +87,47 @@ export default function InflationSummary() {
           </tr>
 
           <tr class="align-bottom">
-            <td className={styles.itemColLast}>
-              <span className={styles.itemName}>Beans</span>
+            <td className={styles.itemCol}>
+              <span className={styles.itemName}>Potatoes</span>
               <div>
-                <span className={styles.oldPrice}>₦12,000</span>
+                <span className={styles.oldPrice}>₦4,000</span>
               </div>
             </td>
-            <td className={styles.newPriceLast}>₦8,000</td>
-            <td className={styles.rateDecreaseLast}>↓ 5%</td>
+            <td className={styles.newPrice}>₦8,000</td>
+            <td className={styles.rateIncrease}>↑ 9%</td>
           </tr>
 
           <tr class="align-bottom">
-            <td className={styles.itemColLast}>
-              <span className={styles.itemName}>Beans</span>
+            <td className={styles.itemCol}>
+              <span className={styles.itemName}>Potatoes</span>
               <div>
-                <span className={styles.oldPrice}>₦12,000</span>
+                <span className={styles.oldPrice}>₦4,000</span>
               </div>
             </td>
-            <td className={styles.newPriceLast}>₦8,000</td>
-            <td className={styles.rateDecreaseLast}>↓ 5%</td>
+            <td className={styles.newPrice}>₦8,000</td>
+            <td className={styles.rateIncrease}>↑ 9%</td>
           </tr>
 
           <tr class="align-bottom">
-            <td className={styles.itemColLast}>
-              <span className={styles.itemName}>Beans</span>
+            <td className={styles.itemCol}>
+              <span className={styles.itemName}>Potatoes</span>
               <div>
-                <span className={styles.oldPrice}>₦12,000</span>
+                <span className={styles.oldPrice}>₦4,000</span>
               </div>
             </td>
-            <td className={styles.newPriceLast}>₦8,000</td>
-            <td className={styles.rateDecreaseLast}>↓ 5%</td>
+            <td className={styles.newPrice}>₦8,000</td>
+            <td className={styles.rateIncrease}>↑ 9%</td>
           </tr>
 
           <tr class="align-bottom">
-            <td className={styles.itemColLast}>
-              <span className={styles.itemName}>Beans</span>
+            <td className={styles.itemCol}>
+              <span className={styles.itemName}>Potatoes</span>
               <div>
-                <span className={styles.oldPrice}>₦12,000</span>
+                <span className={styles.oldPrice}>₦4,000</span>
               </div>
             </td>
-            <td className={styles.newPriceLast}>₦8,000</td>
-            <td className={styles.rateDecreaseLast}>↓ 5%</td>
+            <td className={styles.newPrice}>₦8,000</td>
+            <td className={styles.rateIncrease}>↑ 9%</td>
           </tr>
 
           <tr class="align-bottom">
