@@ -1,11 +1,19 @@
 import { useState } from "react";
 import styles from "./budgetsetting.module.css";
+import { createContext } from "react";
 export default function BudgetSetting() {
   const [budget, setBudget] = useState("");
   const [amount, setAmount] = useState("");
 
+  const [newBudget, setNewBudget] = useState({ category: "", amount: "" });
+
   function handleSubmit(e) {
     e.preventDefault();
+    setNewBudget({ category: budget, amount: amount });
+
+    console.log(newBudget);
+    setBudget("");
+    setAmount("");
   }
   return (
     <div>

@@ -54,8 +54,8 @@ export default function Transaction() {
           </tr>
         </thead>
         <tbody>
-          {transaction.map((info) => (
-            <tr>
+          {transaction.map((info, index) => (
+            <tr key={index}>
               <td>{info.name}</td>
               <td>{info.type}</td>
               <td>{info.date}</td>

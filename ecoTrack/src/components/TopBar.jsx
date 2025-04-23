@@ -1,13 +1,25 @@
 import { useState } from "react";
 import styles from "./topbar.module.css";
 import UserProfile from "./UserProfile";
+import { useLocation } from "react-router-dom";
+
+const pageTitles = {
+  "/": "Dashboard",
+  "/budget": "Budget",
+  "/tracking": "Inflation Tracking",
+};
 export default function TopBar() {
   const [query, setQuery] = useState("");
-  const [title, setTitle] = useState("Dashboard");
+  const location = useLocation();
   return (
     <div className={styles.container}>
       <div>
-        <h1>{title}</h1>
+        <h1>{pageTitles[location.pathname] || "Dashboard"}</h1>
+        {pageTitles[location.pathname] === "Budget" ? (
+          <p className={styles.subHead}>Create and track budget</p>
+        ) : (
+          ""
+        )}
       </div>
 
       <div className={styles.rightSideContainer}>

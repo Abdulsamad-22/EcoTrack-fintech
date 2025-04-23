@@ -1,39 +1,36 @@
 import styles from "./analysisSummary.module.css";
 export default function AnalysisSummary() {
+  const analysis = [
+    {
+      title: "My Budget",
+      icon: "/src/images/budget-icon.svg",
+      amount: "₦740,000",
+    },
+    {
+      title: "My Earnings",
+      icon: "/src/images/savings-icon.svg",
+      amount: "₦220,000",
+    },
+    {
+      title: "My Spendings",
+      icon: "/src/images/spending-icon.svg",
+      amount: "₦250,000",
+    },
+  ];
+
   return (
     <section className={styles.wrapper}>
-      <div className={styles.sectionContainer}>
-        <div className={styles.title}>
-          <h1>My Budget</h1>
-          <div className={styles.icon}>
-            <img src="/src/images/budget-icon.svg" alt="budget-icon" />
+      {analysis.map((info) => (
+        <div className={styles.sectionContainer}>
+          <div className={styles.title}>
+            <h1>{info.title}</h1>
+            <div className={styles.icon}>
+              <img src={info.icon} alt="budget-icon" />
+            </div>
           </div>
+          <p>{info.amount}</p>
         </div>
-
-        <p>₦220,000</p>
-      </div>
-
-      <div className={styles.sectionContainer}>
-        <div className={styles.title}>
-          <h1>My Earnings</h1>
-          <div className={styles.icon}>
-            <img src="/src/images/savings-icon.svg" alt="savings-icon" />
-          </div>
-        </div>
-
-        <p>₦220,000</p>
-      </div>
-
-      <div className={styles.sectionContainer}>
-        <div className={styles.title}>
-          <h1>My Spendings</h1>
-          <div className={styles.icon}>
-            <img src="/src/images/spending-icon.svg" alt="spending-icon" />
-          </div>
-        </div>
-
-        <p>₦220,000</p>
-      </div>
+      ))}
     </section>
   );
 }

@@ -42,29 +42,33 @@ export default function BudgetChart() {
   // Custom plugin to draw text in the center of the doughnut chart
 
   const data = {
+    labels: ["Total", "Spent"],
     datasets: [
       {
-        data: [100], // 100% for the base circle
-        backgroundColor: "#DAE3FF", // Light blue shade
+        data: [100, 20], // 100% for the base circle
+        backgroundColor: ["#DAE3FF", "#1C2D5E"],
         borderWidth: 0,
+        borderColor: ["#DAE3FF", "#1C2D5E"],
         circumference: 360,
+        borderRadius: [4, 8],
+        rotation: -180,
 
         weight: 1, // Adjust thickness of the base circle
       },
-      {
-        data: [20, 80], // 20% spent
-        backgroundColor: ["#1C2D5E", "transparent"], // Spent portion and transparent for rest
-        borderWidth: 0,
-        borderRadius: 8,
-        weight: 1,
-        circumference: 360,
-        rotation: 270,
-      },
+      // {
+      //   data: [20, 80], // 20% spent
+      //   backgroundColor: ["#1C2D5E", "transparent"], // Spent portion and transparent for rest
+      //   borderWidth: 0,
+      //   borderRadius: 8,
+      //   weight: 1,
+      //   circumference: 360,
+      //   rotation: 270,
+      // },
     ],
   };
 
   const options = {
-    cutout: "75%", // Makes the doughnut chart thinner
+    cutout: "80%", // Makes the doughnut chart thinner
     responsive: true,
     maintainAspectRatio: false,
     plugins: {

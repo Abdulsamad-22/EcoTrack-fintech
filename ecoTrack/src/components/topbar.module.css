@@ -8,8 +8,15 @@
 
 .container h1 {
   font-size: 2.25rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #252424;
+  margin-bottom: 0;
+}
+
+.subHead {
+  font-size: 1rem;
+  color: #8d8d8d;
+  margin-top: 0;
 }
 
 .rightSideContainer {
