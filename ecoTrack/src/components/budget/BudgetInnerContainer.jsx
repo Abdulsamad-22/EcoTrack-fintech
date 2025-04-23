@@ -1,4 +1,15 @@
 import styles from "./budgetinnercontainer.module.css";
-export default function BudgetInnerContainer({ children }) {
-  return <div className={styles.innerContainer}>{children}</div>;
+import BudgetSetting from "./BudgetSetting";
+import BudgetSummary from "./BudgetSummary";
+import BudgetProvider from "./BudgetProvider";
+
+export default function BudgetInnerContainer() {
+  return (
+    <div className={styles.innerContainer}>
+      <BudgetProvider>
+        <BudgetSetting />
+        <BudgetSummary />
+      </BudgetProvider>
+    </div>
+  );
 }

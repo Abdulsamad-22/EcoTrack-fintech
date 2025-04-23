@@ -1,20 +1,10 @@
 import { useState } from "react";
 import styles from "./budgetsetting.module.css";
-import { createContext } from "react";
+import { useBudget } from "./BudgetProvider";
+
 export default function BudgetSetting() {
-  const [budget, setBudget] = useState("");
-  const [amount, setAmount] = useState("");
+  const { budget, amount, setBudget, setAmount, handleSubmit } = useBudget();
 
-  const [newBudget, setNewBudget] = useState({ category: "", amount: "" });
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setNewBudget({ category: budget, amount: amount });
-
-    console.log(newBudget);
-    setBudget("");
-    setAmount("");
-  }
   return (
     <div>
       <form className={styles.budgetForm} onSubmit={handleSubmit}>

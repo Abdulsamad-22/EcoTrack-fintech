@@ -3,8 +3,6 @@ import TopBar from "../components/TopBar";
 import OuterContainer from "../components/dashboardUno/OuterContainer";
 // import Dashboard from "./Dashboard";
 import SideBar from "../components/SideBar";
-import BudgetSetting from "../components/budget/BudgetSetting";
-import BudgetSummary from "../components/budget/BudgetSummary";
 import SavingGoals from "../components/budget/SavingGoals";
 import TipsAdvice from "../components/budget/TipsAdvice";
 import DashboardBody from "../components/dashboardUno/DashboardBody";
@@ -22,10 +20,7 @@ export default function Budget() {
         <DashboardBody>
           <TopBar />
           <OuterContainer>
-            <BudgetInnerContainer>
-              <BudgetSetting />
-              <BudgetSummary />
-            </BudgetInnerContainer>
+            <BudgetInnerContainer />
 
             <RightSideSection>
               <SavingGoals />
