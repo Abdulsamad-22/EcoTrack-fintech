@@ -25,6 +25,7 @@
   font-size: 0.875rem;
   padding: 0.625rem;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .item:first-child {

@@ -60,13 +60,19 @@ export default function SideBar() {
               <Link
                 key={index}
                 to={item.path}
-                className={`${styles.navIcons} ${
-                  activeItem === item.path && !expanded ? styles.active : ""
-                }`}
+                className={`${styles.navIcons}`}
                 onClick={item.onClick}
               >
-                <div className={styles.navContainer}>
-                  <img src={item.icon} alt="nav-bar" />
+                <div
+                  className={`${styles.navContainer} ${
+                    activeItem === item.path && !expanded ? styles.active : ""
+                  }`}
+                >
+                  <img
+                    className={styles.navIcon}
+                    src={item.icon}
+                    alt="nav-bar"
+                  />
                   {expanded && <p>{item.label}</p>}
                 </div>
               </Link>
@@ -84,8 +90,16 @@ export default function SideBar() {
                 className={styles.navIcons}
                 onClick={() => handleClick(item.id)}
               >
-                <div className={styles.navContainer}>
-                  <img src={item.icon} alt="nav-bar" />
+                <div
+                  className={`${styles.navContainer} ${
+                    activeItem === item.path && !expanded ? styles.active : ""
+                  }`}
+                >
+                  <img
+                    className={styles.navIcon}
+                    src={item.icon}
+                    alt="nav-bar"
+                  />
                   {expanded && <p>{item.label}</p>}
                 </div>
               </div>

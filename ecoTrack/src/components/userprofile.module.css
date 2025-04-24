@@ -45,9 +45,15 @@
 
 .dropDown {
   width: 24px;
+  cursor: pointer;
 }
 
 .leftSideContainer {
   display: flex;
   gap: 1rem;
+}
+
+.bellIcon,
+.chatIcon {
+  cursor: pointer;
 }

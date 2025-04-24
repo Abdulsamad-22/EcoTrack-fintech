@@ -7,7 +7,7 @@ export default function Transaction() {
       date: "12 Dec, 2024",
       amount: "₦120,000",
       category: "Food and Groceries",
-      status: "Successful",
+      status: "Pending",
     },
     {
       name: "Choli Frank",
@@ -26,9 +26,7 @@ export default function Transaction() {
       status: "Pending",
     },
   ];
-  const status = (transaction.status = "Successful"
-    ? styles.statusSuccessful
-    : styles.statusPending);
+
   return (
     <div className={styles.transactionHistory}>
       <div className={styles.header}>
@@ -61,7 +59,15 @@ export default function Transaction() {
               <td>{info.date}</td>
               <td className={styles.amount}>{info.amount}</td>
               <td>{info.category}</td>
-              <td className={status}>{info.status}</td>
+              <td
+                className={
+                  info.status === "Successful"
+                    ? styles.statusSuccessful
+                    : styles.statusPending
+                }
+              >
+                {info.status}
+              </td>
             </tr>
           ))}
         </tbody>
