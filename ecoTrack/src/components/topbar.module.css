@@ -7,10 +7,10 @@
 }
 
 .container h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 400;
   color: #252424;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .subHead {
@@ -24,27 +24,46 @@
   gap: 3rem;
 }
 
-.searchContainer {
-  display: flex;
+/* .searchContainer {
+   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5rem; 
 }
 
-.searchInput {
+ .searchInput {
   display: flex;
   justify-content: end;
   width: 306px;
   height: 32px;
-  padding: 0.125rem 1rem;
+  padding: 0.125rem 0rem 0.125rem 1rem;
   border: 1px solid #b4aeae;
   border-radius: 8px;
+} */
+
+.searchInput {
+  flex: 1;
+  width: 400px;
+  display: flex;
+  align-items: center;
 }
 
 .search {
-  border: none;
-  outline: none;
+  flex: 1;
+  height: 36px;
+  font-size: 1rem;
+  padding-left: 8px;
+  border: 1px solid #b4aeae;
   background-color: transparent;
-  width: 100%;
+  border-radius: 8px 0 0 8px;
+  width: 0;
+  outline: none;
+}
+
+.iconContainer {
+  min-height: 100%;
+  padding: 0.5rem 0.5rem;
+  background-color: #bdbdbd;
+  border-radius: 0 8px 8px 0;
 }
 
 .searchIcon {

@@ -49,15 +49,17 @@ export default function BudgetChart() {
     labels: ["Total", "Spent"],
     datasets: [
       {
-        data: [100, 20], // 100% for the base circle
+        data: [100 - percentageSpent, percentageSpent], // 100% for the base circle
         backgroundColor: ["#DAE3FF", "#1C2D5E"],
         borderWidth: 0,
         borderColor: ["#DAE3FF", "#1C2D5E"],
         circumference: 360,
         borderRadius: [4, 8],
-        rotation: -180,
+        rotation: -90,
 
         weight: 1, // Adjust thickness of the base circle
+        pointRadius: 0,
+        pointHoverRadius: 5,
       },
       // {
       //   data: [20, 80], // 20% spent

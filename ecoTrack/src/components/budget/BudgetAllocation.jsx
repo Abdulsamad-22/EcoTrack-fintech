@@ -28,7 +28,7 @@ export const allocation = [
   },
 ];
 export default function BudgetAllocation() {
-  const { formattedTotal, newBudget, formattedSpent } = useBudget();
+  const { formattedTotal, newBudget } = useBudget();
 
   return (
     <div>
@@ -53,7 +53,7 @@ export default function BudgetAllocation() {
             </div>
             <div className={styles.amountContainer}>
               <p className={styles.allocationAmount}>
-                {list.spentAmount}/<span>{list.totalAmount}</span>
+                ₦{list.spentAmount}/<span>{list.totalAmount}</span>
               </p>
               <img className={styles.onTrackIcon} src={list.status} alt="" />
             </div>

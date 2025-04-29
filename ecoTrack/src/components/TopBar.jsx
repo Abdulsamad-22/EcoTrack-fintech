@@ -31,11 +31,13 @@ export default function TopBar() {
               className={styles.search}
               type="text"
             />
-            <img
-              className={styles.searchIcon}
-              src="/src/images/Search-icon.svg"
-              alt="search-icon"
-            />
+            <button className={styles.iconContainer}>
+              <img
+                className={styles.searchIcon}
+                src="/src/images/Search-icon.svg"
+                alt="search-icon"
+              />
+            </button>
           </div>
         </div>
 

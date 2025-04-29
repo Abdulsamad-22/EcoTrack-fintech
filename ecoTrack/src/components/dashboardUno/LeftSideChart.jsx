@@ -2,10 +2,12 @@ import styles from "./leftsidechart.module.css";
 import ChartGraph from "./ChartGraph";
 import TimeAxis from "../TimeAxis";
 // import ItemSelection from "../ItemSelection";
+import InflationData from "./InflationData";
 
 export default function LeftSideChart() {
   return (
     <div className={styles.leftFrame}>
+      {/* <InflationData /> */}
       <div className={styles.topChartBar}>
         <div className={styles.category}>
           <div className={styles.item}>Electricity</div>
@@ -35,7 +37,7 @@ export default function LeftSideChart() {
       <div>
         <ChartGraph />
       </div>
-      <TimeAxis />
+      {/* <TimeAxis /> */}
     </div>
   );
 }

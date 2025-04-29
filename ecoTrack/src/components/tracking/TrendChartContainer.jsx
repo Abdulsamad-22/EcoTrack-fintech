@@ -1,7 +1,6 @@
 import styles from "./trendchartcontainer.module.css";
 import ChartGraph from "../dashboardUno/ChartGraph";
 import ItemSelection from "../ItemSelection";
-import TimeAxis from "../TimeAxis";
 import TrendIndicator from "../TrendIndicator";
 
 export default function TrendChartContainer() {
@@ -10,7 +9,6 @@ export default function TrendChartContainer() {
       <ItemSelection />
       <TrendIndicator />
       <ChartGraph />
-      <TimeAxis />
     </div>
   );
 }

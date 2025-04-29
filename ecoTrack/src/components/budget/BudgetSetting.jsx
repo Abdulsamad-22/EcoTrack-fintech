@@ -4,6 +4,7 @@ import { useBudget } from "./BudgetProvider";
 
 export default function BudgetSetting() {
   const { budget, amount, setBudget, setAmount, handleSubmit } = useBudget();
+  const activeStyle = amount && budget === !"" ? styles.active : "";
 
   return (
     <div>

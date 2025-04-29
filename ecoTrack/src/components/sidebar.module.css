@@ -26,6 +26,24 @@
   border-radius: 8px;
 }
 
+/* .navIcons .tooltip {
+  position: absolute;
+  bottom: -45px;
+  background-color: gray;
+  color: white;
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.navIcons:hover .tooltip {
+  opacity: 1;
+} */
+
 .navContainer:hover {
   background-color: rgb(192, 192, 192);
 }

@@ -11,29 +11,53 @@ export default function SideBar() {
       id: 1,
       icon: "/src/images/List.svg",
       onClick: () => setExpanded(!expanded),
+      toolTip: "Open navigation",
     },
     {
       id: 2,
       icon: "/src/images/SquaresFour.svg",
       path: "/",
       label: "Dashboard",
+      toolTip: "Dashboard",
     },
     {
       id: 3,
       icon: "/src/images/database.svg",
       path: "/budget",
       label: "Budget",
+      toolTip: "Budget",
     },
     {
       id: 4,
       icon: "/src/images/ChartLine.svg",
       path: "/tracking",
       label: "Analytics",
+      toolTip: "Analytics",
     },
-    { id: 5, icon: "/src/images/card.svg", label: "Savings" },
-    { id: 6, icon: "/src/images/Gear.svg", label: "Settings" },
-    { id: 7, icon: "/src/images/Question.svg", label: "Help Center" },
-    { id: 8, icon: "/src/images/SignOut.svg", label: "Log Out" },
+    {
+      id: 5,
+      icon: "/src/images/card.svg",
+      label: "Savings",
+      toolTip: "Savings",
+    },
+    {
+      id: 6,
+      icon: "/src/images/Gear.svg",
+      label: "Settings",
+      toolTip: "Settings",
+    },
+    {
+      id: 7,
+      icon: "/src/images/Question.svg",
+      label: "Help Center",
+      toolTip: "Help Center",
+    },
+    {
+      id: 8,
+      icon: "/src/images/SignOut.svg",
+      label: "Log Out",
+      toolTip: "Log Out",
+    },
   ];
 
   function handleClick(index) {
@@ -74,6 +98,7 @@ export default function SideBar() {
                     alt="nav-bar"
                   />
                   {expanded && <p>{item.label}</p>}
+                  {/* <div className={styles.toolTip}>{item.toolTip}</div> */}
                 </div>
               </Link>
             ) : (

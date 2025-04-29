@@ -26,13 +26,13 @@ export default function NewPrice() {
               </div>
             </td>
             <td className={styles.newPrice1}>₦8,000</td>
-            <td className={styles.rateDecrease1}>
-              <img
+            <td className={styles.rateDecrease}>
+              {/* <img
                 className={styles.rateIcon}
                 src="/src/images/arrow-down.svg"
                 alt=""
-              />
-              5%
+              /> */}
+              ↓ 5%
             </td>
           </tr>
 

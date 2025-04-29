@@ -19,9 +19,15 @@
   padding: 0.625rem;
   border-radius: 8px;
   cursor: pointer;
+  transition: color 0.15ms;
 }
 
-.label:first-child {
+.selected {
   background-color: #1c2d5e;
   color: #f9f9f9;
+}
+
+.label:hover {
+  background-color: #e4e4e4;
+  color: #1c2d5e;
 }

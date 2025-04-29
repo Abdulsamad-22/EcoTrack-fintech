@@ -1,21 +1,40 @@
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
-import budget from "../data/budget.json";
+import inflationData from "../data/inflationData.json";
 import styles from "./chartgraph.module.css";
+import { useState } from "react";
+import TimeAxis from "../TimeAxis";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
+
 export default function ChartGraph() {
+  const [filteredData, setFilteredData] = useState(inflationData);
+  const today = new Date();
+
+  function filterByRange(daysAgo) {
+    const cutoff = new Date(today);
+    cutoff.setDate(cutoff.getDate() - daysAgo);
+
+    const filtered = inflationData.filter((entry) => {
+      const entryDate = new Date(entry.date);
+      return entryDate >= cutoff;
+    });
+    setFilteredData(filtered);
+  }
   return (
     <div>
       <div className={styles.graphCanvas}>
         <Line
           data={{
-            labels: budget.map((time) => time.label),
+            labels: filteredData.map((item) => item.date),
             datasets: [
               {
                 label: "Budget",
-                data: [40, 80, 50, 30, 54], // Sample data for Budget
+                data: [
+                  40, 80, 50, 30, 54, 10, 14, 15, 17, 54, 10, 14, 15, 17, 54,
+                  10, 14, 15,
+                ], // Sample data for Budget
                 borderColor: "#F87A54",
                 backgroundColor: "rgba(255, 165, 0, 0.1)", // For shading between lines
                 fill: "+1", // Fills the area between this dataset and the next
@@ -25,8 +44,8 @@ export default function ChartGraph() {
               },
 
               {
-                label: "Inflation",
-                data: [50, 60, 70, 40, 77], // Sample data for Inflation
+                label: "Inflation Rate %",
+                data: filteredData.map((item) => item.inflation), // Sample data for Inflation
                 borderColor: "#1C2D5E",
                 backgroundColor: "rgba(0, 0, 255, 0.1)", // For shading between lines
                 // fill: "-1", // Fills the area between this dataset and the previous
@@ -57,12 +76,12 @@ export default function ChartGraph() {
                   drawBorder: false, // Removes axis border
                 },
                 ticks: {
-                  stepSize: 20,
+                  stepSize: 10,
                   callback: function (value) {
                     return value + "%"; // Adds % to y-axis labels
                   },
                 },
-                min: 20,
+                min: 0,
                 max: 100, // Adjust based on your data range
               },
             },
@@ -81,6 +100,11 @@ export default function ChartGraph() {
           }}
         />
       </div>
+      <button onClick={() => filterByRange(180)}>time</button>
+      <TimeAxis
+        filterByRange={filterByRange}
+        reset={() => setFilteredData(inflationData)}
+      />
     </div>
   );
 }

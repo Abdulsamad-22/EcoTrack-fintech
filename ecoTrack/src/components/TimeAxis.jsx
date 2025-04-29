@@ -1,13 +1,43 @@
+import { useEffect } from "react";
 import styles from "./timeaxis.module.css";
-export default function TimeAxis() {
+import { useState } from "react";
+
+export default function TimeAxis({ filterByRange, reset }) {
+  const timeRanges = [
+    { label: "2 Weeks", days: 14 },
+    { label: "1 Month", days: 30 },
+    { label: "3 Months", days: 90 },
+    { label: "6 Months", days: 180 },
+    { label: "1 Year", days: 365 },
+  ];
+
+  const [selectedContainer, setSelectedContainer] = useState(null);
+  function handleClick(index) {
+    setSelectedContainer(index);
+    console.log("active button");
+  }
+  const api_key = "f8591f36bcb4414:6lbrl1at6hfr1fd";
+  // useEffect(() => {
+  //   localStorage.setItem("selectedContainer", selectedContainer);
+  // }, [selectedContainer]);
+
   return (
     <>
       <div className={styles.category2}>
-        <div className={styles.label}>2 Weeks</div>
-        <div className={styles.label}>1 Month</div>
-        <div className={styles.label}>3 Month</div>
-        <div className={styles.label}>6 Month</div>
-        <div className={styles.label}>1 Year</div>
+        {timeRanges.map((time, index) => (
+          <div
+            key={index}
+            className={`${styles.label} ${
+              selectedContainer === index ? styles.selected : ""
+            }`}
+            onClick={() => {
+              handleClick(index);
+              filterByRange(time.days);
+            }}
+          >
+            {time.label}
+          </div>
+        ))}
       </div>
     </>
   );
