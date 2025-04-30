@@ -1,0 +1,26 @@
+.labelName {
+  font-size: 1rem;
+  color: #444242;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.inputField::placeholder {
+  font-size: 0.875rem;
+}
+
+.ctaButton {
+  background-color: #1c2d5e;
+  color: #f9f9f9;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+}

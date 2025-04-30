@@ -40,11 +40,7 @@ export default function BudgetChart() {
     },
   };
 
-  const { formattedSpent, formattedTotal } = useBudget();
-  const spent = Number(formattedSpent.replace(/,/g, ""));
-  const total = Number(formattedTotal.replace(/,/g, ""));
-  const percentageSpent = Number(100 * (spent / total)).toFixed(1);
-  console.log(percentageSpent);
+  const { formattedSpent, formattedTotal, percentageSpent } = useBudget();
   const data = {
     labels: ["Total", "Spent"],
     datasets: [

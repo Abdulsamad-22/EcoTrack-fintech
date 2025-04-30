@@ -47,10 +47,15 @@ export default function BudgetProvider({ children }) {
 
   const formattedSpent = totalSpent.toLocaleString();
 
+  const spent = Number(formattedSpent.replace(/,/g, ""));
+  const totalBudget = Number(formattedTotal.replace(/,/g, ""));
+  const percentageSpent = Number(100 * (spent / totalBudget)).toFixed(1);
+
   return (
     <BudgetContext.Provider
       value={{
         newBudget,
+        percentageSpent,
         formattedTotal,
         formattedSpent,
         budget,

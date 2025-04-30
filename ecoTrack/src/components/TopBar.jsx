@@ -28,6 +28,7 @@ export default function TopBar() {
             <input
               onChange={(e) => setQuery(e.target.value)}
               value={query}
+              placeholder="Search"
               className={styles.search}
               type="text"
             />

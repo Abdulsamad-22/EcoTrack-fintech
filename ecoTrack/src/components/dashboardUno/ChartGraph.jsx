@@ -25,7 +25,7 @@ export default function ChartGraph() {
   return (
     <div>
       <div className={styles.graphCanvas}>
-        <Line
+        <Bar
           data={{
             labels: filteredData.map((item) => item.date),
             datasets: [
@@ -36,9 +36,10 @@ export default function ChartGraph() {
                   10, 14, 15,
                 ], // Sample data for Budget
                 borderColor: "#F87A54",
-                backgroundColor: "rgba(255, 165, 0, 0.1)", // For shading between lines
+                backgroundColor: "#F87A54", // For shading between lines
                 fill: "+1", // Fills the area between this dataset and the next
                 tension: 0.4, // Smooth curve
+                borderRadius: 4,
                 pointRadius: 0,
                 pointHoverRadius: 5,
               },
@@ -47,9 +48,10 @@ export default function ChartGraph() {
                 label: "Inflation Rate %",
                 data: filteredData.map((item) => item.inflation), // Sample data for Inflation
                 borderColor: "#1C2D5E",
-                backgroundColor: "rgba(0, 0, 255, 0.1)", // For shading between lines
+                backgroundColor: "#1C2D5E", // For shading between lines
                 // fill: "-1", // Fills the area between this dataset and the previous
                 tension: 0.4, // Smooth curve
+                borderRadius: 4,
                 // pointRadius: 0,
                 // pointHoverRadius: 5,
               },
@@ -100,11 +102,7 @@ export default function ChartGraph() {
           }}
         />
       </div>
-      <button onClick={() => filterByRange(180)}>time</button>
-      <TimeAxis
-        filterByRange={filterByRange}
-        reset={() => setFilteredData(inflationData)}
-      />
+      <TimeAxis filterByRange={filterByRange} />
     </div>
   );
 }
