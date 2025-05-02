@@ -1,4 +1,5 @@
-.inputField {
+.inputField,
+.categoryInput {
   width: 100%;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
@@ -6,8 +7,21 @@
   outline: none;
 }
 
+.categoryInput {
+  height: 90px;
+  text-align: left;
+}
+
 .inputField::placeholder {
   font-size: 0.875rem;
+}
+
+.descriptionContainer {
+  margin-top: 0.75rem;
+}
+
+.descriptionContainer label {
+  color: #444242;
 }
 
 .payButton {

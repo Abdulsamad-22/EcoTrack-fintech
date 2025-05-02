@@ -95,12 +95,19 @@
   top: 0;
   right: 0;
   background-color: burlywood;
+  border-radius: 8px;
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.875rem;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  color: #444242;
 }

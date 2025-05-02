@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import styles from "./cards.module.css";
 import TransferAction from "./TransferAction";
 import TransferMoney from "./TransferMoney";
 import ConfirmAmount from "./ConfirmAmount";
+import TransferSuccess from "./TransferSuccess";
 // import styles from "./topbar.module.css";
+
 export default function Cards() {
   const [originalBalance, setOriginalBalance] = useState("100,758,030.10");
   const [balance, setBalance] = useState(originalBalance);
@@ -50,10 +52,10 @@ export default function Cards() {
 
           <p className={styles.cardNumber}>5467*******473</p>
           <div className={styles.cardType}>
-            VISA
             <span>
               <img src="/src/images/Chip Card.svg" alt="chip icon" />
             </span>
+            VISA
           </div>
         </div>
         <button className={styles.addCard}>
@@ -68,6 +70,7 @@ export default function Cards() {
               <h1>Transfer Page</h1>
               <button onClick={() => setOverlayVisible("initial")}>X</button>
             </div>
+
             {overlayVisible === "transfer" && (
               <TransferMoney
                 setIsVisible={setIsVisible}
@@ -76,7 +79,11 @@ export default function Cards() {
               />
             )}
 
-            {overlayVisible === "confirm" && <ConfirmAmount />}
+            {overlayVisible === "confirm" && (
+              <ConfirmAmount setOverlayVisible={setOverlayVisible} />
+            )}
+
+            {overlayVisible === "success" && <TransferSuccess />}
           </div>
         )}
 
