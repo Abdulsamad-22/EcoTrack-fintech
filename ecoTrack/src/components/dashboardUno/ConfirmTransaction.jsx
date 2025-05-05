@@ -1,6 +1,21 @@
 import { useState } from "react";
 import styles from "./confirmamount.module.css";
-export default function ConfirmTransaction({ setOverlayVisible }) {
+import { useBudget } from "../budget/BudgetProvider";
+export default function ConfirmTransaction({
+  setOverlayVisible,
+  accountNum,
+  bankName,
+}) {
+  const {
+    newBudget,
+    setNewBudget,
+    budget,
+    percentageSpent,
+    formattedTotal,
+    category,
+    sentAmount,
+    expenseBudgetCalc,
+  } = useBudget();
   const [pin, setPin] = useState("");
   const [error, setError] = useState({});
   function validatePin() {
@@ -15,11 +30,50 @@ export default function ConfirmTransaction({ setOverlayVisible }) {
     if (Object.keys(error).length > 0) {
       return;
     }
-    setOverlayVisible("success");
+
+    const matchedCategory = newBudget.find(
+      (item) => item.category === category
+    );
+
+    if (matchedCategory) {
+      console.log(matchedCategory);
+      const totalAmount = parseFloat(
+        matchedCategory.totalAmount.replace(/,/g, "")
+      );
+      const spentCategoryAmount = parseFloat(sentAmount);
+
+      const budgetBalance = totalAmount - spentCategoryAmount;
+
+      // matchedCategory.totalAmount = budgetBalance;
+      console.log(budgetBalance);
+
+      const totalSpent = parseFloat(
+        matchedCategory.spentAmount.replace(/,/g, "")
+      );
+      const categoryTotalSpent = totalSpent + spentCategoryAmount;
+
+      // matchedCategory.spentAmount = categoryTotalSpent;
+      console.log(categoryTotalSpent);
+      // setBudgetState({ categoryTotalSpent, budgetBalance });
+      // return { categoryTotalSpent };
+
+      setNewBudget((prev) => [
+        ...prev,
+        {
+          category: budget,
+          spentAmount: "00",
+          totalAmount: budgetBalance,
+        },
+      ]);
+    }
+
+    // expenseBudgetCalc();
+    setOverlayVisible("success"); // Open transaction success screen
   }
   return (
     <div>
-      Pay out
+      Pay out {`₦${sentAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`} to
+      {accountNum} {bankName.toUpperCase()}
       <form onSubmit={handleSubmit}>
         <label>Enter Pin</label>
         <br />

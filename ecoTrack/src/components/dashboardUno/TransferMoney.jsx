@@ -1,12 +1,15 @@
-import { useState, createContext, useContext } from "react";
+import { useState } from "react";
 import styles from "./transfermoney.module.css";
+import RecentTransaction from "./RecentTransaction";
 
-export default function TransferMoney({ setOverlayVisible }) {
-  const [accountNum, setAccountNum] = useState("");
-  const [bankName, setBankName] = useState("");
+export default function TransferMoney({
+  setOverlayVisible,
+  accountNum,
+  bankName,
+  setAccountNum,
+  setBankName,
+}) {
   const [errors, setErrors] = useState({});
-
-  //   const [amount, setAmount] = useState(false);
 
   function validateInputs() {
     const errors = {};
@@ -75,41 +78,7 @@ export default function TransferMoney({ setOverlayVisible }) {
       </form>
 
       <div className={styles.recentContainer}>
-        <div className={styles.titleContainer}>
-          <div className={styles.leftSide}>
-            <p>Recent</p>
-            <p>Favourites</p>
-          </div>
-
-          <img
-            className={styles.searchIcon}
-            src="/src/images/Search-icon.svg"
-            alt=""
-          />
-        </div>
-
-        <div>
-          <div className={styles.acctInfoContainer}>
-            <p className={styles.acctName}>Esther Amaiho</p>
-            <p className={styles.acctInfo}>
-              <span>4441529872</span> MONIE POINT
-            </p>
-          </div>
-
-          <div className={styles.acctInfoContainer}>
-            <p className={styles.acctName}>Choli Frank</p>
-            <p className={styles.acctInfo}>
-              <span>4441529872</span> OPAY
-            </p>
-          </div>
-
-          <div className={styles.acctInfoContainer}>
-            <p className={styles.acctName}>Suberu Frank</p>
-            <p className={styles.acctInfo}>
-              <span>4441529872</span> OPAY
-            </p>
-          </div>
-        </div>
+        <RecentTransaction />
       </div>
     </div>
   );

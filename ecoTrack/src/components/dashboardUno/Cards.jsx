@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { useState } from "react";
 import styles from "./cards.module.css";
 import TransferAction from "./TransferAction";
 import TransferMoney from "./TransferMoney";
@@ -12,6 +12,8 @@ export default function Cards() {
   const [isVisible, setIsVisible] = useState(true);
   const [imageSrc, setImageSrc] = useState("/src/images/hide-icon.svg");
 
+  const [accountNum, setAccountNum] = useState(""); // Mock data
+  const [bankName, setBankName] = useState("");
   const [overlayVisible, setOverlayVisible] = useState("initial");
 
   function handleVisibility() {
@@ -68,11 +70,23 @@ export default function Cards() {
           <div className={styles.transferScreen}>
             <div className={styles.header}>
               <h1>Transfer Page</h1>
-              <button onClick={() => setOverlayVisible("initial")}>X</button>
+              <button
+                onClick={() => {
+                  setOverlayVisible("initial");
+                  setAccountNum("");
+                  setBankName("");
+                }}
+              >
+                X
+              </button>
             </div>
 
             {overlayVisible === "transfer" && (
               <TransferMoney
+                accountNum={accountNum}
+                setAccountNum={setAccountNum}
+                bankName={bankName}
+                setBankName={setBankName}
                 setIsVisible={setIsVisible}
                 isVisible={isVisible}
                 setOverlayVisible={setOverlayVisible}
@@ -80,7 +94,11 @@ export default function Cards() {
             )}
 
             {overlayVisible === "confirm" && (
-              <ConfirmAmount setOverlayVisible={setOverlayVisible} />
+              <ConfirmAmount
+                setOverlayVisible={setOverlayVisible}
+                bankName={bankName}
+                accountNum={accountNum}
+              />
             )}
 
             {overlayVisible === "success" && <TransferSuccess />}

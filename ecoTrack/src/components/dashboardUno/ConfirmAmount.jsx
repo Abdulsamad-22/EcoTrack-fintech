@@ -1,20 +1,22 @@
 import { useState } from "react";
 import styles from "./confirmamount.module.css";
 import ConfirmTransaction from "./ConfirmTransaction";
+import { useBudget } from "../budget/BudgetProvider";
 
 export default function ConfirmAmount({
-  accountNum,
-  bankName,
   setOverlayVisible,
+  bankName,
+  accountNum,
 }) {
-  const [amount, setAmount] = useState("");
-  const [category, setCategory] = useState("");
+  // const [amount, setAmount] = useState("");
+  const { category, setCategory, sentAmount, setSentAmount } = useBudget();
+  // const [category, setCategory] = useState("");
   const [confirmTransfer, setConfirmTransfer] = useState(false);
   const [errors, setErrors] = useState({});
 
   function validateAmount() {
     const errors = {};
-    amount === "" ? (errors.amount = "Enter amount") : "";
+    sentAmount === "" ? (errors.sentAmount = "Enter amount") : "";
     category === "" ? (errors.category = "Enter category") : "";
     return errors;
   }
@@ -31,18 +33,18 @@ export default function ConfirmAmount({
   }
   return (
     <div>
-      {bankName} {accountNum}
+      {accountNum} {bankName}
       <form onSubmit={handleSubmit}>
         <input
           className={styles.inputField}
-          onChange={(e) => setAmount(e.target.value)}
-          value={amount}
+          onChange={(e) => setSentAmount(e.target.value)}
+          value={sentAmount}
           placeholder="Set amount"
           type="number"
         />
-        {errors.amount && (
+        {errors.sentAmount && (
           <div style={{ color: "red", fontSize: "0.875rem" }}>
-            {errors.amount}
+            {errors.sentAmount}
           </div>
         )}
         <div className={styles.descriptionContainer}>
@@ -67,7 +69,12 @@ export default function ConfirmAmount({
         </button>
       </form>
       {confirmTransfer && (
-        <ConfirmTransaction setOverlayVisible={setOverlayVisible} />
+        <ConfirmTransaction
+          setOverlayVisible={setOverlayVisible}
+          // amount={amount}
+          bankName={bankName}
+          accountNum={accountNum}
+        />
       )}
     </div>
   );

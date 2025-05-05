@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Tomatoes",
+    "price": 12000,
+    "newPrice": 8000,
+    "rate": "↓ 5%"
+  },
+
+  {
+    "name": "Rice",
+    "price": 90000,
+    "newPrice": 120000,
+    "rate": "↑ 12%"
+  },
+
+  {
+    "name": "Noodles",
+    "price": 9000,
+    "newPrice": 8000,
+    "rate": "↓ 10%"
+  },
+
+  {
+    "name": "Spaghetti",
+    "price": 4000,
+    "newPrice": 8000,
+    "rate": "↑ 9%"
+  },
+
+  {
+    "name": "Potatoes",
+    "price": 4000,
+    "newPrice": 8000,
+    "rate": "↑ 9%"
+  },
+
+  {
+    "name": "Beans",
+    "price": 12000,
+    "newPrice": 8000,
+    "rate": "↓ 9%"
+  }
+]

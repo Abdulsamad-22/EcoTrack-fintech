@@ -1,35 +1,40 @@
 import styles from "./budgetallocation.module.css";
 import { useBudget } from "./BudgetProvider";
 
-export const allocation = [
-  {
-    category: "Rent",
-    spentAmount: "70,000",
-    totalAmount: "320,000",
-    status: "/src/images/check-icon-onPlain.svg",
-  },
-  {
-    category: "Food Item",
-    spentAmount: "155,000",
-    totalAmount: "200,000",
-    status: "/src/images/warning-icon.svg",
-  },
-  {
-    category: "Transportation",
-    spentAmount: "92,000",
-    totalAmount: "170,000",
-    status: "/src/images/warning-icon.svg",
-  },
-  {
-    category: "Electricity",
-    spentAmount: "20,000",
-    totalAmount: "100,000",
-    status: "/src/images/check-icon-onPlain.svg",
-  },
-];
+// export const allocation = [
+//   {
+//     category: "Rent",
+//     spentAmount: "70,000",
+//     totalAmount: "320,000",
+//     status: "/src/images/check-icon-onPlain.svg",
+//   },
+//   {
+//     category: "Food Item",
+//     spentAmount: "155,000",
+//     totalAmount: "200,000",
+//     status: "/src/images/warning-icon.svg",
+//   },
+//   {
+//     category: "Transportation",
+//     spentAmount: "92,000",
+//     totalAmount: "170,000",
+//     status: "/src/images/warning-icon.svg",
+//   },
+//   {
+//     category: "Electricity",
+//     spentAmount: "20,000",
+//     totalAmount: "100,000",
+//     status: "/src/images/check-icon-onPlain.svg",
+//   },
+// ];
 export default function BudgetAllocation() {
-  const { formattedTotal, newBudget } = useBudget();
-
+  const {
+    formattedTotal,
+    formattedAmount,
+    newBudget,
+    categoryTotalSpent,
+    budgetBalance,
+  } = useBudget();
   return (
     <div>
       {/* {console.log(formattedSpent)} */}

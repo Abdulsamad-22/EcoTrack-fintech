@@ -3,8 +3,15 @@ import styles from "./budgetsetting.module.css";
 import { useBudget } from "./BudgetProvider";
 
 export default function BudgetSetting() {
-  const { budget, amount, setBudget, setAmount, handleSubmit } = useBudget();
-  const activeStyle = amount && budget === !"" ? styles.active : "";
+  const {
+    budget,
+    budgetAmount,
+    setBudgetAmount,
+    setBudget,
+    setAmount,
+    handleSubmit,
+  } = useBudget();
+  const activeStyle = budgetAmount && budget === !"" ? styles.active : "";
 
   return (
     <div>
@@ -21,8 +28,8 @@ export default function BudgetSetting() {
 
         <div className={styles.budgetAmountContainer}>
           <input
-            onChange={(e) => setAmount(e.target.value)}
-            value={amount}
+            onChange={(e) => setBudgetAmount(e.target.value)}
+            value={budgetAmount}
             className={styles.budgetAmount}
             type="text"
             placeholder="Enter budget amount"

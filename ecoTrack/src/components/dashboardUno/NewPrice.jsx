@@ -1,5 +1,30 @@
 import styles from "./newprice.module.css";
+import inflatedPrices from "../data/inflatedPrices.json";
+import { useEffect, useState } from "react";
+
+function getFluctuatedPrice(price) {
+  const fluctuation = Math.random() * 0.15 - 0.05;
+  const newPrice = price + price * fluctuation;
+  return Math.round(newPrice);
+}
 export default function NewPrice() {
+  const [items, setItems] = useState(inflatedPrices);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setItems((prevItems) =>
+        prevItems.map((item) => ({
+          ...items,
+          name: item.name,
+          price: getFluctuatedPrice(item.price),
+          newPrice: getFluctuatedPrice(item.price),
+          rate: "↑ 12%",
+        }))
+      );
+    }, 20000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className={styles.sideBar}>
       <div className={styles.header}>
@@ -18,25 +43,31 @@ export default function NewPrice() {
           </tr>
         </thead>
         <tbody>
-          <tr class="align-bottom">
-            <td className={styles.itemCol1}>
-              <span className={styles.itemName}>Tomatoes</span>
-              <div>
-                <span className={styles.oldPrice}>₦12,000</span>
-              </div>
-            </td>
-            <td className={styles.newPrice1}>₦8,000</td>
-            <td className={styles.rateDecrease}>
-              {/* <img
+          {items.map((item) => (
+            <tr class="align-bottom">
+              <td className={styles.itemCol}>
+                <span className={styles.itemName}>{item.name}</span>
+                <div>
+                  <span className={styles.oldPrice}>
+                    ₦{item.price.toLocaleString("en-NG")}
+                  </span>
+                </div>
+              </td>
+              <td className={styles.newPrice}>
+                ₦{item.newPrice.toLocaleString("en-NG")}
+              </td>
+              <td className={styles.rateDecrease}>
+                {/* <img
                 className={styles.rateIcon}
                 src="/src/images/arrow-down.svg"
                 alt=""
               /> */}
-              ↓ 5%
-            </td>
-          </tr>
+                {item.rate}
+              </td>
+            </tr>
+          ))}
 
-          <tr class="align-bottom">
+          {/* <tr class="align-bottom">
             <td className={styles.itemCol}>
               <span className={styles.itemName}>Rice</span>
               <div>
@@ -89,7 +120,7 @@ export default function NewPrice() {
             </td>
             <td className={styles.newPriceLast}>₦8,000</td>
             <td className={styles.rateDecreaseLast}>↓ 5%</td>
-          </tr>
+          </tr> */}
         </tbody>
       </table>
     </section>
