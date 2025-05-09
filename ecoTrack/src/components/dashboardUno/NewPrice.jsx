@@ -9,19 +9,19 @@ function getFluctuatedPrice(price) {
 }
 export default function NewPrice() {
   const [items, setItems] = useState(inflatedPrices);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setItems((prevItems) =>
         prevItems.map((item) => ({
-          ...items,
-          name: item.name,
+          ...item,
           price: getFluctuatedPrice(item.price),
           newPrice: getFluctuatedPrice(item.price),
-          rate: "↑ 12%",
+          rate: Math.abs(
+            ((item.price - item.newPrice) / item.newPrice) * 100
+          ).toFixed(1),
         }))
       );
-    }, 20000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -56,13 +56,19 @@ export default function NewPrice() {
               <td className={styles.newPrice}>
                 ₦{item.newPrice.toLocaleString("en-NG")}
               </td>
-              <td className={styles.rateDecrease}>
+              <td
+                className={
+                  item.price < item.newPrice
+                    ? styles.rateIncrease
+                    : styles.rateDecrease
+                }
+              >
+                {item.price < item.newPrice ? "↑" : "↓"} {item.rate}%
                 {/* <img
                 className={styles.rateIcon}
                 src="/src/images/arrow-down.svg"
                 alt=""
               /> */}
-                {item.rate}
               </td>
             </tr>
           ))}

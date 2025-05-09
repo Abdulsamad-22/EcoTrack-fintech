@@ -30,7 +30,11 @@ export default function ExpenseChart() {
       // Draw "₦250,000"
       ctx.font = "700 18px Arial";
       ctx.fillStyle = "#444242";
-      ctx.fillText(`₦${formattedSpent}`, width / 2, height / 2 + 20);
+      ctx.fillText(
+        `₦${formattedSpent.toLocaleString("en-NG")}`,
+        width / 2,
+        height / 2 + 20
+      );
 
       ctx.restore();
     },

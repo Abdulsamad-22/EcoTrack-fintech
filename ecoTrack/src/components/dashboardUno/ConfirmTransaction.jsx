@@ -6,16 +6,8 @@ export default function ConfirmTransaction({
   accountNum,
   bankName,
 }) {
-  const {
-    newBudget,
-    setNewBudget,
-    budget,
-    percentageSpent,
-    formattedTotal,
-    category,
-    sentAmount,
-    expenseBudgetCalc,
-  } = useBudget();
+  const { sentAmount, setSentAmount, setCategory, expenseBudgetCalc } =
+    useBudget();
   const [pin, setPin] = useState("");
   const [error, setError] = useState({});
   function validatePin() {
@@ -31,44 +23,10 @@ export default function ConfirmTransaction({
       return;
     }
 
-    const matchedCategory = newBudget.find(
-      (item) => item.category === category
-    );
-
-    if (matchedCategory) {
-      console.log(matchedCategory);
-      const totalAmount = parseFloat(
-        matchedCategory.totalAmount.replace(/,/g, "")
-      );
-      const spentCategoryAmount = parseFloat(sentAmount);
-
-      const budgetBalance = totalAmount - spentCategoryAmount;
-
-      // matchedCategory.totalAmount = budgetBalance;
-      console.log(budgetBalance);
-
-      const totalSpent = parseFloat(
-        matchedCategory.spentAmount.replace(/,/g, "")
-      );
-      const categoryTotalSpent = totalSpent + spentCategoryAmount;
-
-      // matchedCategory.spentAmount = categoryTotalSpent;
-      console.log(categoryTotalSpent);
-      // setBudgetState({ categoryTotalSpent, budgetBalance });
-      // return { categoryTotalSpent };
-
-      setNewBudget((prev) => [
-        ...prev,
-        {
-          category: budget,
-          spentAmount: "00",
-          totalAmount: budgetBalance,
-        },
-      ]);
-    }
-
-    // expenseBudgetCalc();
+    expenseBudgetCalc();
     setOverlayVisible("success"); // Open transaction success screen
+    setCategory("");
+    setSentAmount("");
   }
   return (
     <div>

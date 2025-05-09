@@ -3,41 +3,41 @@
     "name": "Tomatoes",
     "price": 12000,
     "newPrice": 8000,
-    "rate": "↓ 5%"
+    "rate": ""
   },
 
   {
     "name": "Rice",
     "price": 90000,
     "newPrice": 120000,
-    "rate": "↑ 12%"
+    "rate": ""
   },
 
   {
     "name": "Noodles",
     "price": 9000,
     "newPrice": 8000,
-    "rate": "↓ 10%"
+    "rate": ""
   },
 
   {
     "name": "Spaghetti",
     "price": 4000,
     "newPrice": 8000,
-    "rate": "↑ 9%"
+    "rate": ""
   },
 
   {
     "name": "Potatoes",
     "price": 4000,
     "newPrice": 8000,
-    "rate": "↑ 9%"
+    "rate": ""
   },
 
   {
     "name": "Beans",
     "price": 12000,
     "newPrice": 8000,
-    "rate": "↓ 9%"
+    "rate": ""
   }
 ]

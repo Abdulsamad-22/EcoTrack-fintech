@@ -30,7 +30,7 @@ export default function AnalysisSummary() {
               <img src={info.icon} alt="budget-icon" />
             </div>
           </div>
-          <p>₦{info.amount}</p>
+          <p>₦{info.amount.toLocaleString("en-NG")}</p>
         </div>
       ))}
     </section>

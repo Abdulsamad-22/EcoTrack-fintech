@@ -6,32 +6,33 @@ export default function BudgetProvider({ children }) {
   const allocation = [
     {
       category: "Rent",
-      spentAmount: "70,000",
-      totalAmount: "320,000",
+      spentAmount: 70000,
+      totalAmount: 320000,
       status: "/src/images/check-icon-onPlain.svg",
     },
     {
       category: "Food Item",
-      spentAmount: "155,000",
-      totalAmount: "200,000",
+      spentAmount: 155000,
+      totalAmount: 200000,
       status: "/src/images/warning-icon.svg",
     },
     {
       category: "Transportation",
-      spentAmount: "92,000",
-      totalAmount: "170,000",
+      spentAmount: 92000,
+      totalAmount: 170000,
       status: "/src/images/warning-icon.svg",
     },
     {
       category: "Electricity",
-      spentAmount: "20,000",
-      totalAmount: "100,000",
+      spentAmount: 20000,
+      totalAmount: 100000,
       status: "/src/images/check-icon-onPlain.svg",
     },
   ];
 
   const [budget, setBudget] = useState("");
   const [budgetAmount, setBudgetAmount] = useState("");
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const [category, setCategory] = useState("");
   const [sentAmount, setSentAmount] = useState("");
@@ -40,41 +41,33 @@ export default function BudgetProvider({ children }) {
     return stored ? JSON.parse(stored) : allocation;
   });
 
-  // const [budgetState, setBudgetState] = useState({
-  //   categoryTotalSpent: 0,
-  //   budgetBalance: 0,
-  // });
-
   useEffect(() => {
     localStorage.setItem("newBudget", JSON.stringify(newBudget), [newBudget]);
   });
 
-  const formattedAmount = budgetAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const formattedAmount = parseFloat(budgetAmount);
 
-  /*const expenseBudgetCalc = () => {
+  const expenseBudgetCalc = () => {
+    const spentCategoryAmount = parseFloat(sentAmount);
     const matchedCategory = newBudget.find(
       (item) => item.category === category
     );
 
     if (matchedCategory) {
-      console.log(matchedCategory);
-      const totalAmount = parseFloat(
-        matchedCategory.totalAmount.replace(/,/g, "")
+      setNewBudget((prevBudget) =>
+        prevBudget.map((item) =>
+          item.category === category
+            ? {
+                ...item,
+
+                spentAmount: item.spentAmount + spentCategoryAmount,
+                totalAmount: item.totalAmount - spentCategoryAmount,
+              }
+            : item
+        )
       );
-      const spentCategoryAmount = parseFloat(sentAmount);
-
-      const budgetBalance = totalAmount - spentCategoryAmount;
-      console.log(budgetBalance);
-
-      const totalSpent = parseFloat(
-        matchedCategory.spentAmount.replace(/,/g, "")
-      );
-      const categoryTotalSpent = totalSpent + spentCategoryAmount;
-
-      console.log(categoryTotalSpent);
-      // setBudgetState({ categoryTotalSpent, budgetBalance });
     }
-  };*/
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -82,7 +75,7 @@ export default function BudgetProvider({ children }) {
       ...prev,
       {
         category: budget,
-        spentAmount: "00",
+        spentAmount: 0,
         totalAmount: formattedAmount,
         status: "/src/images/check-icon-onPlain.svg",
       },
@@ -95,26 +88,22 @@ export default function BudgetProvider({ children }) {
   }
 
   // Adds all initial budget amount
-  const total = newBudget.reduce((acc, current) => {
-    const amount = Number(current.totalAmount);
-    return acc + amount;
-  }, 0);
-  const formattedTotal = total.toLocaleString();
+  const total = newBudget.reduce(
+    (acc, current) => acc + current.totalAmount,
+    0
+  );
+  const formattedTotal = total;
 
   // Adds all spent budget amount
-  const totalSpent = allocation.reduce((acc, item) => {
-    const clean = Number(item.spentAmount.replace(/,/g, "") || 0);
-    return acc + clean;
-  }, 0);
+  const totalSpent = newBudget.reduce((acc, item) => acc + item.spentAmount, 0);
 
-  const formattedSpent = totalSpent.toLocaleString();
+  const formattedSpent = totalSpent;
+  console.log(formattedSpent);
 
   // Calculates the percentage of the spent budget
-  const spent = Number(formattedSpent.replace(/,/g, ""));
-  const totalBudget = Number(formattedTotal.replace(/,/g, ""));
+  const spent = Number(formattedSpent);
+  const totalBudget = Number(formattedTotal);
   const percentageSpent = Number(100 * (spent / totalBudget)).toFixed(1);
-
-  // const numericTotal = parseFloat(formattedTotal.replace(/,/g, ''));
 
   return (
     <BudgetContext.Provider
@@ -134,7 +123,7 @@ export default function BudgetProvider({ children }) {
         handleSubmit,
         setBudgetAmount,
         setSentAmount,
-        // expenseBudgetCalc,
+        expenseBudgetCalc,
       }}
     >
       {children}
