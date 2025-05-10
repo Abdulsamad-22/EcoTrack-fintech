@@ -9,7 +9,7 @@ export default function Expenses() {
 
         <div>
           <select>
-            <option value="">oct</option>
+            <option value="">Oct</option>
             <option value="">Sept</option>
             <option value="">Nov</option>
           </select>

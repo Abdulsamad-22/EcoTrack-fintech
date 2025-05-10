@@ -5,24 +5,28 @@ export const useBudget = () => useContext(BudgetContext);
 export default function BudgetProvider({ children }) {
   const allocation = [
     {
+      icon: "/src/images/House.svg",
       category: "Rent",
       spentAmount: 70000,
       totalAmount: 320000,
       status: "/src/images/check-icon-onPlain.svg",
     },
     {
+      icon: "/src/images/food-icon.svg",
       category: "Food Item",
       spentAmount: 155000,
       totalAmount: 200000,
       status: "/src/images/warning-icon.svg",
     },
     {
+      icon: "/src/images/transport-icon.svg",
       category: "Transportation",
       spentAmount: 92000,
       totalAmount: 170000,
       status: "/src/images/warning-icon.svg",
     },
     {
+      icon: "/src/images/fuel-icon.svg",
       category: "Electricity",
       spentAmount: 20000,
       totalAmount: 100000,
@@ -32,7 +36,7 @@ export default function BudgetProvider({ children }) {
 
   const [budget, setBudget] = useState("");
   const [budgetAmount, setBudgetAmount] = useState("");
-  const [totalAmount, setTotalAmount] = useState(0);
+  // const [totalAmount, setTotalAmount] = useState(0);
 
   const [category, setCategory] = useState("");
   const [sentAmount, setSentAmount] = useState("");
@@ -59,7 +63,6 @@ export default function BudgetProvider({ children }) {
           item.category === category
             ? {
                 ...item,
-
                 spentAmount: item.spentAmount + spentCategoryAmount,
                 totalAmount: item.totalAmount - spentCategoryAmount,
               }
@@ -74,6 +77,7 @@ export default function BudgetProvider({ children }) {
     setNewBudget((prev) => [
       ...prev,
       {
+        // icon: icon,
         category: budget,
         spentAmount: 0,
         totalAmount: formattedAmount,

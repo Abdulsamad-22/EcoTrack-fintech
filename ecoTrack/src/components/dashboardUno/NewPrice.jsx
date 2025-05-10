@@ -21,7 +21,7 @@ export default function NewPrice() {
           ).toFixed(1),
         }))
       );
-    }, 5000);
+    }, 20000);
 
     return () => clearInterval(interval);
   }, []);

@@ -1,7 +1,6 @@
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Doughnut, Pie } from "react-chartjs-2";
 import styles from "./expenses.module.css";
-import budget from "../data/budget.json";
 import { useBudget } from "../budget/BudgetProvider";
 
 defaults.maintainAspectRatio = false;
@@ -10,7 +9,7 @@ defaults.responsive = true;
 // ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function ExpenseChart() {
-  const { formattedSpent } = useBudget();
+  const { formattedSpent, newBudget } = useBudget();
   const centerTextPlugin = {
     id: "centerText",
     beforeDraw: (chart) => {
@@ -41,10 +40,12 @@ export default function ExpenseChart() {
   };
 
   const data = {
-    labels: ["Rent", "Food Item", "Transportation", "Fuel", "Electricity"],
+    labels: newBudget.map((title) => title.category),
     datasets: [
       {
-        data: [20, 35, 15, 15, 15], // Sample data for Budget
+        data: newBudget.map((amount) =>
+          ((amount.spentAmount / formattedSpent) * 100).toFixed(2)
+        ), // Sample data for Budget
         borderColor: ["#f9f9f9"],
         borderWidth: 2,
         backgroundColor: [
