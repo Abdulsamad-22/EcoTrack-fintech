@@ -1,43 +1,81 @@
 [
   {
+    "id": 1,
     "name": "Tomatoes",
     "price": 12000,
     "newPrice": 8000,
-    "rate": ""
+    "rate": 0.01
   },
 
   {
+    "id": 2,
     "name": "Rice",
     "price": 90000,
     "newPrice": 120000,
-    "rate": ""
+    "rate": -0.0025
   },
 
   {
+    "id": 3,
     "name": "Noodles",
     "price": 9000,
     "newPrice": 8000,
-    "rate": ""
+    "rate": 0.00125
   },
 
   {
+    "id": 4,
     "name": "Spaghetti",
     "price": 4000,
     "newPrice": 8000,
-    "rate": ""
+    "rate": -0.005
   },
 
   {
+    "id": 5,
     "name": "Potatoes",
     "price": 4000,
     "newPrice": 8000,
-    "rate": ""
+    "rate": -0.005
   },
 
   {
+    "id": 6,
     "name": "Beans",
     "price": 12000,
     "newPrice": 8000,
-    "rate": ""
+    "rate": 0.01
+  },
+
+  {
+    "id": 7,
+    "name": "Potatoes",
+    "price": 4000,
+    "newPrice": 8000,
+    "rate": -0.005
+  },
+
+  {
+    "id": 8,
+    "name": "Beans",
+    "price": 12000,
+    "newPrice": 8000,
+    "rate": 0.01
+  },
+
+  {
+    "id": 9,
+    "name": "Potatoes",
+    "price": 4000,
+    "newPrice": 8000,
+    "rate": -0.005
+  },
+
+  {
+    "id": 10,
+    "name": "Beans",
+    "price": 12000,
+    "newPrice": 8000,
+    "rate": 0.01
   }
 ]

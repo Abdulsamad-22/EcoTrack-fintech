@@ -2,15 +2,14 @@ import { useState } from "react";
 import styles from "./confirmamount.module.css";
 import ConfirmTransaction from "./ConfirmTransaction";
 import { useBudget } from "../budget/BudgetProvider";
+import TransactionProvider from "./TransactionProvider";
 
 export default function ConfirmAmount({
   setOverlayVisible,
   bankName,
   accountNum,
 }) {
-  // const [amount, setAmount] = useState("");
   const { category, setCategory, sentAmount, setSentAmount } = useBudget();
-  // const [category, setCategory] = useState("");
   const [confirmTransfer, setConfirmTransfer] = useState(false);
   const [errors, setErrors] = useState({});
 

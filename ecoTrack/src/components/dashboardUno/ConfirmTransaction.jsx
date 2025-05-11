@@ -1,13 +1,21 @@
 import { useState } from "react";
 import styles from "./confirmamount.module.css";
 import { useBudget } from "../budget/BudgetProvider";
+import { useTransfer } from "./TransactionProvider";
+
 export default function ConfirmTransaction({
   setOverlayVisible,
   accountNum,
   bankName,
 }) {
-  const { sentAmount, setSentAmount, setCategory, expenseBudgetCalc } =
-    useBudget();
+  const { transaction, setTransaction } = useTransfer();
+  const {
+    sentAmount,
+    setSentAmount,
+    setCategory,
+    category,
+    expenseBudgetCalc,
+  } = useBudget();
   const [pin, setPin] = useState("");
   const [error, setError] = useState({});
   function validatePin() {
@@ -22,12 +30,29 @@ export default function ConfirmTransaction({
     if (Object.keys(error).length > 0) {
       return;
     }
-
+    const date = new Date(); // Ensure date is defined
+    const day = date.getDate(); // Get the day of the month (1–31)
+    const month = date.toLocaleString("en-GB", { month: "short" }); // Get short month name (e.g., "May")
+    const year = date.getFullYear(); // Get the full year (e.g., 2025)
+    const formattedDate = `${day} ${month}, ${year}`;
+    console.log(formattedDate);
+    setTransaction((prevTransfer) => [
+      ...prevTransfer,
+      {
+        name: bankName,
+        type: "Debit",
+        date: formattedDate,
+        amount: sentAmount.toLocaleString("en-NG"),
+        category: category,
+        status: "Successful",
+      },
+    ]);
     expenseBudgetCalc();
     setOverlayVisible("success"); // Open transaction success screen
     setCategory("");
     setSentAmount("");
   }
+
   return (
     <div>
       Pay out {`₦${sentAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`} to

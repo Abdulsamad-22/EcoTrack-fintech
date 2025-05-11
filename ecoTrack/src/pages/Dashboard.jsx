@@ -12,24 +12,27 @@ import TopBar from "../components/TopBar";
 import Transaction from "../components/dashboardUno/Transaction";
 
 import DashboardBody from "../components/dashboardUno/DashboardBody";
+import TransactionProvider from "../components/dashboardUno/TransactionProvider";
 export default function Dashboard() {
   return (
     <section className={styles.dashboard}>
       <SideBar />
       <DashboardBody>
         <TopBar />
-        <OuterContainer>
-          <InnerContainer>
-            <DashboardContent />
-            <Chart />
-            <Transaction />
-          </InnerContainer>
+        <TransactionProvider>
+          <OuterContainer>
+            <InnerContainer>
+              <DashboardContent />
+              <Chart />
+              <Transaction />
+            </InnerContainer>
 
-          <RightSideSection>
-            <Cards />
-            <NewPrice />
-          </RightSideSection>
-        </OuterContainer>
+            <RightSideSection>
+              <Cards />
+              <NewPrice />
+            </RightSideSection>
+          </OuterContainer>
+        </TransactionProvider>
       </DashboardBody>
     </section>
   );

@@ -26,6 +26,20 @@ export default function Cards() {
     );
   }
 
+  function test() {
+    setTransaction((prevTransfer) => [
+      ...prevTransfer,
+      {
+        name: "Obinna Hart",
+        type: "Debit",
+        date: "12 Dec, 2024",
+        amount: "₦120,000",
+        category: "Food and Groceries",
+        status: "Pending",
+      },
+    ]);
+  }
+
   // function handleVisibility() {
   //   const unformattedBalance = balance.replace(/,/g, "");
   //   const maskedBalance = unformattedBalance.replace(/\d/g, "*");

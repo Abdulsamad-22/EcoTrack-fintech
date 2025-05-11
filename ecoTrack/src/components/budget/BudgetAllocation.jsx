@@ -58,7 +58,7 @@ export default function BudgetAllocation() {
             <div className={styles.amountContainer}>
               <p className={styles.allocationAmount}>
                 ₦{list.spentAmount.toLocaleString("en-NG")}/
-                <span>{list.totalAmount.toLocaleString("en-NG")}</span>
+                <span>{list.totalAmount}</span>
               </p>
               <img className={styles.onTrackIcon} src={list.status} alt="" />
             </div>

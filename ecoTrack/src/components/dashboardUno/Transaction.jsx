@@ -1,31 +1,35 @@
+import { createContext, useContext, useState } from "react";
 import styles from "./transaction.module.css";
+import { useTransfer } from "./TransactionProvider";
+
 export default function Transaction() {
-  const transaction = [
-    {
-      name: "Wisdom Obinna Hart",
-      type: "Debit",
-      date: "12 Dec, 2024",
-      amount: "₦120,000",
-      category: "Food and Groceries",
-      status: "Pending",
-    },
-    {
-      name: "Choli Frank",
-      type: "Credit",
-      date: "12 Dec, 2024",
-      amount: "₦120,000",
-      category: "Food and Groceries",
-      status: "Successful",
-    },
-    {
-      name: "AEDC",
-      type: "Debit",
-      date: "12 Dec, 2024",
-      amount: "₦120,000",
-      category: "Food and Groceries",
-      status: "Pending",
-    },
-  ];
+  const { transaction } = useTransfer();
+  // const [transaction, setTransaction] = useState([
+  //   {
+  //     name: "Wisdom Obinna Hart",
+  //     type: "Debit",
+  //     date: "12 Dec, 2024",
+  //     amount: "₦120,000",
+  //     category: "Food and Groceries",
+  //     status: "Pending",
+  //   },
+  //   {
+  //     name: "Choli Frank",
+  //     type: "Credit",
+  //     date: "12 Dec, 2024",
+  //     amount: "₦120,000",
+  //     category: "Food and Groceries",
+  //     status: "Successful",
+  //   },
+  //   {
+  //     name: "AEDC",
+  //     type: "Debit",
+  //     date: "12 Dec, 2024",
+  //     amount: "₦120,000",
+  //     category: "Food and Groceries",
+  //     status: "Pending",
+  //   },
+  // ]);
 
   return (
     <div className={styles.transactionHistory}>
@@ -54,10 +58,12 @@ export default function Transaction() {
         <tbody>
           {transaction.map((info, index) => (
             <tr key={index}>
-              <td>{info.name}</td>
+              <td>{info.name.toUpperCase()}</td>
               <td>{info.type}</td>
               <td>{info.date}</td>
-              <td className={styles.amount}>{info.amount}</td>
+              <td className={styles.amount}>
+                ₦{info.amount.toLocaleString("en-NG")}
+              </td>
               <td>{info.category}</td>
               <td
                 className={

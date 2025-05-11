@@ -23,14 +23,13 @@ export default function CheaperStore() {
     <div className={styles.cheapStoreContainer}>
       <div className={styles.topContainer}>
         <h1>Get Cheaper Products Here</h1>
-        <div>
-          {/* <label>Sort by</label> */}
+        {/* <div>
           <select>
             <option value="date">Nov</option>
             <option value="amount">Dec</option>
             <option value="name">Jan</option>
           </select>
-        </div>
+        </div> */}
       </div>
 
       <div className={styles.storeWrapper}>
