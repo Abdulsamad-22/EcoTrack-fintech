@@ -4,33 +4,6 @@ import { useTransfer } from "./TransactionProvider";
 
 export default function Transaction() {
   const { transaction } = useTransfer();
-  // const [transaction, setTransaction] = useState([
-  //   {
-  //     name: "Wisdom Obinna Hart",
-  //     type: "Debit",
-  //     date: "12 Dec, 2024",
-  //     amount: "₦120,000",
-  //     category: "Food and Groceries",
-  //     status: "Pending",
-  //   },
-  //   {
-  //     name: "Choli Frank",
-  //     type: "Credit",
-  //     date: "12 Dec, 2024",
-  //     amount: "₦120,000",
-  //     category: "Food and Groceries",
-  //     status: "Successful",
-  //   },
-  //   {
-  //     name: "AEDC",
-  //     type: "Debit",
-  //     date: "12 Dec, 2024",
-  //     amount: "₦120,000",
-  //     category: "Food and Groceries",
-  //     status: "Pending",
-  //   },
-  // ]);
-
   return (
     <div className={styles.transactionHistory}>
       <div className={styles.header}>

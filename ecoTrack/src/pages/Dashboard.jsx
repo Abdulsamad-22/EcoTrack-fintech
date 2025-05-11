@@ -13,6 +13,7 @@ import Transaction from "../components/dashboardUno/Transaction";
 
 import DashboardBody from "../components/dashboardUno/DashboardBody";
 import TransactionProvider from "../components/dashboardUno/TransactionProvider";
+import FluctuatingPrices from "../components/dashboardUno/FluctuatingPrices";
 export default function Dashboard() {
   return (
     <section className={styles.dashboard}>
@@ -29,7 +30,9 @@ export default function Dashboard() {
 
             <RightSideSection>
               <Cards />
-              <NewPrice />
+              <FluctuatingPrices>
+                <NewPrice />
+              </FluctuatingPrices>
             </RightSideSection>
           </OuterContainer>
         </TransactionProvider>

@@ -1,30 +1,12 @@
 import styles from "./newprice.module.css";
-import inflatedPrices from "../data/inflatedPrices.json";
 import { useEffect, useState } from "react";
+import FluctuatingPrices, { usePrice } from "./FluctuatingPrices";
 
-function getFluctuatedPrice(price) {
-  const fluctuation = Math.random() * 0.15 - 0.05;
-  const newPrice = price + price * fluctuation;
-  return Math.round(newPrice);
-}
 export default function NewPrice() {
-  const [items, setItems] = useState(inflatedPrices);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setItems((prevItems) =>
-        prevItems.map((item) => ({
-          ...item,
-          price: getFluctuatedPrice(item.price),
-          newPrice: getFluctuatedPrice(item.price),
-          rate: Math.abs(
-            ((item.price - item.newPrice) / item.newPrice) * 100
-          ).toFixed(1),
-        }))
-      );
-    }, 20000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const { items, setItems } = usePrice();
+  {
+    <FluctuatingPrices />;
+  }
   return (
     <section className={styles.sideBar}>
       <div className={styles.header}>
@@ -76,61 +58,6 @@ export default function NewPrice() {
               ""
             )
           )}
-
-          {/* <tr class="align-bottom">
-            <td className={styles.itemCol}>
-              <span className={styles.itemName}>Rice</span>
-              <div>
-                <span className={styles.oldPrice}>₦90,000</span>
-              </div>
-            </td>
-            <td className={styles.newPrice}>₦120,000</td>
-            <td className={styles.rateIncrease}>↑ 12%</td>
-          </tr>
-
-          <tr class="align-bottom">
-            <td className={styles.itemCol}>
-              <span className={styles.itemName}>Noodles</span>
-              <div>
-                <span className={styles.oldPrice}>₦9,000</span>
-              </div>
-            </td>
-            <td className={styles.newPrice}>₦8,000</td>
-            <td className={styles.rateDecrease}>↓ 10%</td>
-          </tr>
-
-          <tr class="align-bottom">
-            <td className={styles.itemCol}>
-              <span className={styles.itemName}>Spaghetti</span>
-              <div>
-                <span className={styles.oldPrice}>₦4,000</span>
-              </div>
-            </td>
-            <td className={styles.newPrice}>₦8,000</td>
-            <td className={styles.rateIncrease}>↑ 9%</td>
-          </tr>
-
-          <tr class="align-bottom">
-            <td className={styles.itemCol}>
-              <span className={styles.itemName}>Potatoes</span>
-              <div>
-                <span className={styles.oldPrice}>₦4,000</span>
-              </div>
-            </td>
-            <td className={styles.newPrice}>₦8,000</td>
-            <td className={styles.rateIncrease}>↑ 9%</td>
-          </tr>
-
-          <tr class="align-bottom">
-            <td className={styles.itemColLast}>
-              <span className={styles.itemName}>Beans</span>
-              <div>
-                <span className={styles.oldPrice}>₦12,000</span>
-              </div>
-            </td>
-            <td className={styles.newPriceLast}>₦8,000</td>
-            <td className={styles.rateDecreaseLast}>↓ 5%</td>
-          </tr> */}
         </tbody>
       </table>
     </section>

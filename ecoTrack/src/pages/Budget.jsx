@@ -11,6 +11,7 @@ import RightSideSection from "../components/dashboardUno/RightSideSection";
 import BudgetInnerContainer from "../components/budget/BudgetInnerContainer";
 import InflationSummary from "../components/budget/InflationSummary";
 import BudgetWrapper from "../components/budget/BudgetWrapper";
+import FluctuatingPrices from "../components/dashboardUno/FluctuatingPrices";
 
 export default function Budget() {
   return (
@@ -28,7 +29,9 @@ export default function Budget() {
             </RightSideSection>
 
             <RightSideSection>
-              <InflationSummary />
+              <FluctuatingPrices>
+                <InflationSummary />
+              </FluctuatingPrices>
             </RightSideSection>
           </OuterContainer>
         </DashboardBody>
