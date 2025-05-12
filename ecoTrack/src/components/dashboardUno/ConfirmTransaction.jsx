@@ -37,7 +37,6 @@ export default function ConfirmTransaction({
     const formattedDate = `${day} ${month}, ${year}`;
     console.log(formattedDate);
     setTransaction((prevTransfer) => [
-      ...prevTransfer,
       {
         name: bankName,
         type: "Debit",
@@ -46,6 +45,7 @@ export default function ConfirmTransaction({
         category: category,
         status: "Successful",
       },
+      ...prevTransfer,
     ]);
     expenseBudgetCalc();
     setOverlayVisible("success"); // Open transaction success screen

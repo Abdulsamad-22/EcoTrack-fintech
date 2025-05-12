@@ -1,10 +1,4 @@
-import {
-  Children,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import inflatedPrices from "../data/inflatedPrices.json";
 
 const PriceContext = createContext();
@@ -16,10 +10,7 @@ function getFluctuatedPrice(price) {
   return Math.round(newPrice);
 }
 export default function FluctuatingPrices({ children }) {
-  const [items, setItems] = useState(() => {
-    const storedPrices = localStorage.getItem("prices");
-    return storedPrices ? JSON.parse(storedPrices) : inflatedPrices;
-  });
+  const [items, setItems] = useState(inflatedPrices);
   useEffect(() => {
     const interval = setInterval(() => {
       setItems((prevItems) =>
@@ -32,17 +23,23 @@ export default function FluctuatingPrices({ children }) {
           ).toFixed(1),
         }))
       );
-    }, 20000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("prices", JSON.stringify(items));
-  }, [items]);
+  //   useEffect(() => {
+  //     localStorage.setItem("prices", JSON.stringify(items));
+  //   }, [items]);
   return (
     <PriceContext.Provider value={{ items, setItems }}>
       {children}
     </PriceContext.Provider>
   );
 }
+
+/* () => {
+    const storedPrices = localStorage.getItem("prices");
+    return storedPrices ? JSON.parse(storedPrices) : inflatedPrices;
+  }
+    */
