@@ -30,7 +30,7 @@ export default function NewPrice() {
             .sort((a, b) => b.rate - a.rate)
             .map((item) =>
               item.id <= 6 ? (
-                <tr class="align-bottom">
+                <tr key={item.id} className="align-bottom">
                   <td className={styles.itemCol}>
                     <span className={styles.itemName}>{item.name}</span>
                     <div>

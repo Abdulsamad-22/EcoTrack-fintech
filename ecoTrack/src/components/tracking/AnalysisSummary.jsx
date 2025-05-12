@@ -23,7 +23,7 @@ export default function AnalysisSummary() {
   return (
     <section className={styles.wrapper}>
       {analysis.map((info) => (
-        <div className={styles.sectionContainer}>
+        <div key={info.title} className={styles.sectionContainer}>
           <div className={styles.title}>
             <h1>{info.title}</h1>
             <div className={styles.icon}>

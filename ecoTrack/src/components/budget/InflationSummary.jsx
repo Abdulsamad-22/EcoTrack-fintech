@@ -36,7 +36,7 @@ export default function InflationSummary() {
             .slice()
             .sort((a, b) => b.rate - a.rate)
             .map((item) => (
-              <tr class="align-bottom">
+              <tr key={item.id} class="align-bottom">
                 <td className={styles.itemCol}>
                   <span className={styles.itemName}>{item.name}</span>
                   <div>

@@ -34,28 +34,11 @@ export default function CheaperStore() {
 
       <div className={styles.storeWrapper}>
         {stores.map((store) => (
-          <div className={styles.storeContainer1}>
+          <div key={store.text} className={styles.storeContainer1}>
             <img src={store.image} alt={store.alt} />
             <p>{store.text}</p>
           </div>
         ))}
-        {/* <div className={styles.storeContainer1}>
-          <img src="/src/images/BowlSteam.svg" alt="item-image" />
-          <p>Fresh food items at Die-Die market on Tuesdays</p>
-        </div>
-
-        <div className={styles.storeContainer2}>
-          <img src="/src/images/Tote.svg" alt="item-image" />
-          <p>
-            Get your foodstuff at Detyms supermarket they offer 10% for Easter
-            sales.
-          </p>
-        </div>
-
-        <div className={styles.storeContainer3}>
-          <img src="/src/images/GasPump.svg" alt="item-image" />
-          <p>Refuel From any MRS Fuel Station sells @870/liter</p>
-        </div> */}
       </div>
     </div>
   );
