@@ -21,7 +21,7 @@ export default function ItemSelection() {
         </div>
 
         <button className={styles.alertButton}>
-          <img src="images/bell2.svg" alt="bell icon" />
+          <img src="/images/bell2.svg" alt="bell icon" />
           Set Alert
         </button>
       </div>

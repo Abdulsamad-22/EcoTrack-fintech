@@ -3,18 +3,18 @@ import styles from "./cheaperstore.module.css";
 export default function CheaperStore() {
   const stores = [
     {
-      image: "images/BowlSteam.svg",
+      image: "/images/BowlSteam.svg",
       alt: "item-image",
       text: "Fresh food items at Die-Die market on Tuesdays",
     },
     {
-      image: "images/Tote.svg",
+      image: "/images/Tote.svg",
       alt: "item-image",
       text: `Get your foodstuff at Detyms supermarket they offer 10% for Easter
             sales.`,
     },
     {
-      image: "images/GasPump.svg",
+      image: "/images/GasPump.svg",
       alt: "item-image",
       text: `Refuel From any MRS Fuel Station sells @870/liter.`,
     },

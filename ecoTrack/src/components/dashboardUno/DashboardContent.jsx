@@ -6,7 +6,7 @@ export default function DashboardContent() {
         <div className={styles.overlay}></div>
         <img
           className={styles.headerImage}
-          src="images/Inflation tracking board.png"
+          src="/images/Inflation tracking board.png"
           alt=""
         />
         <h2 className={styles.headerText}>
