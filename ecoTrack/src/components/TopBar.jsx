@@ -35,7 +35,7 @@ export default function TopBar() {
             <button className={styles.iconContainer}>
               <img
                 className={styles.searchIcon}
-                src="src/images/Search-icon.svg"
+                src="images/Search-icon.svg"
                 alt="search-icon"
               />
             </button>

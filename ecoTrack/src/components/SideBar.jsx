@@ -9,52 +9,52 @@ export default function SideBar() {
   const navItems = [
     {
       id: 1,
-      icon: "src/images/List.svg",
+      icon: "images/List.svg",
       onClick: () => setExpanded(!expanded),
       toolTip: "Open navigation",
     },
     {
       id: 2,
-      icon: "src/images/SquaresFour.svg",
+      icon: "images/SquaresFour.svg",
       path: "/",
       label: "Dashboard",
       toolTip: "Dashboard",
     },
     {
       id: 3,
-      icon: "src/images/database.svg",
+      icon: "images/database.svg",
       path: "/budget",
       label: "Budget",
       toolTip: "Budget",
     },
     {
       id: 4,
-      icon: "src/images/ChartLine.svg",
+      icon: "images/ChartLine.svg",
       path: "/tracking",
       label: "Analytics",
       toolTip: "Analytics",
     },
     {
       id: 5,
-      icon: "src/images/card.svg",
+      icon: "images/card.svg",
       label: "Savings",
       toolTip: "Savings",
     },
     {
       id: 6,
-      icon: "src/images/Gear.svg",
+      icon: "images/Gear.svg",
       label: "Settings",
       toolTip: "Settings",
     },
     {
       id: 7,
-      icon: "src/images/Question.svg",
+      icon: "images/Question.svg",
       label: "Help Center",
       toolTip: "Help Center",
     },
     {
       id: 8,
-      icon: "src/images/SignOut.svg",
+      icon: "images/SignOut.svg",
       label: "Log Out",
       toolTip: "Log Out",
     },
@@ -69,7 +69,7 @@ export default function SideBar() {
       className={`${styles.sideBar} ${expanded ? styles.expand : "collapsed"}`}
     >
       <div className={styles.logoContainer}>
-        <img className={styles.logo} src="src/images/logo.svg" alt="logo"></img>
+        <img className={styles.logo} src="images/logo.svg" alt="logo"></img>
         {expanded && <p>EcoTrack</p>}
       </div>
 

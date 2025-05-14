@@ -11,17 +11,17 @@ export default function TransferAction({ setOverlayVisible, overlayVisible }) {
     <div>
       <div className={styles.actions}>
         <div onClick={handleTransfer} className={styles.actionItem}>
-          <img src="src/images/Transfer.svg" alt="" />
+          <img src="images/Transfer.svg" alt="" />
           Transfer
         </div>
 
         <div className={styles.actionItem}>
-          <img src="src/images/save.svg" alt="" />
+          <img src="images/save.svg" alt="" />
           Save
         </div>
 
         <div className={styles.actionItem}>
-          <img src="src/images/more-icon.svg" alt="" />
+          <img src="images/more-icon.svg" alt="" />
           More
         </div>
       </div>

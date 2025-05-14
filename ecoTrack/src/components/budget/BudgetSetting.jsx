@@ -37,7 +37,7 @@ export default function BudgetSetting() {
         </div>
 
         <button type="submit" className={styles.addBudget}>
-          <img src="src/images/Add-icon.svg" alt="add-icon" /> Add New Budget
+          <img src="images/Add-icon.svg" alt="add-icon" /> Add New Budget
         </button>
       </form>
     </div>

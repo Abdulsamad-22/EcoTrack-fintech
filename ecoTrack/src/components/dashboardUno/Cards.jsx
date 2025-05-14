@@ -10,7 +10,7 @@ export default function Cards() {
   const [originalBalance, setOriginalBalance] = useState("100,758,030.10");
   const [balance, setBalance] = useState(originalBalance);
   const [isVisible, setIsVisible] = useState(true);
-  const [imageSrc, setImageSrc] = useState("src/images/hide-icon.svg");
+  const [imageSrc, setImageSrc] = useState("images/hide-icon.svg");
 
   const [accountNum, setAccountNum] = useState(""); // Mock data
   const [bankName, setBankName] = useState("");
@@ -18,9 +18,7 @@ export default function Cards() {
 
   function handleVisibility() {
     setIsVisible(!isVisible);
-    setImageSrc(
-      isVisible ? "src/images/Eye-icon.svg" : "src/images/hide-icon.svg"
-    );
+    setImageSrc(isVisible ? "images/Eye-icon.svg" : "images/hide-icon.svg");
     setBalance(
       isVisible ? originalBalance.replace(/[0-9]/g, "*") : originalBalance
     );
@@ -69,14 +67,14 @@ export default function Cards() {
           <p className={styles.cardNumber}>5467*******473</p>
           <div className={styles.cardType}>
             <span>
-              <img src="src/images/Chip Card.svg" alt="chip icon" />
+              <img src="images/Chip Card.svg" alt="chip icon" />
             </span>
             VISA
           </div>
         </div>
         <button className={styles.addCard}>
           {" "}
-          <img src="src/images/Add-icon.svg" alt="" />
+          <img src="images/Add-icon.svg" alt="" />
           Add New Card
         </button>
 

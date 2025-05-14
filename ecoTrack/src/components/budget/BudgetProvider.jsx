@@ -5,32 +5,32 @@ export const useBudget = () => useContext(BudgetContext);
 export default function BudgetProvider({ children }) {
   const allocation = [
     {
-      icon: "src/images/House.svg",
+      icon: "images/House.svg",
       category: "Rent",
       spentAmount: 70000,
       totalAmount: 320000,
-      status: "src/images/check-icon-onPlain.svg",
+      status: "images/check-icon-onPlain.svg",
     },
     {
-      icon: "src/images/food-icon.svg",
+      icon: "images/food-icon.svg",
       category: "Food Item",
       spentAmount: 155000,
       totalAmount: 200000,
-      status: "src/images/warning-icon.svg",
+      status: "images/warning-icon.svg",
     },
     {
-      icon: "src/images/transport-icon.svg",
+      icon: "images/transport-icon.svg",
       category: "Transportation",
       spentAmount: 92000,
       totalAmount: 170000,
-      status: "src/images/warning-icon.svg",
+      status: "images/warning-icon.svg",
     },
     {
-      icon: "src/images/fuel-icon.svg",
+      icon: "images/fuel-icon.svg",
       category: "Electricity",
       spentAmount: 20000,
       totalAmount: 100000,
-      status: "src/images/check-icon-onPlain.svg",
+      status: "images/check-icon-onPlain.svg",
     },
   ];
 
@@ -81,7 +81,7 @@ export default function BudgetProvider({ children }) {
         category: budget,
         spentAmount: 0,
         totalAmount: formattedAmount,
-        status: "src/images/check-icon-onPlain.svg",
+        status: "images/check-icon-onPlain.svg",
       },
     ]);
 

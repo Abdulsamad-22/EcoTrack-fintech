@@ -3,19 +3,19 @@ import styles from "./topexpense.module.css";
 export default function TopExpense() {
   const { newBudget, spentAmount } = useBudget();
   // const expenses = [
-  //   { icon: "/src/images/House.svg", title: "Rent", amount: 420000 },
+  //   { icon: "images/House.svg", title: "Rent", amount: 420000 },
   //   ,
   //   {
-  //     icon: "/src/images/food-icon.svg",
+  //     icon: "images/food-icon.svg",
   //     title: "Food Item",
   //     amount: 220000,
   //   },
   //   {
-  //     icon: "/src/images/transport-icon.svg",
+  //     icon: "images/transport-icon.svg",
   //     title: "Transportation",
   //     amount: 120000,
   //   },
-  //   { icon: "/src/images/fuel-icon.svg", title: "Fuel", amount: 120000 },
+  //   { icon: "images/fuel-icon.svg", title: "Fuel", amount: 120000 },
   // ];
   return (
     <div className={styles.topExpense}>

@@ -42,7 +42,7 @@ export default function BudgetAllocation() {
         <div className={styles.budgetStatus}>
           <p>₦{formattedTotal.toLocaleString("en-NG")}</p>
           <div className={styles.status}>
-            <img src="src/images/check-icon.svg" alt="check-icon" />
+            <img src="images/check-icon.svg" alt="check-icon" />
             On track
           </div>
         </div>
