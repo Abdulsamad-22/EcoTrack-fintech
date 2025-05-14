@@ -5,17 +5,17 @@ export default function AnalysisSummary() {
   const analysis = [
     {
       title: "My Budget",
-      icon: "/src/images/budget-icon.svg",
+      icon: "src/images/budget-icon.svg",
       amount: formattedTotal,
     },
     {
       title: "My Earnings",
-      icon: "/src/images/savings-icon.svg",
+      icon: "src/images/savings-icon.svg",
       amount: "220,000",
     },
     {
       title: "My Spendings",
-      icon: "/src/images/spending-icon.svg",
+      icon: "src/images/spending-icon.svg",
       amount: formattedSpent,
     },
   ];

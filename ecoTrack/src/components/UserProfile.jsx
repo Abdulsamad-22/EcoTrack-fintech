@@ -7,7 +7,7 @@ export default function UserProfile() {
           <div className={styles.chatIcon}>
             <img
               className={styles.chat}
-              src="/src/images/ChatCircle.svg"
+              src="src/images/ChatCircle.svg"
               alt="chat icon"
             />
           </div>
@@ -15,7 +15,7 @@ export default function UserProfile() {
           <div className={styles.bellIcon}>
             <img
               className={styles.bell}
-              src="/src/images/bell.svg"
+              src="src/images/bell.svg"
               alt="notification icon"
             />
           </div>
@@ -26,7 +26,7 @@ export default function UserProfile() {
             <div className={styles.avatarContainer}>
               <img
                 className={styles.avatar}
-                src="/src/images/Avatar.png"
+                src="src/images/Avatar.png"
                 alt="avatar"
               ></img>
             </div>
@@ -40,7 +40,7 @@ export default function UserProfile() {
           <div>
             <img
               className={styles.dropDown}
-              src="/src/images/icon-chevron-down.svg"
+              src="src/images/icon-chevron-down.svg"
               alt="arrow down icon"
             />
           </div>
