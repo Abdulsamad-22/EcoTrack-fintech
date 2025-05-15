@@ -16,7 +16,7 @@ export default function LeftSideChart() {
         </div>
 
         <button className={styles.alertButton}>
-          <img src="/src/images/bell2.svg" alt="bell icon" />
+          <img src="./images/bell2.svg" alt="bell icon" />
           Set Alert
         </button>
       </div>
