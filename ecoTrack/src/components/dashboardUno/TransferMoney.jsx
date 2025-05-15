@@ -3,7 +3,7 @@ import styles from "./transfermoney.module.css";
 import RecentTransaction from "./RecentTransaction";
 
 export default function TransferMoney({
-  setOverlayVisible,
+  setOpenTransfer,
   accountNum,
   bankName,
   setAccountNum,
@@ -15,11 +15,13 @@ export default function TransferMoney({
     const errors = {};
     accountNum.trim() === ""
       ? (errors.accountNum = "Account number cannot be empty")
+      : accountNum.trim().length !== 10
+      ? (errors.accountNum = "Check account number and try again")
       : "";
 
-    accountNum.trim().length !== 10
-      ? (errors.invalidAcct = "Check account number and try again")
-      : "";
+    // accountNum.trim().length !== 10
+    //   ? (errors.accountNum = "Check account number and try again")
+    //   : "";
 
     bankName.trim() === "" ? (errors.bankName = "Enter bank name") : "";
     return errors;
@@ -31,32 +33,29 @@ export default function TransferMoney({
     setErrors(errors);
 
     if (Object.keys(errors).length > 0) {
-      console.log(errors);
       return;
     }
 
-    setOverlayVisible("confirm");
+    setOpenTransfer("confirm");
   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className={styles.accountDetailsForm} onSubmit={handleSubmit}>
+        <div className={styles.acctNumInput}>
           <label className={styles.labelName}>Recepient Account</label>
           <input
             className={styles.inputField}
             onChange={(e) => setAccountNum(e.target.value)}
             value={accountNum}
             placeholder="Enter 10-digit account number"
-            type="text"
+            type="number"
           />
           {errors.accountNum && (
-            <div style={{ color: "red", fontSize: "0.875rem" }}>
-              {errors.accountNum}
-            </div>
+            <div className={styles.errorText}>{errors.accountNum}</div>
           )}
         </div>
-        <div>
+        <div className={styles.bankNameInput}>
           <label className={styles.labelName}>Select Bank</label>
           <br />
           <input
@@ -67,9 +66,7 @@ export default function TransferMoney({
             type="text"
           />
           {errors.bankName && (
-            <div style={{ color: "red", fontSize: "0.875rem" }}>
-              {errors.bankName}
-            </div>
+            <div className={styles.errorText}>{errors.bankName}</div>
           )}
         </div>
         <button className={styles.ctaButton} type="submit">

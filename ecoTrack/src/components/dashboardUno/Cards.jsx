@@ -4,9 +4,15 @@ import TransferAction from "./TransferAction";
 import TransferMoney from "./TransferMoney";
 import ConfirmAmount from "./ConfirmAmount";
 import TransferSuccess from "./TransferSuccess";
+import { useBudget } from "../budget/BudgetProvider";
 // import styles from "./topbar.module.css";
 
-export default function Cards() {
+export default function Cards({
+  setShowOverlay,
+  showOverlay,
+  setOpenTransfer,
+  openTransfer,
+}) {
   const [originalBalance, setOriginalBalance] = useState("100,758,030.10");
   const [balance, setBalance] = useState(originalBalance);
   const [isVisible, setIsVisible] = useState(true);
@@ -14,7 +20,7 @@ export default function Cards() {
 
   const [accountNum, setAccountNum] = useState(""); // Mock data
   const [bankName, setBankName] = useState("");
-  const [overlayVisible, setOverlayVisible] = useState("initial");
+  const { setSentAmount, setCategory } = useBudget();
 
   function handleVisibility() {
     setIsVisible(!isVisible);
@@ -64,22 +70,25 @@ export default function Cards() {
           Add New Card
         </button>
 
-        {overlayVisible !== "initial" && (
+        {openTransfer !== "initial" && (
           <div className={styles.transferScreen}>
             <div className={styles.header}>
               <h1>Transfer Page</h1>
               <button
                 onClick={() => {
-                  setOverlayVisible("initial");
+                  setOpenTransfer("initial");
+                  setShowOverlay(false);
                   setAccountNum("");
                   setBankName("");
+                  setCategory("");
+                  setSentAmount("");
                 }}
               >
                 X
               </button>
             </div>
 
-            {overlayVisible === "transfer" && (
+            {openTransfer === "transfer" && (
               <TransferMoney
                 accountNum={accountNum}
                 setAccountNum={setAccountNum}
@@ -87,19 +96,19 @@ export default function Cards() {
                 setBankName={setBankName}
                 setIsVisible={setIsVisible}
                 isVisible={isVisible}
-                setOverlayVisible={setOverlayVisible}
+                setOpenTransfer={setOpenTransfer}
               />
             )}
 
-            {overlayVisible === "confirm" && (
+            {openTransfer === "confirm" && (
               <ConfirmAmount
-                setOverlayVisible={setOverlayVisible}
+                setOpenTransfer={setOpenTransfer}
                 bankName={bankName}
                 accountNum={accountNum}
               />
             )}
 
-            {overlayVisible === "success" && <TransferSuccess />}
+            {openTransfer === "success" && <TransferSuccess />}
           </div>
         )}
 
@@ -110,8 +119,10 @@ export default function Cards() {
         )} */}
 
         <TransferAction
-          overlayVisible={overlayVisible}
-          setOverlayVisible={setOverlayVisible}
+          showOverlay={showOverlay}
+          setShowOverlay={setShowOverlay}
+          openTransfer={openTransfer}
+          setOpenTransfer={setOpenTransfer}
         />
       </div>
     </section>

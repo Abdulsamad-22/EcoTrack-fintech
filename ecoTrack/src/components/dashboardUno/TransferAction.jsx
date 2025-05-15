@@ -1,11 +1,18 @@
 import { useState } from "react";
 import styles from "./transferaction.module.css";
 import Cards from "./Cards";
-export default function TransferAction({ setOverlayVisible, overlayVisible }) {
+export default function TransferAction({
+  setOpenTransfer,
+  openTransfer,
+  setShowOverlay,
+  showOverlay,
+}) {
   //   const [isVisible, setIsVisible] = useState(false);
 
   function handleTransfer() {
-    setOverlayVisible("transfer");
+    setOpenTransfer("transfer");
+    setShowOverlay(!showOverlay);
+    console.log(showOverlay);
   }
   return (
     <div>

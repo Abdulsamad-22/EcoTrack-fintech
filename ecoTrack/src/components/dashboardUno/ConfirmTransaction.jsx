@@ -4,7 +4,7 @@ import { useBudget } from "../budget/BudgetProvider";
 import { useTransfer } from "./TransactionProvider";
 
 export default function ConfirmTransaction({
-  setOverlayVisible,
+  setOpenTransfer,
   accountNum,
   bankName,
 }) {
@@ -48,16 +48,21 @@ export default function ConfirmTransaction({
       ...prevTransfer,
     ]);
     expenseBudgetCalc();
-    setOverlayVisible("success"); // Open transaction success screen
+    setOpenTransfer("success"); // Open transaction success screen
     setCategory("");
     setSentAmount("");
   }
 
   return (
     <div>
-      Pay out {`₦${sentAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`} to
-      {accountNum} {bankName.toUpperCase()}
-      <form onSubmit={handleSubmit}>
+      <p className={styles.recepient}>
+        {`₦${sentAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`} is on the way
+        to
+        <span className={styles.bankDetails}>
+          {accountNum} {bankName.toUpperCase()}
+        </span>
+      </p>
+      <form className={styles.confirmTransfer} onSubmit={handleSubmit}>
         <label>Enter Pin</label>
         <br />
         <input

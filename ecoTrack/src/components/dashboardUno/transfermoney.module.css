@@ -1,18 +1,37 @@
+.accountDetailsForm {
+  margin-top: 1rem;
+}
+
+/* For Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.acctNumInput,
+.bankNameInput {
+  margin-bottom: 1rem;
+}
+
 .labelName {
   font-size: 1rem;
-  color: #444242;
+  color: #2c2b2b;
 }
 
 .inputField {
   width: 100%;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
+  background-color: #e7e7e7;
   border: none;
   outline: none;
+  margin: 0.25rem 0;
 }
 
 .inputField::placeholder {
   font-size: 0.875rem;
+  color: #acb1c0;
 }
 
 .ctaButton {
@@ -27,4 +46,10 @@
 
 .recentContainer {
   margin-top: 1rem;
+}
+
+.errorText {
+  color: #fa2e2e;
+  font-size: 0.875rem;
+  padding-left: 0.75rem;
 }

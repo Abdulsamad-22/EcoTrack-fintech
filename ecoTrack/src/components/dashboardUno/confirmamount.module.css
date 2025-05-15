@@ -1,3 +1,15 @@
+.amountForm,
+.confirmTransfer {
+  margin: 1rem 0;
+}
+
+/* For Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .inputField,
 .categoryInput {
   width: 100%;
@@ -5,19 +17,23 @@
   border-radius: 8px;
   border: none;
   outline: none;
+  background-color: #e7e7e7;
 }
 
 .categoryInput {
   height: 90px;
   text-align: left;
+  margin-top: 0.25rem;
 }
 
-.inputField::placeholder {
+.inputField::placeholder,
+.categoryInput::placeholder {
   font-size: 0.875rem;
+  color: #acb1c0;
 }
 
 .descriptionContainer {
-  margin-top: 0.75rem;
+  margin: 1rem 0;
 }
 
 .descriptionContainer label {
@@ -32,4 +48,22 @@
   border: none;
   border-radius: 8px;
   margin-top: 1rem;
+}
+
+.errorText {
+  color: #fa2e2e;
+  font-size: 0.875rem;
+  padding-left: 0.75rem;
+}
+/* confirm transaction*/
+
+.recepient {
+  font-size: 1.125rem;
+
+  text-align: center;
+}
+
+.bankDetails {
+  font-weight: 500;
+  margin-left: 3px;
 }

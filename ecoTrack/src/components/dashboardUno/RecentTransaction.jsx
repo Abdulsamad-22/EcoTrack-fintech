@@ -4,13 +4,13 @@ export default function RecentTransaction() {
     <>
       <div className={styles.titleContainer}>
         <div className={styles.leftSide}>
-          <p>Recent</p>
-          <p>Favourites</p>
+          <p className={styles.recents}>Recent</p>
+          <p className={styles.favourites}>Favourites</p>
         </div>
 
         <img
           className={styles.searchIcon}
-          src="/src/images/Search-icon.svg"
+          src="/images/Search-icon.svg"
           alt=""
         />
       </div>

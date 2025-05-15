@@ -14,9 +14,30 @@ import Transaction from "../components/dashboardUno/Transaction";
 import DashboardBody from "../components/dashboardUno/DashboardBody";
 import TransactionProvider from "../components/dashboardUno/TransactionProvider";
 import FluctuatingPrices from "../components/dashboardUno/FluctuatingPrices";
+
+import { useState } from "react";
+import { useBudget } from "../components/budget/BudgetProvider";
+
 export default function Dashboard() {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [openTransfer, setOpenTransfer] = useState("initial");
+  const { setSentAmount, setCategory } = useBudget();
   return (
     <section className={styles.dashboard}>
+      {showOverlay && (
+        <div
+          onClick={() => {
+            setOpenTransfer("initial");
+            setShowOverlay(false);
+            setCategory("");
+            setSentAmount("");
+            // setAccountNum("");
+            // setBankName("");
+          }}
+          className={styles.overlayContainer}
+        ></div>
+      )}
+
       <SideBar />
       <DashboardBody>
         <TopBar />
@@ -29,7 +50,12 @@ export default function Dashboard() {
             </InnerContainer>
 
             <RightSideSection>
-              <Cards />
+              <Cards
+                openTransfer={openTransfer}
+                setOpenTransfer={setOpenTransfer}
+                setShowOverlay={setShowOverlay}
+                showOverlay={showOverlay}
+              />
               <FluctuatingPrices>
                 <NewPrice />
               </FluctuatingPrices>

@@ -5,7 +5,7 @@ import { useBudget } from "../budget/BudgetProvider";
 import TransactionProvider from "./TransactionProvider";
 
 export default function ConfirmAmount({
-  setOverlayVisible,
+  setOpenTransfer,
   bankName,
   accountNum,
 }) {
@@ -32,8 +32,8 @@ export default function ConfirmAmount({
   }
   return (
     <div>
-      {accountNum} {bankName}
-      <form onSubmit={handleSubmit}>
+      {/* {accountNum} {bankName} */}
+      <form className={styles.amountForm} onSubmit={handleSubmit}>
         <input
           className={styles.inputField}
           onChange={(e) => setSentAmount(e.target.value)}
@@ -42,9 +42,7 @@ export default function ConfirmAmount({
           type="number"
         />
         {errors.sentAmount && (
-          <div style={{ color: "red", fontSize: "0.875rem" }}>
-            {errors.sentAmount}
-          </div>
+          <div className={styles.errorText}>{errors.sentAmount}</div>
         )}
         <div className={styles.descriptionContainer}>
           <label>Category</label>
@@ -57,9 +55,7 @@ export default function ConfirmAmount({
           ></textarea>
 
           {errors.category && (
-            <div style={{ color: "red", fontSize: "0.875rem" }}>
-              {errors.category}
-            </div>
+            <div className={styles.errorText}>{errors.category}</div>
           )}
         </div>
 
@@ -69,7 +65,7 @@ export default function ConfirmAmount({
       </form>
       {confirmTransfer && (
         <ConfirmTransaction
-          setOverlayVisible={setOverlayVisible}
+          setOpenTransfer={setOpenTransfer}
           // amount={amount}
           bankName={bankName}
           accountNum={accountNum}
