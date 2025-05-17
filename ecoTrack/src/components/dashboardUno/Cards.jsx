@@ -13,7 +13,7 @@ export default function Cards({
   setOpenTransfer,
   openTransfer,
 }) {
-  const [originalBalance, setOriginalBalance] = useState("100,758,030.10");
+  const [originalBalance, setOriginalBalance] = useState(100758030.1);
   const [balance, setBalance] = useState(originalBalance);
   const [isVisible, setIsVisible] = useState(true);
   const [imageSrc, setImageSrc] = useState("/images/hide-icon.svg");
@@ -21,20 +21,26 @@ export default function Cards({
   const [accountNum, setAccountNum] = useState(""); // Mock data
   const [bankName, setBankName] = useState("");
   const { setSentAmount, setCategory } = useBudget();
-
-  function handleVisibility() {
-    setIsVisible(!isVisible);
-    setImageSrc(isVisible ? "/images/Eye-icon.svg" : "/images/hide-icon.svg");
-    setBalance(
-      isVisible ? originalBalance.replace(/[0-9]/g, "*") : originalBalance
-    );
-  }
+  const [selectedBankName, setSelectedBankName] = useState("");
 
   // function handleVisibility() {
-  //   const unformattedBalance = balance.replace(/,/g, "");
-  //   const maskedBalance = unformattedBalance.replace(/\d/g, "*");
-  //   setbalance(maskedBalance);
+  //   setIsVisible(!isVisible);
+  //   setImageSrc(isVisible ? "/images/Eye-icon.svg" : "/images/hide-icon.svg");
+  //   setBalance(
+  //     isVisible ? originalBalance.replace(/\d/g, "*") : originalBalance
+  //   );
   // }
+
+  function handleVisibility() {
+    setIsVisible((prevVisible) => {
+      const newVisible = !prevVisible;
+      setImageSrc(
+        newVisible ? "/images/hide-icon.svg" : "/images/Eye-icon.svg"
+      );
+      setBalance(newVisible ? originalBalance : "*****"); // Number when visible, string when masked
+      return newVisible;
+    });
+  }
 
   return (
     <section className={styles.cardsFrame}>
@@ -53,7 +59,9 @@ export default function Cards({
           </div>
 
           <div>
-            <p className={styles.balance}>₦{balance}</p>
+            <p className={styles.balance}>
+              ₦{balance.toLocaleString("en-NG", { minimumFractionDigits: 2 })}
+            </p>
           </div>
 
           <p className={styles.cardNumber}>5467*******473</p>
@@ -97,11 +105,15 @@ export default function Cards({
                 setIsVisible={setIsVisible}
                 isVisible={isVisible}
                 setOpenTransfer={setOpenTransfer}
+                selectedBankName={selectedBankName}
+                setSelectedBankName={setSelectedBankName}
               />
             )}
 
             {openTransfer === "confirm" && (
               <ConfirmAmount
+                selectedBankName={selectedBankName}
+                setSelectedBankName={setSelectedBankName}
                 setOpenTransfer={setOpenTransfer}
                 bankName={bankName}
                 accountNum={accountNum}

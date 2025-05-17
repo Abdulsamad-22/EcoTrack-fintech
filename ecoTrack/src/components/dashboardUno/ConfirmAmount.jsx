@@ -8,6 +8,7 @@ export default function ConfirmAmount({
   setOpenTransfer,
   bankName,
   accountNum,
+  selectedBankName,
 }) {
   const { category, setCategory, sentAmount, setSentAmount } = useBudget();
   const [confirmTransfer, setConfirmTransfer] = useState(false);
@@ -65,6 +66,7 @@ export default function ConfirmAmount({
       </form>
       {confirmTransfer && (
         <ConfirmTransaction
+          selectedBankName={selectedBankName}
           setOpenTransfer={setOpenTransfer}
           // amount={amount}
           bankName={bankName}

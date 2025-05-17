@@ -7,6 +7,7 @@ export default function ConfirmTransaction({
   setOpenTransfer,
   accountNum,
   bankName,
+  selectedBankName,
 }) {
   const { transaction, setTransaction } = useTransfer();
   const {
@@ -59,7 +60,7 @@ export default function ConfirmTransaction({
         {`₦${sentAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`} is on the way
         to
         <span className={styles.bankDetails}>
-          {accountNum} {bankName.toUpperCase()}
+          {accountNum} {bankName.toUpperCase()} {selectedBankName}
         </span>
       </p>
       <form className={styles.confirmTransfer} onSubmit={handleSubmit}>
