@@ -33,3 +33,9 @@
 .active {
   background-color: #1c2d5e;
 }
+
+.errorText {
+  color: #fa2e2e;
+  font-size: 0.875rem;
+  padding-left: 0.75rem;
+}

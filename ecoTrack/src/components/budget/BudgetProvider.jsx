@@ -38,6 +38,7 @@ export default function BudgetProvider({ children }) {
   const [budgetAmount, setBudgetAmount] = useState("");
   const [originalBalance, setOriginalBalance] = useState(100758030.1);
   const [balance, setBalance] = useState(originalBalance);
+  const [errors, setErrors] = useState({});
 
   const [category, setCategory] = useState("");
   const [sentAmount, setSentAmount] = useState("");
@@ -73,20 +74,41 @@ export default function BudgetProvider({ children }) {
     }
   };
 
+  function validateInputs() {
+    const errors = {};
+    budget.trim() === ""
+      ? (errors.budget = "Please enter a budget category name")
+      : "";
+
+    budgetAmount.trim() === "" ? (errors.budgetAmount = "Enter an amount") : "";
+    return errors;
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    const newBalance = Number(balance - formattedAmount);
-    setBalance(newBalance);
-    setNewBudget((prev) => [
-      ...prev,
-      {
-        // icon: icon,
-        category: budget,
-        spentAmount: 0,
-        totalAmount: formattedAmount,
-        status: "/images/check-icon-onPlain.svg",
-      },
-    ]);
+    const errors = validateInputs();
+    setErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      return;
+    } else {
+      const newBalance = Number(balance - formattedAmount);
+      setBalance(newBalance);
+      setNewBudget((prev) => [
+        ...prev,
+        {
+          // icon: icon,
+          category: budget,
+          spentAmount: 0,
+          totalAmount: formattedAmount,
+          status: "/images/check-icon-onPlain.svg",
+        },
+      ]);
+    }
+
+    // if (budget === "" || budgetAmount === "") {
+    //   console.log("error inputs");
+    // }
 
     // Empty budget category and amount input fields
     setBudget("");
@@ -126,6 +148,7 @@ export default function BudgetProvider({ children }) {
         category,
         originalBalance,
         balance,
+        errors,
         setBalance,
         setOriginalBalance,
         setNewBudget,

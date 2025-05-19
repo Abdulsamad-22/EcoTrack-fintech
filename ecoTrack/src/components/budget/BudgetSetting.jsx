@@ -10,6 +10,7 @@ export default function BudgetSetting() {
     setBudget,
     setAmount,
     handleSubmit,
+    errors,
   } = useBudget();
   const activeStyle = budgetAmount && budget === !"" ? styles.active : "";
 
@@ -24,6 +25,9 @@ export default function BudgetSetting() {
             type="text"
             placeholder="Enter category name"
           />
+          {errors.budget && (
+            <div className={styles.errorText}>{errors.budget}</div>
+          )}
         </div>
 
         <div className={styles.budgetAmountContainer}>
@@ -34,6 +38,9 @@ export default function BudgetSetting() {
             type="number"
             placeholder="Enter budget amount"
           />
+          {errors.budgetAmount && (
+            <div className={styles.errorText}>{errors.budgetAmount}</div>
+          )}
         </div>
 
         <button type="submit" className={styles.addBudget}>
