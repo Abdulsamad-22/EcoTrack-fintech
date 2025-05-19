@@ -4,20 +4,35 @@ import ConfirmTransaction from "./ConfirmTransaction";
 import { useBudget } from "../budget/BudgetProvider";
 import TransactionProvider from "./TransactionProvider";
 
-export default function ConfirmAmount({
-  setOpenTransfer,
-  bankName,
-  accountNum,
-  selectedBankName,
-}) {
-  const { category, setCategory, sentAmount, setSentAmount } = useBudget();
+export default function ConfirmAmount({ setOpenTransfer, selectedBankName }) {
+  const {
+    category,
+    setCategory,
+    sentAmount,
+    setSentAmount,
+    newBudget,
+    accountNum,
+  } = useBudget();
   const [confirmTransfer, setConfirmTransfer] = useState(false);
   const [errors, setErrors] = useState({});
 
   function validateAmount() {
     const errors = {};
     sentAmount === "" ? (errors.sentAmount = "Enter amount") : "";
-    category === "" ? (errors.category = "Enter category") : "";
+    if (category.trim() === "") {
+      errors.category = "Enter category";
+    } else {
+      const matchedCategory = newBudget.find(
+        (item) => item.category.toLowerCase() === category.trim().toLowerCase()
+      );
+
+      if (!matchedCategory) {
+        errors.category = "Category does not exist in budget, start new";
+      } else if (matchedCategory.totalAmount < Number(sentAmount)) {
+        errors.sentAmount = "Insufficient budget for this category";
+      }
+    }
+
     return errors;
   }
 
@@ -26,14 +41,12 @@ export default function ConfirmAmount({
     const errors = validateAmount();
     setErrors(errors);
     if (Object.keys(errors).length > 0) {
-      console.log(errors);
       return;
     }
     setConfirmTransfer(!confirmTransfer);
   }
   return (
     <div>
-      {/* {accountNum} {bankName} */}
       <form className={styles.amountForm} onSubmit={handleSubmit}>
         <input
           className={styles.inputField}
@@ -68,8 +81,6 @@ export default function ConfirmAmount({
         <ConfirmTransaction
           selectedBankName={selectedBankName}
           setOpenTransfer={setOpenTransfer}
-          // amount={amount}
-          bankName={bankName}
           accountNum={accountNum}
         />
       )}

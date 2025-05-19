@@ -28,7 +28,7 @@ export default function TransactionProvider({ children }) {
             type: "Debit",
             date: "12 Dec, 2024",
             amount: 20000,
-            category: "Food and Groceries",
+            category: "Electricity",
             status: "Pending",
           },
         ];

@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./transfermoney.module.css";
 import RecentTransaction from "./RecentTransaction";
 import axios from "axios";
+import { useBudget } from "../budget/BudgetProvider";
 
 export default function TransferMoney({
   setOpenTransfer,
-  accountNum,
-  setAccountNum,
   setSelectedBankName,
 }) {
   const [errors, setErrors] = useState({});
@@ -14,6 +13,7 @@ export default function TransferMoney({
   const [loading, setLoading] = useState(false);
   const [banks, setBanks] = useState([]);
   const [selectedBankCode, setSelectedBankCode] = useState("");
+  const { accountNum, setAccountNum } = useBudget();
 
   function validateInputs() {
     const errors = {};
@@ -22,8 +22,9 @@ export default function TransferMoney({
       : accountNum.trim().length !== 10
       ? (errors.accountNum = "Check account number and try again")
       : "";
-
-    // bankName.trim() === "" ? (errors.bankName = "Enter bank name") : "";
+    selectedBankCode === ""
+      ? (errors.selectedBankCode = "Please select a bank")
+      : "";
     return errors;
   }
 
@@ -89,13 +90,6 @@ export default function TransferMoney({
           {loading && <p>Loading banks...</p>}
           <label className={styles.labelName}>Select Bank</label>
           <br />
-          {/* <input
-            className={styles.inputField}
-            onChange={(e) => setBankName(e.target.value)}
-            value={bankName}
-            placeholder="Select Bank"
-            type="text"
-          /> */}
 
           {!loading && !error2 && (
             <select
@@ -111,12 +105,10 @@ export default function TransferMoney({
               ))}
             </select>
           )}
-
+          {errors.selectedBankCode && (
+            <p className={styles.errorText}>{errors.selectedBankCode}</p>
+          )}
           {error2 && <div className={styles.errorText}>{error2}</div>}
-
-          {/* {errors.bankName && (
-            <div className={styles.errorText}>{errors.bankName}</div>
-          )} */}
         </div>
         <button className={styles.ctaButton} type="submit">
           Next

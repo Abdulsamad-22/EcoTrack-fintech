@@ -13,13 +13,17 @@ export default function Cards({
   setOpenTransfer,
   openTransfer,
 }) {
-  const { setOriginalBalance, originalBalance, setBalance, balance } =
-    useBudget();
+  const {
+    setOriginalBalance,
+    originalBalance,
+    setBalance,
+    balance,
+    accountNum,
+    setAccountNum,
+  } = useBudget();
   const [isVisible, setIsVisible] = useState(true);
   const [imageSrc, setImageSrc] = useState("/images/hide-icon.svg");
 
-  const [accountNum, setAccountNum] = useState(""); // Mock data
-  const [bankName, setBankName] = useState("");
   const { setSentAmount, setCategory } = useBudget();
   const [selectedBankName, setSelectedBankName] = useState("");
 
@@ -73,13 +77,12 @@ export default function Cards({
         {openTransfer !== "initial" && (
           <div className={styles.transferScreen}>
             <div className={styles.header}>
-              <h1>Transfer Page</h1>
+              <h1>Transfer to Bank Account</h1>
               <button
                 onClick={() => {
                   setOpenTransfer("initial");
                   setShowOverlay(false);
                   setAccountNum("");
-                  setBankName("");
                   setCategory("");
                   setSentAmount("");
                 }}
@@ -92,8 +95,6 @@ export default function Cards({
               <TransferMoney
                 accountNum={accountNum}
                 setAccountNum={setAccountNum}
-                bankName={bankName}
-                setBankName={setBankName}
                 setIsVisible={setIsVisible}
                 isVisible={isVisible}
                 setOpenTransfer={setOpenTransfer}
@@ -107,7 +108,6 @@ export default function Cards({
                 selectedBankName={selectedBankName}
                 setSelectedBankName={setSelectedBankName}
                 setOpenTransfer={setOpenTransfer}
-                bankName={bankName}
                 accountNum={accountNum}
               />
             )}

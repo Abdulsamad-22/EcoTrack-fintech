@@ -6,7 +6,6 @@ import { useTransfer } from "./TransactionProvider";
 export default function ConfirmTransaction({
   setOpenTransfer,
   accountNum,
-  bankName,
   selectedBankName,
 }) {
   const { transaction, setTransaction } = useTransfer();
@@ -21,7 +20,11 @@ export default function ConfirmTransaction({
   const [error, setError] = useState({});
   function validatePin() {
     const error = {};
-    pin === "" ? (error.pin = "Enter your pin") : "";
+    pin === ""
+      ? (error.pin = "Please Enter your pin")
+      : pin !== 4
+      ? (error.pin = "Incorrect pin, try again")
+      : "";
     return error;
   }
   function handleSubmit(e) {
@@ -39,10 +42,10 @@ export default function ConfirmTransaction({
     console.log(formattedDate);
     setTransaction((prevTransfer) => [
       {
-        name: bankName,
+        name: selectedBankName,
         type: "Debit",
         date: formattedDate,
-        amount: sentAmount.toLocaleString("en-NG"),
+        amount: sentAmount,
         category: category,
         status: "Successful",
       },
@@ -60,7 +63,7 @@ export default function ConfirmTransaction({
         {`₦${sentAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`} is on the way
         to
         <span className={styles.bankDetails}>
-          {accountNum} {bankName.toUpperCase()} {selectedBankName}
+          {accountNum} {selectedBankName}
         </span>
       </p>
       <form className={styles.confirmTransfer} onSubmit={handleSubmit}>

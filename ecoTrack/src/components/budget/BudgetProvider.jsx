@@ -40,6 +40,7 @@ export default function BudgetProvider({ children }) {
   const [balance, setBalance] = useState(originalBalance);
   const [errors, setErrors] = useState({});
 
+  const [accountNum, setAccountNum] = useState("");
   const [category, setCategory] = useState("");
   const [sentAmount, setSentAmount] = useState("");
   const [newBudget, setNewBudget] = useState(() => {
@@ -62,7 +63,7 @@ export default function BudgetProvider({ children }) {
     if (matchedCategory) {
       setNewBudget((prevBudget) =>
         prevBudget.map((item) =>
-          item.category === category
+          item.category.toLowerCase() === category.trim().toLowerCase()
             ? {
                 ...item,
                 spentAmount: item.spentAmount + spentCategoryAmount,
@@ -106,10 +107,6 @@ export default function BudgetProvider({ children }) {
       ]);
     }
 
-    // if (budget === "" || budgetAmount === "") {
-    //   console.log("error inputs");
-    // }
-
     // Empty budget category and amount input fields
     setBudget("");
     setBudgetAmount("");
@@ -149,6 +146,8 @@ export default function BudgetProvider({ children }) {
         originalBalance,
         balance,
         errors,
+        accountNum,
+        setAccountNum,
         setBalance,
         setOriginalBalance,
         setNewBudget,

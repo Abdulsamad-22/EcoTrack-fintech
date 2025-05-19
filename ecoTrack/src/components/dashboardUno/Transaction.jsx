@@ -29,7 +29,7 @@ export default function Transaction() {
           </tr>
         </thead>
         <tbody>
-          {transaction.map((info, index) => (
+          {transaction.slice(0, 4).map((info, index) => (
             <tr key={index}>
               <td>{info.name.toUpperCase()}</td>
               <td>{info.type}</td>

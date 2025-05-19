@@ -2,27 +2,17 @@ import { useBudget } from "../budget/BudgetProvider";
 import styles from "./topexpense.module.css";
 export default function TopExpense() {
   const { newBudget, spentAmount } = useBudget();
-  // const expenses = [
-  //   { icon: "images/House.svg", title: "Rent", amount: 420000 },
-  //   ,
-  //   {
-  //     icon: "images/food-icon.svg",
-  //     title: "Food Item",
-  //     amount: 220000,
-  //   },
-  //   {
-  //     icon: "images/transport-icon.svg",
-  //     title: "Transportation",
-  //     amount: 120000,
-  //   },
-  //   { icon: "images/fuel-icon.svg", title: "Fuel", amount: 120000 },
-  // ];
+
+  const topExpenses = newBudget
+    .filter((item) => item.spentAmount > 0) // Only include non-zero spent amounts
+    .sort((a, b) => b.spentAmount - a.spentAmount) // Sort by spentAmount in descending order
+    .slice(0, 4);
   return (
     <div className={styles.topExpense}>
       <h2>Top Expense</h2>
 
       <div className={styles.wrapper}>
-        {newBudget.map((item) => (
+        {topExpenses.map((item) => (
           <div key={item.category} className={styles.expenseContainer}>
             <div className={styles.heading}>
               <img src={item.icon} alt="" />

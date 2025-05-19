@@ -21,7 +21,7 @@ import { useBudget } from "../components/budget/BudgetProvider";
 export default function Dashboard() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [openTransfer, setOpenTransfer] = useState("initial");
-  const { setSentAmount, setCategory } = useBudget();
+  const { setSentAmount, setCategory, setAccountNum } = useBudget();
   return (
     <section className={styles.dashboard}>
       {showOverlay && (
@@ -31,8 +31,7 @@ export default function Dashboard() {
             setShowOverlay(false);
             setCategory("");
             setSentAmount("");
-            // setAccountNum("");
-            // setBankName("");
+            setAccountNum("");
           }}
           className={styles.overlayContainer}
         ></div>
