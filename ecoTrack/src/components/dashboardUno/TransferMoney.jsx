@@ -112,6 +112,8 @@ export default function TransferMoney({
             </select>
           )}
 
+          {error2 && <div className={styles.errorText}>{error2}</div>}
+
           {/* {errors.bankName && (
             <div className={styles.errorText}>{errors.bankName}</div>
           )} */}

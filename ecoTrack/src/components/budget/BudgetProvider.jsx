@@ -36,7 +36,8 @@ export default function BudgetProvider({ children }) {
 
   const [budget, setBudget] = useState("");
   const [budgetAmount, setBudgetAmount] = useState("");
-  // const [totalAmount, setTotalAmount] = useState(0);
+  const [originalBalance, setOriginalBalance] = useState(100758030.1);
+  const [balance, setBalance] = useState(originalBalance);
 
   const [category, setCategory] = useState("");
   const [sentAmount, setSentAmount] = useState("");
@@ -74,6 +75,8 @@ export default function BudgetProvider({ children }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const newBalance = Number(balance - formattedAmount);
+    setBalance(newBalance);
     setNewBudget((prev) => [
       ...prev,
       {
@@ -121,6 +124,10 @@ export default function BudgetProvider({ children }) {
         budgetAmount,
         sentAmount,
         category,
+        originalBalance,
+        balance,
+        setBalance,
+        setOriginalBalance,
         setNewBudget,
         setCategory,
         setBudget,

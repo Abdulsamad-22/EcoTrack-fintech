@@ -31,7 +31,7 @@ export default function BudgetSetting() {
             onChange={(e) => setBudgetAmount(e.target.value)}
             value={budgetAmount}
             className={styles.budgetAmount}
-            type="text"
+            type="number"
             placeholder="Enter budget amount"
           />
         </div>

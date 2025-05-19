@@ -13,8 +13,8 @@ export default function Cards({
   setOpenTransfer,
   openTransfer,
 }) {
-  const [originalBalance, setOriginalBalance] = useState(100758030.1);
-  const [balance, setBalance] = useState(originalBalance);
+  const { setOriginalBalance, originalBalance, setBalance, balance } =
+    useBudget();
   const [isVisible, setIsVisible] = useState(true);
   const [imageSrc, setImageSrc] = useState("/images/hide-icon.svg");
 
@@ -22,14 +22,6 @@ export default function Cards({
   const [bankName, setBankName] = useState("");
   const { setSentAmount, setCategory } = useBudget();
   const [selectedBankName, setSelectedBankName] = useState("");
-
-  // function handleVisibility() {
-  //   setIsVisible(!isVisible);
-  //   setImageSrc(isVisible ? "/images/Eye-icon.svg" : "/images/hide-icon.svg");
-  //   setBalance(
-  //     isVisible ? originalBalance.replace(/\d/g, "*") : originalBalance
-  //   );
-  // }
 
   function handleVisibility() {
     setIsVisible((prevVisible) => {
