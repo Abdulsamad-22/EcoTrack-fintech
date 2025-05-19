@@ -1,22 +1,104 @@
 [
-  { "date": "2024-04-15", "inflation": 24.3 },
-  { "date": "2024-04-22", "inflation": 24.5 },
-  { "date": "2024-04-29", "inflation": 24.8 },
-  { "date": "2024-05-06", "inflation": 25.1 },
-  { "date": "2024-05-13", "inflation": 25.5 },
-  { "date": "2024-05-20", "inflation": 26.0 },
-  { "date": "2024-05-27", "inflation": 26.2 },
-  { "date": "2024-06-03", "inflation": 26.5 },
-  { "date": "2024-06-10", "inflation": 27.0 },
-  { "date": "2024-06-17", "inflation": 27.3 },
-  { "date": "2024-07-01", "inflation": 27.7 },
-  { "date": "2024-07-15", "inflation": 28.0 },
-  { "date": "2024-08-01", "inflation": 28.5 },
-  { "date": "2024-09-01", "inflation": 29.0 },
-  { "date": "2024-10-01", "inflation": 29.8 },
-  { "date": "2024-11-01", "inflation": 30.5 },
-  { "date": "2024-12-01", "inflation": 31.0 },
-  { "date": "2025-01-01", "inflation": 31.4 },
-  { "date": "2025-02-01", "inflation": 32.0 },
-  { "date": "2025-03-01", "inflation": 32.8 }
+  {
+    "date": "2024-01-01",
+    "inflation": 29.9,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-02-01",
+    "inflation": 31.7,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-03-01",
+    "inflation": 33.2,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-04-01",
+    "inflation": 33.69,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-05-01",
+    "inflation": 33.95,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-06-01",
+    "inflation": 34.19,
+    "source": "Stears",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-07-01",
+    "inflation": 33.4,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-08-01",
+    "inflation": 32.15,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-09-01",
+    "inflation": 32.7,
+    "source": "NBS",
+    "note": "Actual"
+  },
+  {
+    "date": "2024-10-01",
+    "inflation": 33.88,
+    "source": "Estimated",
+    "note": "Estimated based on trend"
+  },
+  {
+    "date": "2024-11-01",
+    "inflation": 34.6,
+    "source": "Estimated",
+    "note": "Estimated based on trend"
+  },
+  {
+    "date": "2024-12-01",
+    "inflation": 34.8,
+    "source": "TheCable",
+    "note": "Reported via X post"
+  },
+  {
+    "date": "2025-01-01",
+    "inflation": 24.48,
+    "source": "NBS",
+    "note": "Actual, post-CPI rebasing"
+  },
+  {
+    "date": "2025-02-01",
+    "inflation": 23.2,
+    "source": "Bloomberg via X",
+    "note": "Actual, post-CPI rebasing"
+  },
+  {
+    "date": "2025-03-01",
+    "inflation": 23.0,
+    "source": "Estimated",
+    "note": "Estimated based on NESG projection"
+  },
+  {
+    "date": "2025-04-01",
+    "inflation": 22.8,
+    "source": "Estimated",
+    "note": "Estimated based on NESG projection"
+  },
+  {
+    "date": "2025-05-01",
+    "inflation": 22.6,
+    "source": "Estimated",
+    "note": "Estimated based on NESG projection"
+  }
 ]
