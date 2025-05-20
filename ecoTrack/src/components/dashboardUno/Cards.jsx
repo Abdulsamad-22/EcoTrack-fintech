@@ -27,6 +27,17 @@ export default function Cards({
   const { setSentAmount, setCategory } = useBudget();
   const [selectedBankName, setSelectedBankName] = useState("");
 
+  function handlePrevious() {
+    if (openTransfer === "confirm") {
+      setOpenTransfer("transfer");
+    } else if (openTransfer === "transfer") {
+      setOpenTransfer("initial");
+      setShowOverlay(false);
+    }
+    setSentAmount("");
+    setCategory("");
+  }
+
   function handleVisibility() {
     setIsVisible((prevVisible) => {
       const newVisible = !prevVisible;
@@ -77,18 +88,24 @@ export default function Cards({
         {openTransfer !== "initial" && (
           <div className={styles.transferScreen}>
             <div className={styles.header}>
-              <h1>Transfer to Bank Account</h1>
-              <button
-                onClick={() => {
-                  setOpenTransfer("initial");
-                  setShowOverlay(false);
-                  setAccountNum("");
-                  setCategory("");
-                  setSentAmount("");
-                }}
-              >
-                X
+              <button onClick={handlePrevious}>
+                <img src="/images/icon-previous.svg" alt="" />
               </button>
+              <h1>Transfer to Bank Account</h1>
+
+              {openTransfer === "confirm" && (
+                <button
+                  onClick={() => {
+                    setOpenTransfer("initial");
+                    setShowOverlay(false);
+                    setAccountNum("");
+                    setCategory("");
+                    setSentAmount("");
+                  }}
+                >
+                  <img src="/images/icon-close.svg" alt="" />
+                </button>
+              )}
             </div>
 
             {openTransfer === "transfer" && (

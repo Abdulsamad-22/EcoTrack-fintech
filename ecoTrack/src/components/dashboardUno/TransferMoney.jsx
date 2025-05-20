@@ -13,6 +13,7 @@ export default function TransferMoney({
   const [loading, setLoading] = useState(false);
   const [banks, setBanks] = useState([]);
   const [selectedBankCode, setSelectedBankCode] = useState("");
+  const [accountName, setAccountName] = useState("");
   const { accountNum, setAccountNum } = useBudget();
 
   function validateInputs() {
@@ -70,6 +71,86 @@ export default function TransferMoney({
     fetchBanks();
   }, []);
 
+  useEffect(() => {
+    const verifyAccount = async () => {
+      if (accountNum.length === 10 && selectedBankCode) {
+        setLoading(true);
+        try {
+          const response = await fetch(
+            "https://api.budpay.com/api/v2/verify_bank_account",
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer sk_test_txs4wrjnhrzuxqa1y8dc9jp0vx0rifkznpxqipm`,
+                "Content-Type": "application/json",
+              },
+              // body: JSON.stringify({
+              //   account_number: accountNum,
+              //   bank_code: selectedBankCode,
+              // }),
+            }
+          );
+          const data = await response.json();
+          if (data.status) {
+            setAccountName(data.data.account_name);
+            console.log(accountName);
+            setErrors((prev) => ({ ...prev, accountNumber: "" }));
+          } else {
+            setAccountName("");
+            setErrors((prev) => ({
+              ...prev,
+              accountNumber: "Invalid account details",
+            }));
+          }
+        } catch (error) {
+          setAccountName("");
+          setErrors((prev) => ({
+            ...prev,
+            setAccountNum: "Verification failed",
+          }));
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setAccountName("");
+      }
+    };
+    verifyAccount();
+  }, [accountNum, selectedBankCode]);
+
+  // const BUDPAY_SECRET_KEY = process.env.REACT_APP_BUDPAY_SECRET_KEY;
+
+  /*useEffect(() => {
+    const fetchBanks = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          "https://api.budpay.com/api/v2/bank_list/NGN",
+          {
+            headers: {
+              Authorization: `Bearer sk_test_txs4wrjnhrzuxqa1y8dc9jp0vx0rifkznpxqipm`,
+            },
+          }
+        );
+        const data = await response.json();
+        if (data.success) {
+          setBanks(data.data);
+          console.log(banks)
+          setLoading(false);
+          console.log(data.data);
+        } else
+          setErrors((prev) => ({
+            ...prev,
+            bankFetch: "Failed to fetch bank list",
+          }));
+      } catch (error) {
+        setErrors((prev) => ({ ...prev, bankFetch: "Error fetching banks" }));
+        setLoading(false);
+      }
+    };
+    fetchBanks();
+  }, []);*/
+
   return (
     <div>
       <form className={styles.accountDetailsForm} onSubmit={handleSubmit}>
@@ -79,11 +160,17 @@ export default function TransferMoney({
             className={styles.inputField}
             onChange={(e) => setAccountNum(e.target.value)}
             value={accountNum}
-            placeholder="Enter 10-digit account number"
-            type="number"
+            placeholder="Account Number (10 digits)"
+            type="text"
+            maxLength={10}
+            aria-label="Account number"
           />
           {errors.accountNum && (
             <div className={styles.errorText}>{errors.accountNum}</div>
+          )}
+          {loading && <p className={styles.info}>Verifying account...</p>}
+          {accountName && (
+            <p className={styles.success}>Account Name: {accountName}</p>
           )}
         </div>
         <div className={styles.bankNameInput}>
