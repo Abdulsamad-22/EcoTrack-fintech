@@ -1,4 +1,4 @@
-import styles from "./inflationsummary.module.css";
+import styles from "../../../styles/budgetStyles/inflationsummary.module.css";
 import inflatedPrices from "../data/inflatedPrices.json";
 import { useEffect, useState } from "react";
 import FluctuatingPrices, { usePrice } from "../dashboardUno/FluctuatingPrices";

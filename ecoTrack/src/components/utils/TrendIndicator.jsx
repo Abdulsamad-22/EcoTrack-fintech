@@ -1,4 +1,4 @@
-import styles from "./trendindicator.module.css";
+import styles from "../../../styles/utilsStyles/trendindicator.module.css";
 export default function TrendIndicator() {
   return (
     <>

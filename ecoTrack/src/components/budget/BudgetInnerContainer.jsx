@@ -1,4 +1,4 @@
-import styles from "./budgetinnercontainer.module.css";
+import styles from "../../../styles/budgetStyles/budgetinnercontainer.module.css";
 import BudgetSetting from "./BudgetSetting";
 import BudgetSummary from "./BudgetSummary";
 

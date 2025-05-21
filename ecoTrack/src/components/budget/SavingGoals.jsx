@@ -1,4 +1,4 @@
-import styles from "./savinggoals.module.css";
+import styles from "../../../styles/budgetStyles/savinggoals.module.css";
 import SavingsChart from "./SavingsChart";
 export default function SavingGoals() {
   return (

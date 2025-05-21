@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./topbar.module.css";
+import styles from "../../../styles/utilsStyles/topbar.module.css";
 import UserProfile from "./UserProfile";
 import { useLocation } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import { color } from "chart.js/helpers";
-import styles from "./cheaperstore.module.css";
+import styles from "../../../styles/trackingStyles/cheaperstore.module.css";
 export default function CheaperStore() {
   const stores = [
     {

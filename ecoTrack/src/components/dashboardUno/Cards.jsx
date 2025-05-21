@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./cards.module.css";
+import styles from "../../../styles/dashboardStyles/cards.module.css";
 import TransferAction from "./TransferAction";
 import TransferMoney from "./TransferMoney";
 import ConfirmAmount from "./ConfirmAmount";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./itemselection.module.css";
+import styles from "../../../styles/utilsStyles/itemselection.module.css";
 export default function ItemSelection() {
   const [active, setActive] = useState(false);
   function activeState() {

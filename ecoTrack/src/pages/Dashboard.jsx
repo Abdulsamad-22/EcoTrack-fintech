@@ -7,8 +7,8 @@ import InnerContainer from "../components/dashboardUno/InnerContainer";
 import NewPrice from "../components/dashboardUno/NewPrice";
 import OuterContainer from "../components/dashboardUno/OuterContainer";
 import RightSideSection from "../components/dashboardUno/RightSideSection";
-import SideBar from "../components/SideBar";
-import TopBar from "../components/TopBar";
+import SideBar from "../components/utils/SideBar";
+import TopBar from "../components/utils/TopBar";
 import Transaction from "../components/dashboardUno/Transaction";
 
 import DashboardBody from "../components/dashboardUno/DashboardBody";

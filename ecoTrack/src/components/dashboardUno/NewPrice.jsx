@@ -1,4 +1,4 @@
-import styles from "./newprice.module.css";
+import styles from "../../../styles/dashboardStyles/newprice.module.css";
 import { useEffect, useState } from "react";
 import FluctuatingPrices, { usePrice } from "./FluctuatingPrices";
 

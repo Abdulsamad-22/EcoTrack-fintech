@@ -1,9 +1,9 @@
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import inflationData from "../data/inflationData.json";
-import styles from "./chartgraph.module.css";
+import styles from "../../../styles/dashboardStyles/chartgraph.module.css";
 import { useState } from "react";
-import TimeAxis from "../TimeAxis";
+import TimeAxis from "../utils/TimeAxis";
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;

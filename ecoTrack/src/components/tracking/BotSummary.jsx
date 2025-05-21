@@ -1,4 +1,4 @@
-import styles from "./botsummary.module.css";
+import styles from "../../../styles/trackingStyles/botsummary.module.css";
 export default function BotSummary() {
   return (
     <div>

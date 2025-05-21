@@ -5,8 +5,9 @@ const PriceContext = createContext();
 export const usePrice = () => useContext(PriceContext);
 
 function getFluctuatedPrice(price) {
-  const fluctuation = Math.random() * 0.15 - 0.05;
-  const newPrice = price + price * fluctuation;
+  const maximumFluctuation = price * 0.1;
+  const fluctuation = (Math.random() * 2 - 1) * maximumFluctuation;
+  const newPrice = price + fluctuation;
   return Math.round(newPrice);
 }
 export default function FluctuatingPrices({ children }) {
@@ -23,7 +24,7 @@ export default function FluctuatingPrices({ children }) {
           ).toFixed(1),
         }))
       );
-    }, 5000);
+    }, 20000);
 
     return () => clearInterval(interval);
   }, []);

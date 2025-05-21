@@ -1,5 +1,5 @@
 import ExpenseChart from "./ExpenseChart";
-import styles from "./expenses.module.css";
+import styles from "../../../styles/trackingStyles/expenses.module.css";
 import TopExpense from "./TopExpense";
 export default function Expenses() {
   return (

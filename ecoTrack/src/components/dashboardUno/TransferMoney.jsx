@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./transfermoney.module.css";
+import styles from "../../../styles/dashboardStyles/transfermoney.module.css";
 import RecentTransaction from "./RecentTransaction";
 import axios from "axios";
 import { useBudget } from "../budget/BudgetProvider";
@@ -167,10 +167,6 @@ export default function TransferMoney({
           />
           {errors.accountNum && (
             <div className={styles.errorText}>{errors.accountNum}</div>
-          )}
-          {loading && <p className={styles.info}>Verifying account...</p>}
-          {accountName && (
-            <p className={styles.success}>Account Name: {accountName}</p>
           )}
         </div>
         <div className={styles.bankNameInput}>

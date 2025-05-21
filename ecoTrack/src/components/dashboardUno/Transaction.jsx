@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import styles from "./transaction.module.css";
+import styles from "../../../styles/dashboardStyles/transaction.module.css";
 import { useTransfer } from "./TransactionProvider";
 
 export default function Transaction() {

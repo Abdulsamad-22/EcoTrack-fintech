@@ -1,4 +1,4 @@
-import styles from "./botsummary.module.css";
+import styles from "../../../styles/trackingStyles/botsummary.module.css";
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import budget from "../data/budget.json";

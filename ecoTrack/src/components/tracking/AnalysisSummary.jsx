@@ -1,5 +1,5 @@
 import { useBudget } from "../budget/BudgetProvider";
-import styles from "./analysisSummary.module.css";
+import styles from "../../../styles/trackingStyles/analysisSummary.module.css";
 export default function AnalysisSummary() {
   const { formattedTotal, formattedSpent } = useBudget();
   const analysis = [

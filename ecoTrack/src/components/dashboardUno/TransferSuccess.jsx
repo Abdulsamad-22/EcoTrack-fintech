@@ -1,4 +1,4 @@
-import styles from "./transactionsuccess.module.css";
+import styles from "../../../styles/dashboardStyles/transactionsuccess.module.css";
 export default function TransferSuccess() {
   return (
     <div className={styles.successContainer}>

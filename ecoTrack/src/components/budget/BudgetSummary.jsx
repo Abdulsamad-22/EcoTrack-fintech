@@ -1,4 +1,4 @@
-import styles from "./budgetsummary.module.css";
+import styles from "../../../styles/budgetStyles/budgetsummary.module.css";
 import BudgetChart from "./BudgetChart";
 import BudgetAllocation from "./BudgetAllocation";
 export default function BudgetSummary() {

@@ -1,4 +1,4 @@
-import styles from "./defenseplan.module.css";
+import styles from "../../../styles/trackingStyles/defenseplan.module.css";
 export default function DefensePlan() {
   const defensePlan = [
     {

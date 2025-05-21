@@ -1,5 +1,5 @@
 import { useBudget } from "../budget/BudgetProvider";
-import styles from "./topexpense.module.css";
+import styles from "../../../styles/trackingStyles/topexpense.module.css";
 export default function TopExpense() {
   const { newBudget, spentAmount } = useBudget();
 

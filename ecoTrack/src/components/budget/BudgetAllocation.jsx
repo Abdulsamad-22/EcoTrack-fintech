@@ -1,4 +1,4 @@
-import styles from "./budgetallocation.module.css";
+import styles from "../../../styles/budgetStyles/budgetallocation.module.css";
 import { useBudget } from "./BudgetProvider";
 
 export default function BudgetAllocation() {

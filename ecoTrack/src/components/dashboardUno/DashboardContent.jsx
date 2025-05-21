@@ -1,4 +1,4 @@
-import styles from "./dashboardcontent.module.css";
+import styles from "../../../styles/dashboardStyles/dashboardcontent.module.css";
 export default function DashboardContent() {
   return (
     <main className={styles.container}>

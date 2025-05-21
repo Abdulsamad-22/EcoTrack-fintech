@@ -1,5 +1,5 @@
 import inflationData from "../data/inflationData.json";
-import TimeAxis from "../TimeAxis";
+import TimeAxis from "../utils/TimeAxis";
 import ChartGraph from "./ChartGraph";
 import { useState } from "react";
 

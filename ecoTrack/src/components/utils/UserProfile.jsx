@@ -1,4 +1,4 @@
-import styles from "./userprofile.module.css";
+import styles from "../../../styles/utilsStyles/userprofile.module.css";
 export default function UserProfile() {
   return (
     <div>

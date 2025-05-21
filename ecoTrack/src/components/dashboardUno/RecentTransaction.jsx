@@ -1,4 +1,4 @@
-import styles from "./recenttransaction.module.css";
+import styles from "../../../styles/dashboardStyles/recenttransaction.module.css";
 export default function RecentTransaction() {
   return (
     <>

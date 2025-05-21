@@ -1,6 +1,6 @@
-import styles from "./leftsidechart.module.css";
+import styles from "../../../styles/dashboardStyles/leftsidechart.module.css";
 import ChartGraph from "./ChartGraph";
-import TimeAxis from "../TimeAxis";
+import TimeAxis from "../utils/TimeAxis";
 // import ItemSelection from "../ItemSelection";
 import InflationData from "./InflationData";
 

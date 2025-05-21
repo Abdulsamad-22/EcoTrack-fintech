@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./confirmamount.module.css";
+import styles from "../../../styles/dashboardStyles/confirmamount.module.css";
 import ConfirmTransaction from "./ConfirmTransaction";
 import { useBudget } from "../budget/BudgetProvider";
 import TransactionProvider from "./TransactionProvider";

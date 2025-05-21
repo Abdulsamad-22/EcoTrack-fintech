@@ -43,10 +43,7 @@ export default function BudgetProvider({ children }) {
   const [accountNum, setAccountNum] = useState("");
   const [category, setCategory] = useState("");
   const [sentAmount, setSentAmount] = useState("");
-  const [newBudget, setNewBudget] = useState(() => {
-    const stored = localStorage.getItem("newBudget");
-    return stored ? JSON.parse(stored) : allocation;
-  });
+  const [newBudget, setNewBudget] = useState(allocation);
 
   useEffect(() => {
     localStorage.setItem("newBudget", JSON.stringify(newBudget), [newBudget]);
@@ -163,3 +160,7 @@ export default function BudgetProvider({ children }) {
     </BudgetContext.Provider>
   );
 }
+
+/*() => {
+    const stored = localStorage.getItem("newBudget");
+    return stored ? JSON.parse(stored) : */

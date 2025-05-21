@@ -1,4 +1,4 @@
-import styles from "./smartinsight.module.css";
+import styles from "../../../styles/dashboardStyles/smartinsight.module.css";
 export default function SmartInsight() {
   const insights = [
     {

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import TopBar from "../components/TopBar";
+import TopBar from "../components/utils/TopBar";
 import OuterContainer from "../components/dashboardUno/OuterContainer";
 // import Dashboard from "./Dashboard";
-import SideBar from "../components/SideBar";
+import SideBar from "../components/utils/SideBar";
 import SavingGoals from "../components/budget/SavingGoals";
 import TipsAdvice from "../components/budget/TipsAdvice";
 import DashboardBody from "../components/dashboardUno/DashboardBody";

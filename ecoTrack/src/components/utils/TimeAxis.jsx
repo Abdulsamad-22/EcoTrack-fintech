@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import styles from "./timeaxis.module.css";
+import styles from "../../../styles/utilsStyles/timeaxis.module.css";
 import { useState } from "react";
-import { useBudget } from "./budget/BudgetProvider";
+import { useBudget } from "../budget/BudgetProvider";
 
 export const timeRanges = [
   { label: "2 Weeks", days: 14 },

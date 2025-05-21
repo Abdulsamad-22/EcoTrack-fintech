@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./budgetsetting.module.css";
+import styles from "../../../styles/budgetStyles/budgetsetting.module.css";
 import { useBudget } from "./BudgetProvider";
 
 export default function BudgetSetting() {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./transferaction.module.css";
+import styles from "../../../styles/dashboardStyles/transferaction.module.css";
 import Cards from "./Cards";
 export default function TransferAction({
   setOpenTransfer,

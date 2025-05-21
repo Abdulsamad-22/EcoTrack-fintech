@@ -6,7 +6,7 @@ import {
   Legend,
 } from "chart.js/auto";
 import { Bar, Doughnut } from "react-chartjs-2";
-import styles from "./budgetchart.module.css";
+import styles from "../../../styles/budgetStyles/budgetchart.module.css";
 import { useBudget } from "./BudgetProvider";
 
 defaults.maintainAspectRatio = false;

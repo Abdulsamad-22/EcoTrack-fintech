@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./tipsadvice.module.css";
+import styles from "../../../styles/budgetStyles/tipsadvice.module.css";
 export default function TipsAdvice() {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
