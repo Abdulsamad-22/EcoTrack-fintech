@@ -23,7 +23,7 @@ export default function TopBar() {
       </div>
 
       <div className={styles.rightSideContainer}>
-        <div className={styles.searchContainer}>
+        {/* <div className={styles.searchContainer}>
           <div className={styles.searchInput}>
             <input
               onChange={(e) => setQuery(e.target.value)}
@@ -40,7 +40,7 @@ export default function TopBar() {
               />
             </button>
           </div>
-        </div>
+        </div> */}
 
         <UserProfile />
       </div>

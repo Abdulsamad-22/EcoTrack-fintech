@@ -17,6 +17,7 @@ export default function BudgetSetting() {
   return (
     <div>
       <form className={styles.budgetForm} onSubmit={handleSubmit}>
+        <h1 className={styles.header}>Start New Budget</h1>
         <div className={styles.budgetNameContainer}>
           <input
             onChange={(e) => setBudget(e.target.value)}

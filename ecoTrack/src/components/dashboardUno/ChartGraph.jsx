@@ -30,7 +30,7 @@ export default function ChartGraph() {
             labels: filteredData.map((item) => item.date),
             datasets: [
               {
-                label: "Budget",
+                label: "Budget %",
                 data: [
                   40, 80, 50, 30, 54, 10, 14, 15, 17, 54, 10, 14, 15, 17, 54,
                   10, 14, 15,
@@ -52,8 +52,8 @@ export default function ChartGraph() {
                 // fill: "-1", // Fills the area between this dataset and the previous
                 tension: 0.4, // Smooth curve
                 borderRadius: 4,
-                // pointRadius: 0,
-                // pointHoverRadius: 5,
+                pointRadius: 0,
+                pointHoverRadius: 5,
               },
             ],
           }}
@@ -97,6 +97,18 @@ export default function ChartGraph() {
                   usePointStyle: true,
                   //pointStyle: "rect",  Square legend markers
                 },
+              },
+              tooltip: {
+                displaColors: false,
+                backgroundColor: "rgba (255, 255, 0, 0.2)",
+                borderColor: "#666",
+                titleColor: "#f9f9f9",
+                cornerRadius: 8,
+                borderWidth: 1,
+                borderColor: "#ddd",
+                padding: 8,
+                position: "average",
+                yAlign: "bottom",
               },
             },
           }}

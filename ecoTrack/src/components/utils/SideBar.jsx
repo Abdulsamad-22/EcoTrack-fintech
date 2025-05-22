@@ -85,7 +85,11 @@ export default function SideBar() {
               >
                 <div
                   className={`${styles.navContainer} ${
-                    activeItem === item.path && !expanded ? styles.active : ""
+                    activeItem === item.path && !expanded
+                      ? styles.active
+                      : activeItem === item.path && expanded
+                      ? styles.active
+                      : ""
                   }`}
                 >
                   <img
@@ -94,7 +98,6 @@ export default function SideBar() {
                     alt="nav-bar"
                   />
                   {expanded && <p>{item.label}</p>}
-                  {/* <div className={styles.toolTip}>{item.toolTip}</div> */}
                 </div>
               </Link>
             ) : (

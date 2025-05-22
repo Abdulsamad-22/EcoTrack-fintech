@@ -1,9 +1,18 @@
 .budgetForm {
   margin-top: 2.25rem;
+  background-color: #f9f9f9;
+  padding: 1.25rem 1.25rem;
+  border-radius: 8px;
 }
 
 .budgetNameContainer {
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+.header {
+  font-size: 1.25rem;
+  color: #444242;
   margin-bottom: 1rem;
 }
 
@@ -27,7 +36,7 @@
   font-weight: 200;
   background: #6275ad;
   color: #f9f9f9;
-  margin-top: 2.625rem;
+  margin-top: 1.5rem;
 }
 
 .active {

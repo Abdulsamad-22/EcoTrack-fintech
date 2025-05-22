@@ -11,20 +11,10 @@ export const timeRanges = [
   { label: "1 Year", days: 365 },
 ];
 export default function TimeAxis({ filterByRange }) {
-  // const { formattedTotal, percentageSpent } = useBudget();
-  // const spent = Number(formattedTotal.replace(/,/g, ""));
-  // const percentage = Number(percentageSpent.replace(/,/g, ""));
-  // const budgetAmount = Number(spent * percentage);
-  // console.log(budgetAmount / 180);
-
   const [selectedContainer, setSelectedContainer] = useState(null);
   function handleClick(index) {
     setSelectedContainer(index);
   }
-  const api_key = "f8591f36bcb4414:6lbrl1at6hfr1fd";
-  // useEffect(() => {
-  //   localStorage.setItem("selectedContainer", selectedContainer);
-  // }, [selectedContainer]);
 
   return (
     <>

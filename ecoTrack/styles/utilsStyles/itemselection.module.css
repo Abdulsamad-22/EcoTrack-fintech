@@ -1,6 +1,7 @@
 .category {
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
   width: 50%;
   border: 1px solid #dadada;
   border-radius: 8px;

@@ -24,22 +24,6 @@
   gap: 3rem;
 }
 
-/* .searchContainer {
-   display: flex;
-  align-items: center;
-  gap: 0.5rem; 
-}
-
- .searchInput {
-  display: flex;
-  justify-content: end;
-  width: 306px;
-  height: 32px;
-  padding: 0.125rem 0rem 0.125rem 1rem;
-  border: 1px solid #b4aeae;
-  border-radius: 8px;
-} */
-
 .searchInput {
   flex: 1;
   width: 400px;

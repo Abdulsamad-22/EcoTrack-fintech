@@ -1,6 +1,5 @@
 .sideBar {
   background-color: #b4b6bb;
-  /* height: 1000px; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,7 +13,7 @@
 }
 
 .expand {
-  width: 200px;
+  width: 180px;
   transform: translateX(0%);
   transition: transform 0.3s ease-in-out;
 }
@@ -22,6 +21,7 @@
 .navContainer {
   display: flex;
   align-items: center;
+  gap: 0.25rem;
   width: 100%;
   cursor: pointer;
   border-radius: 8px;
@@ -86,12 +86,12 @@
 }
 
 .navIcons {
-  /* width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
   border-radius: 8px;
+  width: 100%;
+}
+
+.navIcons:first-child {
+  width: 2.5rem;
 }
 
 .active {
@@ -110,7 +110,6 @@
   justify-content: space-evenly;
   width: 100%;
   gap: 0.75rem;
-  /* height: 40%; */
 }
 
 .bottomContainer {
@@ -120,5 +119,4 @@
   justify-content: space-evenly;
   gap: 0.75rem;
   width: 100%;
-  /* height: 30%; */
 }
