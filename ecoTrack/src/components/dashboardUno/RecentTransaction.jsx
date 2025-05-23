@@ -24,14 +24,14 @@ export default function RecentTransaction() {
         </div>
 
         <div className={styles.acctInfoContainer}>
-          <p className={styles.acctName}>Choli Frank</p>
+          <p className={styles.acctName}>Samuel Adetomiwa</p>
           <p className={styles.acctInfo}>
             <span>4441529872</span> OPAY
           </p>
         </div>
 
         <div className={styles.acctInfoContainer}>
-          <p className={styles.acctName}>Suberu Frank</p>
+          <p className={styles.acctName}>Chukwudi Frank</p>
           <p className={styles.acctInfo}>
             <span>4441529872</span> OPAY
           </p>

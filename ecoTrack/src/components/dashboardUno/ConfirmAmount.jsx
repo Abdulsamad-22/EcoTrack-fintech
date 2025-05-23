@@ -36,6 +36,15 @@ export default function ConfirmAmount({ setOpenTransfer, selectedBankName }) {
     return errors;
   }
 
+  function capitalizeFirstLetter(str) {
+    return str.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase());
+  }
+
+  function handleCategory(e) {
+    const value = e.target.value;
+    setCategory(capitalizeFirstLetter(value));
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     const errors = validateAmount();
@@ -62,7 +71,7 @@ export default function ConfirmAmount({ setOpenTransfer, selectedBankName }) {
           <label>Category</label>
           <br />
           <textarea
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={handleCategory}
             value={category}
             className={styles.categoryInput}
             placeholder="Enter category..."

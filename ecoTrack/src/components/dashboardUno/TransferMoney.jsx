@@ -71,53 +71,6 @@ export default function TransferMoney({
     fetchBanks();
   }, []);
 
-  useEffect(() => {
-    const verifyAccount = async () => {
-      if (accountNum.length === 10 && selectedBankCode) {
-        setLoading(true);
-        try {
-          const response = await fetch(
-            "https://api.budpay.com/api/v2/verify_bank_account",
-            {
-              method: "POST",
-              headers: {
-                Authorization: `Bearer sk_test_txs4wrjnhrzuxqa1y8dc9jp0vx0rifkznpxqipm`,
-                "Content-Type": "application/json",
-              },
-              // body: JSON.stringify({
-              //   account_number: accountNum,
-              //   bank_code: selectedBankCode,
-              // }),
-            }
-          );
-          const data = await response.json();
-          if (data.status) {
-            setAccountName(data.data.account_name);
-            console.log(accountName);
-            setErrors((prev) => ({ ...prev, accountNumber: "" }));
-          } else {
-            setAccountName("");
-            setErrors((prev) => ({
-              ...prev,
-              accountNumber: "Invalid account details",
-            }));
-          }
-        } catch (error) {
-          setAccountName("");
-          setErrors((prev) => ({
-            ...prev,
-            setAccountNum: "Verification failed",
-          }));
-        } finally {
-          setLoading(false);
-        }
-      } else {
-        setAccountName("");
-      }
-    };
-    verifyAccount();
-  }, [accountNum, selectedBankCode]);
-
   // const BUDPAY_SECRET_KEY = process.env.REACT_APP_BUDPAY_SECRET_KEY;
 
   /*useEffect(() => {
@@ -180,7 +133,7 @@ export default function TransferMoney({
               value={selectedBankCode}
               onChange={handleBankChange}
             >
-              <option value="">-- Select a Bank --</option>
+              <option value=""> Select a Bank </option>
               {banks.map((bank) => (
                 <option key={bank.id} value={bank.code}>
                   {bank.name}

@@ -22,7 +22,7 @@ export default function ConfirmTransaction({
     const error = {};
     pin === ""
       ? (error.pin = "Please Enter your pin")
-      : pin !== 4
+      : pin.length !== 4
       ? (error.pin = "Incorrect pin, try again")
       : "";
     return error;
@@ -36,7 +36,7 @@ export default function ConfirmTransaction({
     }
     const date = new Date(); // Ensure date is defined
     const day = date.getDate(); // Get the day of the month (1–31)
-    const month = date.toLocaleString("en-GB", { month: "short" }); // Get short month name (e.g., "May")
+    const month = date.toLocaleString("en-NG", { month: "short" }); // Get short month name (e.g., "May")
     const year = date.getFullYear(); // Get the full year (e.g., 2025)
     const formattedDate = `${day} ${month}, ${year}`;
     console.log(formattedDate);

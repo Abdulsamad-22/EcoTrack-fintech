@@ -14,13 +14,22 @@ export default function BudgetSetting() {
   } = useBudget();
   const activeStyle = budgetAmount && budget === !"" ? styles.active : "";
 
+  function capitalizeFirstLetter(str) {
+    return str.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase());
+  }
+
+  function handleBudget(e) {
+    const value = e.target.value;
+    setBudget(capitalizeFirstLetter(value));
+  }
+
   return (
     <div>
       <form className={styles.budgetForm} onSubmit={handleSubmit}>
         <h1 className={styles.header}>Start New Budget</h1>
         <div className={styles.budgetNameContainer}>
           <input
-            onChange={(e) => setBudget(e.target.value)}
+            onChange={handleBudget}
             value={budget}
             className={styles.budgetName}
             type="text"

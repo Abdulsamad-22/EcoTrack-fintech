@@ -88,12 +88,14 @@ export default function Cards({
         {openTransfer !== "initial" && (
           <div className={styles.transferScreen}>
             <div className={styles.header}>
-              <button onClick={handlePrevious}>
-                <img src="/images/icon-previous.svg" alt="" />
-              </button>
+              {openTransfer !== "success" && (
+                <button onClick={handlePrevious}>
+                  <img src="/images/icon-previous.svg" alt="" />
+                </button>
+              )}
               <h1>Transfer to Bank Account</h1>
 
-              {openTransfer === "confirm" && (
+              {(openTransfer === "confirm" || openTransfer === "success") && (
                 <button
                   onClick={() => {
                     setOpenTransfer("initial");
