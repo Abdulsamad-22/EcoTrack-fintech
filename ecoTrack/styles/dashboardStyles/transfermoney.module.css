@@ -53,3 +53,18 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 0.875rem;
   padding-left: 0.75rem;
 }
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loadingText::after {
+  content: "...";
+  animation: blink 1.5s infinite steps(3, end);
+}

@@ -9,7 +9,7 @@ export default function BudgetProvider({ children }) {
       category: "Rent",
       spentAmount: 70000,
       totalAmount: 320000,
-      status: "/images/check-icon-onPlain.svg",
+      status: "/images/check-Icon-onPlain.svg",
     },
     {
       icon: "/images/food-icon.svg",
@@ -30,14 +30,18 @@ export default function BudgetProvider({ children }) {
       category: "Electricity",
       spentAmount: 20000,
       totalAmount: 100000,
-      status: "/images/check-icon-onPlain.svg",
+      status: "/images/check-Icon-onPlain.svg",
     },
   ];
 
   const [budget, setBudget] = useState("");
   const [budgetAmount, setBudgetAmount] = useState("");
-  const [originalBalance, setOriginalBalance] = useState(100758030.1);
+  const [originalBalance] = useState(100758030.1);
   const [balance, setBalance] = useState(originalBalance);
+  const [displayBalance, setDisplayBalance] = useState(
+    originalBalance.toLocaleString("en-NG")
+  );
+  const [isVisible, setIsVisible] = useState(true);
   const [errors, setErrors] = useState({});
 
   const [accountNum, setAccountNum] = useState("");
@@ -51,7 +55,8 @@ export default function BudgetProvider({ children }) {
 
   const formattedAmount = parseFloat(budgetAmount);
 
-  const expenseBudgetCalc = () => {
+  // Adds to total amount substract the transfered amount from the total when a transaction is made
+  function expenseBudgetCalc() {
     const spentCategoryAmount = parseFloat(sentAmount);
     const matchedCategory = newBudget.find(
       (item) => item.category === category
@@ -60,7 +65,7 @@ export default function BudgetProvider({ children }) {
     if (matchedCategory) {
       setNewBudget((prevBudget) =>
         prevBudget.map((item) =>
-          item.category.toLowerCase() === category.trim().toLowerCase()
+          item.category === category
             ? {
                 ...item,
                 spentAmount: item.spentAmount + spentCategoryAmount,
@@ -70,7 +75,7 @@ export default function BudgetProvider({ children }) {
         )
       );
     }
-  };
+  }
 
   function validateInputs() {
     const errors = {};
@@ -86,28 +91,41 @@ export default function BudgetProvider({ children }) {
     e.preventDefault();
     const errors = validateInputs();
     setErrors(errors);
+    const matchedCategory = newBudget.find((item) => item.category === budget);
 
     if (Object.keys(errors).length > 0) {
       return;
     } else {
       const newBalance = Number(balance - formattedAmount);
       setBalance(newBalance);
-      setNewBudget((prev) => [
-        ...prev,
-        {
-          // icon: icon,
-          category: budget,
-          spentAmount: 0,
-          totalAmount: formattedAmount,
-          status: "/images/check-icon-onPlain.svg",
-        },
-      ]);
+      setDisplayBalance(
+        isVisible ? newBalance.toLocaleString("en-NG") : "*****"
+      );
+      setNewBudget((prev) =>
+        // Adds to total amount when budget category already exist
+        matchedCategory
+          ? prev.map((item) =>
+              item.category === budget
+                ? {
+                    ...item,
+                    totalAmount: item.totalAmount + formattedAmount,
+                  }
+                : item
+            )
+          : // starts new budget
+            [
+              ...prev,
+              {
+                category: budget,
+                spentAmount: 0,
+                totalAmount: formattedAmount,
+                status: "/images/check-Icon-onPlain.svg",
+              },
+            ]
+      );
     }
-
-    // Empty budget category and amount input fields
     setBudget("");
     setBudgetAmount("");
-    // console.log(newBudget);
   }
 
   // Adds all initial budget amount
@@ -140,13 +158,15 @@ export default function BudgetProvider({ children }) {
         budgetAmount,
         sentAmount,
         category,
-        originalBalance,
         balance,
         errors,
         accountNum,
+        displayBalance,
+        isVisible,
+        setIsVisible,
+        setDisplayBalance,
         setAccountNum,
         setBalance,
-        setOriginalBalance,
         setNewBudget,
         setCategory,
         setBudget,

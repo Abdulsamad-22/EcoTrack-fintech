@@ -14,14 +14,14 @@ export default function Cards({
   openTransfer,
 }) {
   const {
-    setOriginalBalance,
-    originalBalance,
-    setBalance,
     balance,
     accountNum,
     setAccountNum,
+    displayBalance,
+    setDisplayBalance,
+    isVisible,
+    setIsVisible,
   } = useBudget();
-  const [isVisible, setIsVisible] = useState(true);
   const [imageSrc, setImageSrc] = useState("/images/hide-icon.svg");
 
   const { setSentAmount, setCategory } = useBudget();
@@ -44,7 +44,7 @@ export default function Cards({
       setImageSrc(
         newVisible ? "/images/hide-icon.svg" : "/images/Eye-icon.svg"
       );
-      setBalance(newVisible ? originalBalance : "*****"); // Number when visible, string when masked
+      setDisplayBalance(newVisible ? balance.toLocaleString("en-NG") : "*****");
       return newVisible;
     });
   }
@@ -66,9 +66,7 @@ export default function Cards({
           </div>
 
           <div>
-            <p className={styles.balance}>
-              ₦{balance.toLocaleString("en-NG", { minimumFractionDigits: 2 })}
-            </p>
+            <p className={styles.balance}>₦{displayBalance}</p>
           </div>
 
           <p className={styles.cardNumber}>5467*******473</p>

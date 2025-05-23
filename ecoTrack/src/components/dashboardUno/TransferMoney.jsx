@@ -123,7 +123,7 @@ export default function TransferMoney({
           )}
         </div>
         <div className={styles.bankNameInput}>
-          {loading && <p>Loading banks...</p>}
+          {loading && <p className={styles.loadingText}>Loading banks...</p>}
           <label className={styles.labelName}>Select Bank</label>
           <br />
 

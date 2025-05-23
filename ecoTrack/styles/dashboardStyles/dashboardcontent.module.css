@@ -6,6 +6,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .headerImage {
@@ -28,4 +29,5 @@
   position: absolute;
   left: 10%;
   top: 30%;
+  opacity: 1;
 }

@@ -44,7 +44,7 @@ export default function BudgetChart() {
     },
   };
 
-  const { formattedSpent, formattedTotal, percentageSpent } = useBudget();
+  const { formattedSpent, percentageSpent } = useBudget();
   const data = {
     labels: ["Total", "Spent"],
     datasets: [

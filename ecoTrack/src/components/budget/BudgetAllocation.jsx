@@ -2,11 +2,15 @@ import styles from "../../../styles/budgetStyles/budgetallocation.module.css";
 import { useBudget } from "./BudgetProvider";
 
 export default function BudgetAllocation() {
-  const { formattedTotal, newBudget, categoryTotalSpent, budgetBalance } =
-    useBudget();
+  const { formattedTotal, newBudget } = useBudget();
+
+  const topBudget = newBudget
+    .filter((item) => item.totalAmount > 0) // Only include non-zero total amounts
+    .sort((a, b) => b.totalAmount - a.totalAmount) // Sort by spentAmount in descending order
+    .slice(0, 6);
+
   return (
     <div>
-      {/* {console.log(formattedSpent)} */}
       <div className={styles.topContainer}>
         <h2>Allocation</h2>
         <div className={styles.budgetStatus}>
@@ -19,7 +23,7 @@ export default function BudgetAllocation() {
       </div>
 
       <div className={styles.allocationWrapper}>
-        {newBudget.map((list, index) => (
+        {topBudget.map((list, index) => (
           <div key={index} className={styles.allocatioContainer}>
             <div className={styles.allocationName}>
               <div className={styles.allocationRent}></div>
