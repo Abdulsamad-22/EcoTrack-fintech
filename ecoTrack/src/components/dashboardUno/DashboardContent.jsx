@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styles from "../../../styles/dashboardStyles/dashboardcontent.module.css";
-const newsAPI_KEY = "d24c744724c242e3986a2a0929be2131";
 export default function DashboardContent() {
   const [news, setNews] = useState([]);
   const [newsError, setNewsError] = useState("");
@@ -23,7 +22,9 @@ export default function DashboardContent() {
     async function fetchNews() {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/everything?q=nigeria inflation OR nigeria economy&language=en&sortBy=publishedAt&apiKey=${newsAPI_KEY}`
+          `https://newsapi.org/v2/everything?q=nigeria inflation OR nigeria economy&language=en&sortBy=publishedAt&apiKey=${
+            import.meta.env.VITE_NEWSAPI_KEY
+          }`
         );
         const data = await response.json();
         console.log(data.articles);
