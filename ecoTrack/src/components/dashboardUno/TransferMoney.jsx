@@ -61,9 +61,7 @@ export default function TransferMoney({
         );
         setBanks(response.data.data);
         setLoading(false);
-        console.log(response.data.data);
       } catch (error) {
-        console.log("Failed to fetch banks. Please try again.");
         setError2("Failed to fetch banks. Please try again.");
         setLoading(false);
       }

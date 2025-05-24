@@ -12,7 +12,6 @@ export default function TransferAction({
   function handleTransfer() {
     setOpenTransfer("transfer");
     setShowOverlay(!showOverlay);
-    console.log(showOverlay);
   }
   return (
     <div>

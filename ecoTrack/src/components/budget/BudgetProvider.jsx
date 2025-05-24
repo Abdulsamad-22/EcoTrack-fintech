@@ -139,7 +139,6 @@ export default function BudgetProvider({ children }) {
   const totalSpent = newBudget.reduce((acc, item) => acc + item.spentAmount, 0);
 
   const formattedSpent = totalSpent;
-  console.log(formattedSpent);
 
   // Calculates the percentage of the spent budget
   const spent = Number(formattedSpent);

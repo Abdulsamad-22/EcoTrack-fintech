@@ -36,6 +36,7 @@ export default function Cards({
     }
     setSentAmount("");
     setCategory("");
+    setAccountNum("");
   }
 
   function handleVisibility() {

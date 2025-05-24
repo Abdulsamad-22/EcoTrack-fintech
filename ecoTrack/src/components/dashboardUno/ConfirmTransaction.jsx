@@ -39,7 +39,6 @@ export default function ConfirmTransaction({
     const month = date.toLocaleString("en-NG", { month: "short" }); // Get short month name (e.g., "May")
     const year = date.getFullYear(); // Get the full year (e.g., 2025)
     const formattedDate = `${day} ${month}, ${year}`;
-    console.log(formattedDate);
     setTransaction((prevTransfer) => [
       {
         name: selectedBankName,
