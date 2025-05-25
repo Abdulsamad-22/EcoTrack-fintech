@@ -23,21 +23,34 @@ export default function BudgetAllocation() {
       </div>
 
       <div className={styles.allocationWrapper}>
-        {topBudget.map((list, index) => (
-          <div key={index} className={styles.allocatioContainer}>
-            <div className={styles.allocationName}>
-              <div className={styles.allocationRent}></div>
-              <h3>{list.category}</h3>
+        {topBudget.length === 0 ? (
+          <h1
+            style={{
+              textAlign: "center",
+              margin: "0 auto",
+              width: "80%",
+              fontSize: "1.25rem",
+            }}
+          >
+            You have no Budget Allocation, Make New Budget
+          </h1>
+        ) : (
+          topBudget.map((list, index) => (
+            <div key={index} className={styles.allocatioContainer}>
+              <div className={styles.allocationName}>
+                <div className={styles.allocationRent}></div>
+                <h3>{list.category}</h3>
+              </div>
+              <div className={styles.amountContainer}>
+                <p className={styles.allocationAmount}>
+                  ₦{list.spentAmount.toLocaleString("en-NG")}/
+                  <span>{list.totalAmount.toLocaleString("en-NG")}</span>
+                </p>
+                <img className={styles.onTrackIcon} src={list.status} alt="" />
+              </div>
             </div>
-            <div className={styles.amountContainer}>
-              <p className={styles.allocationAmount}>
-                ₦{list.spentAmount.toLocaleString("en-NG")}/
-                <span>{list.totalAmount.toLocaleString("en-NG")}</span>
-              </p>
-              <img className={styles.onTrackIcon} src={list.status} alt="" />
-            </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

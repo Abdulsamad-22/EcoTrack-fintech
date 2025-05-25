@@ -3,36 +3,36 @@ import { useContext, createContext, useState, useEffect } from "react";
 const BudgetContext = createContext();
 export const useBudget = () => useContext(BudgetContext);
 export default function BudgetProvider({ children }) {
-  const allocation = [
-    {
-      icon: "/images/House.svg",
-      category: "Rent",
-      spentAmount: 70000,
-      totalAmount: 320000,
-      status: "/images/check-Icon-onPlain.svg",
-    },
-    {
-      icon: "/images/food-icon.svg",
-      category: "Food Item",
-      spentAmount: 155000,
-      totalAmount: 200000,
-      status: "/images/warning-icon.svg",
-    },
-    {
-      icon: "/images/transport-icon.svg",
-      category: "Transportation",
-      spentAmount: 92000,
-      totalAmount: 170000,
-      status: "/images/warning-icon.svg",
-    },
-    {
-      icon: "/images/fuel-icon.svg",
-      category: "Electricity",
-      spentAmount: 20000,
-      totalAmount: 100000,
-      status: "/images/check-Icon-onPlain.svg",
-    },
-  ];
+  // const allocation = [
+  //   {
+  //     icon: "/images/House.svg",
+  //     category: "Rent",
+  //     spentAmount: 70000,
+  //     totalAmount: 320000,
+  //     status: "/images/check-Icon-onPlain.svg",
+  //   },
+  //   {
+  //     icon: "/images/food-icon.svg",
+  //     category: "Food Item",
+  //     spentAmount: 155000,
+  //     totalAmount: 200000,
+  //     status: "/images/warning-icon.svg",
+  //   },
+  //   {
+  //     icon: "/images/transport-icon.svg",
+  //     category: "Transportation",
+  //     spentAmount: 92000,
+  //     totalAmount: 170000,
+  //     status: "/images/warning-icon.svg",
+  //   },
+  //   {
+  //     icon: "/images/fuel-icon.svg",
+  //     category: "Electricity",
+  //     spentAmount: 20000,
+  //     totalAmount: 100000,
+  //     status: "/images/check-Icon-onPlain.svg",
+  //   },
+  // ];
 
   const [budget, setBudget] = useState("");
   const [budgetAmount, setBudgetAmount] = useState("");
@@ -47,11 +47,11 @@ export default function BudgetProvider({ children }) {
   const [accountNum, setAccountNum] = useState("");
   const [category, setCategory] = useState("");
   const [sentAmount, setSentAmount] = useState("");
-  const [newBudget, setNewBudget] = useState(allocation);
+  const [newBudget, setNewBudget] = useState([]);
 
-  useEffect(() => {
-    localStorage.setItem("newBudget", JSON.stringify(newBudget), [newBudget]);
-  });
+  // useEffect(() => {
+  //   localStorage.setItem("newBudget", JSON.stringify(newBudget), [newBudget]);
+  // });
 
   const formattedAmount = parseFloat(budgetAmount);
 
@@ -69,7 +69,7 @@ export default function BudgetProvider({ children }) {
             ? {
                 ...item,
                 spentAmount: item.spentAmount + spentCategoryAmount,
-                totalAmount: item.totalAmount - spentCategoryAmount,
+                // totalAmount: item.totalAmount - spentCategoryAmount,
               }
             : item
         )
@@ -143,7 +143,8 @@ export default function BudgetProvider({ children }) {
   // Calculates the percentage of the spent budget
   const spent = Number(formattedSpent);
   const totalBudget = Number(formattedTotal);
-  const percentageSpent = Number(100 * (spent / totalBudget)).toFixed(1);
+  const percentageSpent =
+    totalBudget > 0 ? Number(100 * (spent / totalBudget)).toFixed(1) : 0;
 
   return (
     <BudgetContext.Provider

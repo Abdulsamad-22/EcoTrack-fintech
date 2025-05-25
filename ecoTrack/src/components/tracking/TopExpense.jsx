@@ -12,15 +12,27 @@ export default function TopExpense() {
       <h2>Top Expense</h2>
 
       <div className={styles.wrapper}>
-        {topExpenses.map((item) => (
-          <div key={item.category} className={styles.expenseContainer}>
-            <div className={styles.heading}>
-              <img src={item.icon} alt="" />
-              {item.category}
+        {topExpenses.length === 0 ? (
+          <h1
+            style={{
+              textAlign: "center",
+              margin: "0 auto",
+              fontSize: "1.25rem",
+            }}
+          >
+            You have no Expenses yet!
+          </h1>
+        ) : (
+          topExpenses.map((item) => (
+            <div key={item.category} className={styles.expenseContainer}>
+              <div className={styles.heading}>
+                <img src={item.icon} alt="" />
+                {item.category}
+              </div>
+              <p>₦{item.spentAmount.toLocaleString("en-NG")}</p>
             </div>
-            <p>₦{item.spentAmount.toLocaleString("en-NG")}</p>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

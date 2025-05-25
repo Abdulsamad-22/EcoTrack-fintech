@@ -49,7 +49,10 @@ export default function BudgetChart() {
     labels: ["Total", "Spent"],
     datasets: [
       {
-        data: [100 - percentageSpent, percentageSpent], // 100% for the base circle
+        data:
+          percentageSpent > 0
+            ? [100 - percentageSpent, percentageSpent]
+            : [100, 0], // 100% for the base circle
         backgroundColor: ["#DAE3FF", "#1C2D5E"],
         borderWidth: 0,
         borderColor: ["#DAE3FF", "#1C2D5E"],
