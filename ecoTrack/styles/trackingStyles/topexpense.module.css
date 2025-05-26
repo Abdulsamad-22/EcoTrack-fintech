@@ -35,3 +35,11 @@
   font-size: 0.875rem;
   color: #444242;
 }
+
+.emptyState {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-style: italic;
+}

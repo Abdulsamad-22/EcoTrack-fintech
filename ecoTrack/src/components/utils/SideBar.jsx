@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import styles from "../../../styles/utilsStyles/sidebar.module.css";
 import { Link, useLocation } from "react-router-dom";
+import { useBudget } from "../budget/BudgetProvider";
 export default function SideBar() {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.pathname);
   const [expanded, setExpanded] = useState(false);
+  const sidebarRef = useRef();
+  useBudget();
 
   const navItems = [
     {
@@ -64,9 +67,23 @@ export default function SideBar() {
     setActiveItem(index);
   }
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setExpanded(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav
       className={`${styles.sideBar} ${expanded ? styles.expand : "collapsed"}`}
+      ref={sidebarRef}
     >
       <div className={styles.logoContainer}>
         <img className={styles.logo} src="/images/logo.svg" alt="logo"></img>
@@ -85,11 +102,7 @@ export default function SideBar() {
               >
                 <div
                   className={`${styles.navContainer} ${
-                    activeItem === item.path && !expanded
-                      ? styles.active
-                      : activeItem === item.path && expanded
-                      ? styles.active
-                      : ""
+                    activeItem === item.path ? styles.active : ""
                   }`}
                 >
                   <img
@@ -116,7 +129,7 @@ export default function SideBar() {
               >
                 <div
                   className={`${styles.navContainer} ${
-                    activeItem === item.path && !expanded ? styles.active : ""
+                    activeItem === item.path ? styles.active : ""
                   }`}
                 >
                   <img

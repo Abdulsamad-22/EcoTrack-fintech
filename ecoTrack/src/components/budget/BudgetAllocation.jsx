@@ -24,16 +24,9 @@ export default function BudgetAllocation() {
 
       <div className={styles.allocationWrapper}>
         {topBudget.length === 0 ? (
-          <h1
-            style={{
-              textAlign: "center",
-              margin: "0 auto",
-              width: "80%",
-              fontSize: "1.25rem",
-            }}
-          >
-            You have no Budget Allocation, Make New Budget
-          </h1>
+          <p className={styles.emptyAllocation}>
+            No Budget Allocation have been made yet, Please Make New Budget
+          </p>
         ) : (
           topBudget.map((list, index) => (
             <div key={index} className={styles.allocatioContainer}>

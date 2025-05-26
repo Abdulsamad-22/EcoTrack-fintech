@@ -45,7 +45,11 @@ export default function Cards({
       setImageSrc(
         newVisible ? "/images/hide-icon.svg" : "/images/Eye-icon.svg"
       );
-      setDisplayBalance(newVisible ? balance.toLocaleString("en-NG") : "*****");
+      setDisplayBalance(
+        newVisible
+          ? balance.toLocaleString("en-NG", { minimumFractionDigits: 2 })
+          : "*****"
+      );
       return newVisible;
     });
   }

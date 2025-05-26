@@ -39,7 +39,7 @@ export default function BudgetProvider({ children }) {
   const [originalBalance] = useState(100758030.1);
   const [balance, setBalance] = useState(originalBalance);
   const [displayBalance, setDisplayBalance] = useState(
-    originalBalance.toLocaleString("en-NG")
+    originalBalance.toLocaleString("en-NG", { minimumFractionDigits: 2 })
   );
   const [isVisible, setIsVisible] = useState(true);
   const [errors, setErrors] = useState({});

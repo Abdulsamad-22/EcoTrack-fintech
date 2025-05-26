@@ -13,15 +13,9 @@ export default function TopExpense() {
 
       <div className={styles.wrapper}>
         {topExpenses.length === 0 ? (
-          <h1
-            style={{
-              textAlign: "center",
-              margin: "0 auto",
-              fontSize: "1.25rem",
-            }}
-          >
-            You have no Expenses yet!
-          </h1>
+          <p className={styles.emptyState}>
+            No Expenses have been recorded yet!
+          </p>
         ) : (
           topExpenses.map((item) => (
             <div key={item.category} className={styles.expenseContainer}>

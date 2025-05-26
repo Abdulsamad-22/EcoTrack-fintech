@@ -43,12 +43,16 @@ export default function ExpenseChart() {
     labels: newBudget.map((title) => title.category),
     datasets: [
       {
-        data: newBudget.map((amount) =>
-          ((amount.spentAmount / formattedSpent) * 100).toFixed(2)
-        ), // Sample data for Budget
+        data:
+          formattedSpent > 0
+            ? newBudget.map((amount) =>
+                ((amount.spentAmount / formattedSpent) * 100).toFixed(2)
+              )
+            : [100, 0], // Sample data for Budget
         borderColor: ["#f9f9f9"],
         borderWidth: 2,
         backgroundColor: [
+          "DAE3FF",
           "#F39C12",
           "#003CBE",
           "#2ECC71",
