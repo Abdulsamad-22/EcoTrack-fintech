@@ -13,14 +13,13 @@ export default function InflationSummary() {
       <div className={styles.topContainer}>
         <h1>Inflation Summary</h1>
 
-        <div>
-          {/* <label>Sort by</label> */}
+        {/* <div>
           <select>
             <option value="date">Oct</option>
             <option value="amount">Dec</option>
             <option value="name">Jan</option>
           </select>
-        </div>
+        </div> */}
       </div>
 
       <table>

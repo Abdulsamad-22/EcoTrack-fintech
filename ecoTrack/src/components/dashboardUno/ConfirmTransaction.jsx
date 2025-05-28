@@ -44,7 +44,7 @@ export default function ConfirmTransaction({
         name: selectedBankName,
         type: "Debit",
         date: formattedDate,
-        amount: sentAmount,
+        amount: sentAmount.toLocaleString("en-NG"),
         category: category,
         status: "Successful",
       },

@@ -3,6 +3,7 @@ import styles from "../../../styles/dashboardStyles/transfermoney.module.css";
 import RecentTransaction from "./RecentTransaction";
 import axios from "axios";
 import { useBudget } from "../budget/BudgetProvider";
+import Select from "react-select";
 
 export default function TransferMoney({
   setOpenTransfer,
@@ -13,7 +14,7 @@ export default function TransferMoney({
   const [loading, setLoading] = useState(false);
   const [banks, setBanks] = useState([]);
   const [selectedBankCode, setSelectedBankCode] = useState("");
-  const [accountName, setAccountName] = useState("");
+  // const [accountName, setAccountName] = useState("");
   const { accountNum, setAccountNum } = useBudget();
 
   function validateInputs() {
@@ -41,8 +42,8 @@ export default function TransferMoney({
     setOpenTransfer("confirm");
   }
 
-  function handleBankChange(e) {
-    const selectedBankCode = e.target.value;
+  function handleBankChange(selectedOption) {
+    const selectedBankCode = selectedOption?.value;
     const selectedBank = banks.find((bank) => bank.code === selectedBankCode);
     setSelectedBankCode(selectedBankCode);
     setSelectedBankName(selectedBank ? selectedBank.name : "");
@@ -102,6 +103,10 @@ export default function TransferMoney({
     fetchBanks();
   }, []);*/
 
+  const bankOptions = banks.map((bank) => ({
+    value: bank.code,
+    label: bank.name,
+  }));
   return (
     <div>
       <form className={styles.accountDetailsForm} onSubmit={handleSubmit}>
@@ -126,18 +131,31 @@ export default function TransferMoney({
           <br />
 
           {!loading && !error2 && (
-            <select
-              className={styles.inputField}
-              value={selectedBankCode}
+            <Select
+              className={styles.bankInput}
+              classNamePrefix={styles.bankInput}
+              options={bankOptions}
               onChange={handleBankChange}
-            >
-              <option value=""> Select a Bank </option>
-              {banks.map((bank) => (
-                <option key={bank.id} value={bank.code}>
-                  {bank.name}
-                </option>
-              ))}
-            </select>
+              placeholder="Select a Bank"
+              menuPlacement="bottom"
+              value={bankOptions.find((opt) => opt.value === selectedBankCode)}
+            />
+            // <select
+            //   onFocus={(e) =>
+            //     e.target.scrollIntoView({ behavior: "smooth", block: "center" })
+            //   }
+            //   className={styles.inputField}
+            //   value={selectedBankCode}
+            //   onChange={handleBankChange}
+            //   menuPlacement="bottom"
+            // >
+            //   <option value=""> Select a Bank </option>
+            //   {banks.map((bank) => (
+            //     <option key={bank.id} value={bank.code}>
+            //       {bank.name}
+            //     </option>
+            //   ))}
+            // </select>
           )}
           {errors.selectedBankCode && (
             <p className={styles.errorText}>{errors.selectedBankCode}</p>

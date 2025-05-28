@@ -7,13 +7,13 @@ export default function Expenses() {
       <div className={styles.topContainer}>
         <h1>Expenses</h1>
 
-        <div>
+        {/* <div>
           <select>
             <option value="">Oct</option>
             <option value="">Sept</option>
             <option value="">Nov</option>
           </select>
-        </div>
+        </div> */}
       </div>
 
       <div className={styles.expenseNSummary}>

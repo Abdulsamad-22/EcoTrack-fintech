@@ -26,11 +26,11 @@ export default function ConfirmAmount({ setOpenTransfer, selectedBankName }) {
         (item) => item.category.toLowerCase() === category.trim().toLowerCase()
       );
 
-      if (!matchedCategory) {
-        errors.category = "Category does not exist in budget, start new";
-      } else if (matchedCategory.totalAmount < Number(sentAmount)) {
-        errors.sentAmount = "Insufficient budget for this category";
-      }
+      // if (!matchedCategory) {
+      //   errors.category = "Category does not exist in budget, start new";
+      // } else if (matchedCategory.totalAmount < Number(sentAmount)) {
+      //   errors.sentAmount = "Insufficient budget for this category";
+      // }
     }
 
     return errors;

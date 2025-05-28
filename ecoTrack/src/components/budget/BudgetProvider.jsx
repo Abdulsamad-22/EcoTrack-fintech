@@ -50,7 +50,7 @@ export default function BudgetProvider({ children }) {
   const [newBudget, setNewBudget] = useState([]);
 
   // useEffect(() => {
-  //   localStorage.setItem("newBudget", JSON.stringify(newBudget), [newBudget]);
+  //   sessionStorage.setItem("newBudget", JSON.stringify(newBudget), [newBudget]);
   // });
 
   const formattedAmount = parseFloat(budgetAmount);

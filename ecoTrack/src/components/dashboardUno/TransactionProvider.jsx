@@ -3,7 +3,7 @@ const TransferContext = createContext();
 export const useTransfer = () => useContext(TransferContext);
 export default function TransactionProvider({ children }) {
   const [transaction, setTransaction] = useState(() => {
-    const savedTransactions = localStorage.getItem("transactions");
+    const savedTransactions = sessionStorage.getItem("transactions");
     return savedTransactions
       ? JSON.parse(savedTransactions)
       : [
@@ -35,7 +35,7 @@ export default function TransactionProvider({ children }) {
   });
 
   useEffect(() => {
-    localStorage.setItem("transactions", JSON.stringify(transaction));
+    sessionStorage.setItem("transactions", JSON.stringify(transaction));
   }, [transaction]);
   return (
     <TransferContext.Provider value={{ transaction, setTransaction }}>

@@ -12,7 +12,7 @@
     "name": "Rice",
     "price": 90000,
     "newPrice": 120000,
-    "rate": -0.0
+    "rate": 0.0
   },
 
   {
@@ -28,7 +28,7 @@
     "name": "Spaghetti",
     "price": 4000,
     "newPrice": 8000,
-    "rate": -0.01
+    "rate": 0.01
   },
 
   {
@@ -36,7 +36,7 @@
     "name": "Potatoes",
     "price": 4000,
     "newPrice": 8000,
-    "rate": -0.01
+    "rate": 0.01
   },
 
   {
@@ -52,7 +52,7 @@
     "name": "Potatoes",
     "price": 4000,
     "newPrice": 8000,
-    "rate": -0.01
+    "rate": 0.01
   },
 
   {
@@ -68,7 +68,7 @@
     "name": "Potatoes",
     "price": 4000,
     "newPrice": 8000,
-    "rate": -0.01
+    "rate": 0.01
   },
 
   {

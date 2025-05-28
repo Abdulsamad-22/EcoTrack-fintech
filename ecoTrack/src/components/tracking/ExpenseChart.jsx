@@ -1,5 +1,5 @@
 import { Chart as ChartJS, defaults } from "chart.js/auto";
-import { Doughnut, Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 // import styles from "../../../styles/trackingStyles/expenses.module.css";
 import { useBudget } from "../budget/BudgetProvider";
 
@@ -26,7 +26,7 @@ export default function ExpenseChart() {
       ctx.fillStyle = "#615E5E";
       ctx.fillText("Total Expenses", width / 2, height / 2 - 10);
 
-      // Draw "₦250,000"
+      // Draw total amount spent
       ctx.font = "700 18px Arial";
       ctx.fillStyle = "#444242";
       ctx.fillText(
@@ -52,7 +52,7 @@ export default function ExpenseChart() {
         borderColor: ["#f9f9f9"],
         borderWidth: 2,
         backgroundColor: [
-          "DAE3FF",
+          // "DAE3FF",
           "#F39C12",
           "#003CBE",
           "#2ECC71",
