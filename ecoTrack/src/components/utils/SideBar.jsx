@@ -58,6 +58,7 @@ export default function SideBar() {
     {
       id: 8,
       icon: "/images/SignOut.svg",
+      path: "/logOut",
       label: "Log Out",
       toolTip: "Log Out",
     },
@@ -122,8 +123,9 @@ export default function SideBar() {
         <div className={styles.bottomContainer}>
           {navItems.map((item) =>
             item.id > 5 ? (
-              <div
+              <Link
                 key={item.id}
+                to={item.path}
                 className={styles.navIcons}
                 onClick={() => handleClick(item.id)}
               >
@@ -139,7 +141,7 @@ export default function SideBar() {
                   />
                   {expanded && <p>{item.label}</p>}
                 </div>
-              </div>
+              </Link>
             ) : (
               ""
             )
