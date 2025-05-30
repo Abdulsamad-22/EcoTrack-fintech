@@ -40,3 +40,7 @@
   background: #6275ad;
   border-radius: 8px;
 }
+
+form {
+  width: 100%;
+}

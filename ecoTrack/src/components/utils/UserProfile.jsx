@@ -1,5 +1,7 @@
 import styles from "../../../styles/utilsStyles/userprofile.module.css";
+import { useAuth } from "../../Auth/AuthProvider";
 export default function UserProfile() {
+  const { currentUser } = useAuth();
   return (
     <div>
       <div className={styles.completeRightSide}>
@@ -33,7 +35,7 @@ export default function UserProfile() {
 
             <div className={styles.nameInfo}>
               <p className={styles.userName}>Daniel Frank</p>
-              <p className={styles.userMail}>danielfrank@gmail.com</p>
+              <p className={styles.userMail}>{currentUser.email}</p>
             </div>
           </div>
 

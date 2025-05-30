@@ -58,7 +58,7 @@ export default function SideBar() {
     {
       id: 8,
       icon: "/images/SignOut.svg",
-      path: "/logOut",
+      // path: "/logOut",
       label: "Log Out",
       toolTip: "Log Out",
     },

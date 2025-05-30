@@ -5,3 +5,9 @@
   gap: 1rem;
   /* width: 100%; */
 }
+
+/* .expand {
+  width: 180px;
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in-out;
+} */
