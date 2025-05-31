@@ -5,5 +5,5 @@ import { useAuth } from "./Auth/AuthProvider";
 export default function RouteWrapper({ children }) {
   const { currentUser, loading } = useAuth();
   if (loading) return <div>Loading...</div>;
-  return currentUser ? children : <Navigate to="/signUp" />;
+  return currentUser ? children : <Navigate to="/login" />;
 }

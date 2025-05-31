@@ -17,7 +17,7 @@ export default function WelcomeBackScreen({ buttonLabels, message }) {
           An app that helps you know how to spend and plan for future hike of
           your daily consumables
         </p>
-        <Link to="/login">
+        <Link to={buttonLabels === "Login" ? "/login" : "/signUp"}>
           <button onClick={handleLogin} className={styles.loginBtn}>
             {buttonLabels}
           </button>

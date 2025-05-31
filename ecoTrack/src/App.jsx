@@ -9,12 +9,15 @@ import Login from "./pages/Login";
 import { useAuth } from "./Auth/AuthProvider";
 import { useState } from "react";
 import RouteWrapper from "./RouteWrapper";
+import useAutoLogout from "./Auth/useAutoLogout";
 
 function App() {
   const [heading, setHeading] = useState("");
   const [buttonLabels, setButtonLabels] = useState("");
   const [message, setMessage] = useState("");
   const { currentUser, loading } = useAuth();
+
+  useAutoLogout();
   if (loading) return <div>Loading...</div>;
   return (
     <BrowserRouter>
@@ -29,11 +32,11 @@ function App() {
                 message={"Welcome Back"}
               />
             ) : (
-              <Navigate to="/" />
+              <Navigate to="/dashboard" />
             )
           }
         />
-        {console.log(currentUser.email)}
+
         <Route
           path="/login"
           element={
@@ -44,13 +47,13 @@ function App() {
                 message={"Welcome to EcoTrack"}
               />
             ) : (
-              <Navigate to="/" />
+              <Navigate to="/dashboard" />
             )
           }
         />
 
         <Route
-          path="/"
+          path="/dashboard"
           element={
             <RouteWrapper>
               <Dashboard />
@@ -75,18 +78,6 @@ function App() {
             </RouteWrapper>
           }
         />
-
-        {/* <Route
-          path="/*"
-          element={currentUser ? <Dashboard /> : <Navigate to="/signUp" />}
-        ></Route> */}
-
-        {/* <Route path="/" element={<Dashboard />} />
-        <Route path="/budget" element={<Budget />} />
-
-        <Route path="/tracking" element={<Tracking />} />
-
-        <Route path="/logOut" element={<SignUp />} /> */}
       </Routes>
     </BrowserRouter>
   );

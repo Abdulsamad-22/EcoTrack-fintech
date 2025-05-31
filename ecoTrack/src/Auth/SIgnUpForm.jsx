@@ -2,14 +2,8 @@ import { signUp } from "./useAuth";
 import { login } from "./useAuth";
 import { useState } from "react";
 import styles from "../../styles/authStyles/signUpForm.module.css";
-import Dashboard from "../pages/Dashboard";
 
-export default function SignUpForm({
-  heading,
-  buttonLabels,
-  defaultMode = "Sign up",
-}) {
-  const [mode, setMode] = useState(defaultMode);
+export default function SignUpForm({ heading, buttonLabels }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
@@ -17,7 +11,7 @@ export default function SignUpForm({
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      if (mode === "Sign up") {
+      if (buttonLabels === "Sign up") {
         await signUp(email, password);
         setMsg("Account created!");
       } else {
@@ -28,11 +22,10 @@ export default function SignUpForm({
       setMsg(error.message);
     }
   }
+  console.log(buttonLabels);
   return (
     <form onSubmit={handleSubmit} className={styles.signUpForm}>
-      <h1 className={styles.headerText}>
-        {mode === "Sign up" ? "Create an account" : "Login"}
-      </h1>
+      <h1 className={styles.headerText}>{heading}</h1>
       <input
         className={styles.emailInput}
         value={email}
@@ -50,18 +43,18 @@ export default function SignUpForm({
       />
       <br />
       <button className={styles.signUpBtn} type="submit">
-        {mode === "Sign up" ? "Sign up" : "Login"}
+        {buttonLabels}
       </button>
-      <p>
-        {mode === "signup"
+      <p className={styles.toggleOption}>
+        {buttonLabels === "Sign up"
           ? "Already have an account?"
-          : "Don't have an account?"}
+          : "Forgot password?"}
         <button
           type="button"
           className={styles.toggleBtn}
-          onClick={() => setMode(mode === "signup" ? "login" : "signup")}
+          onClick={() => (buttonLabels === "Sign up" ? "/login" : "Sign up")}
         >
-          {mode === "signup" ? "Login" : "Sign Up"}
+          {buttonLabels === "Sign up" ? "Login" : ""}
         </button>
       </p>
       <p>{msg}</p>

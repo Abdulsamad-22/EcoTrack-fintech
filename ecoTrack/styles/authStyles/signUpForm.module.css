@@ -34,3 +34,14 @@
   padding: 0.75rem;
   /* border-radius: 24px; */
 }
+
+.toggleOption {
+  margin-top: 0.5rem;
+  color: #303030;
+}
+
+.toggleBtn {
+  font-weight: 500;
+  color: #1c2d5e;
+  margin-left: 0.25rem;
+}
