@@ -32,7 +32,7 @@ function App() {
                 message={"Welcome Back"}
               />
             ) : (
-              <Navigate to="/dashboard" />
+              <Navigate to="/" />
             )
           }
         />
@@ -47,13 +47,13 @@ function App() {
                 message={"Welcome to EcoTrack"}
               />
             ) : (
-              <Navigate to="/dashboard" />
+              <Navigate to="/" />
             )
           }
         />
 
         <Route
-          path="/dashboard"
+          path="/"
           element={
             <RouteWrapper>
               <Dashboard />

@@ -6,12 +6,7 @@ import styles from "./login.module.css";
 export default function signUp({ heading, buttonLabels, message }) {
   return (
     <div className={styles.login}>
-      <WelcomeBackScreen
-        buttonLabels={buttonLabels}
-        message={message}
-        mode={mode}
-        setMode={setMode}
-      />
+      <WelcomeBackScreen buttonLabels={buttonLabels} message={message} />
       <SignUpForm heading={heading} buttonLabels={"Sign up"} />
     </div>
   );

@@ -19,7 +19,7 @@ export default function SideBar() {
     {
       id: 2,
       icon: "/images/SquaresFour.svg",
-      path: "/dashboard",
+      path: "/",
       label: "Dashboard",
       toolTip: "Dashboard",
     },
