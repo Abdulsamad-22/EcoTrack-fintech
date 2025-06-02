@@ -2,11 +2,22 @@ import { signUp } from "./useAuth";
 import { login } from "./useAuth";
 import { useState } from "react";
 import styles from "../../styles/authStyles/signUpForm.module.css";
+import { useNavigate } from "react-router-dom";
 
+const errorMessages = {
+  "auth/email-already-in-use": "This account already exist, login instead.",
+  "auth/invalid-email": "Please enter a valid email address.",
+  "auth/weak-password": "Password should be at least 6 characters.",
+  "auth/user-not-found": "No account found with this email.",
+  "auth/wrong-password": "Incorrect password. Please try again.",
+  "auth/network-request-failed": "Network error. Please check your connection.",
+  // Add more as needed
+};
 export default function SignUpForm({ heading, buttonLabels }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +30,9 @@ export default function SignUpForm({ heading, buttonLabels }) {
         setMsg("created acount");
       }
     } catch (error) {
-      setMsg(error.message);
+      const friendlyMessage =
+        errorMessages[error.code] || "Something went wrong. Please try again.";
+      setMsg(friendlyMessage);
     }
   }
   console.log(buttonLabels);
@@ -46,18 +59,20 @@ export default function SignUpForm({ heading, buttonLabels }) {
         {buttonLabels}
       </button>
       <p className={styles.toggleOption}>
-        {buttonLabels === "Sign up"
-          ? "Already have an account?"
-          : "Forgot password?"}
+        {buttonLabels === "Sign up" ? (
+          "Already have an account?"
+        ) : (
+          <button>Forgot password?</button>
+        )}
         <button
           type="button"
           className={styles.toggleBtn}
-          onClick={() => (buttonLabels === "Sign up" ? "/login" : "Sign up")}
+          onClick={() => navigate("/login")}
         >
           {buttonLabels === "Sign up" ? "Login" : ""}
         </button>
       </p>
-      <p>{msg}</p>
+      <p className={styles.errorMsg}>{msg}</p>
     </form>
   );
 }
