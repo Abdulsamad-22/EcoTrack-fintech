@@ -1,13 +1,23 @@
 import { useRef, useState, useEffect } from "react";
 import styles from "../../../styles/utilsStyles/sidebar.module.css";
 import { Link, useLocation } from "react-router-dom";
-import { useBudget } from "../budget/BudgetProvider";
-export default function SideBar() {
+
+export default function SideBar({
+  setConfirmLogout,
+  confirmLogout,
+  setShowOverlay,
+  showOverlay,
+}) {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.pathname);
   const [expanded, setExpanded] = useState(false);
   const sidebarRef = useRef();
-  useBudget();
+
+  const checkLogout = () => {
+    setConfirmLogout(!confirmLogout);
+    setShowOverlay(!showOverlay);
+    console.log(confirmLogout);
+  };
 
   const navItems = [
     {
@@ -58,7 +68,7 @@ export default function SideBar() {
     {
       id: 8,
       icon: "/images/SignOut.svg",
-      // path: "/logOut",
+      onClick: checkLogout,
       label: "Log Out",
       toolTip: "Log Out",
     },
@@ -127,7 +137,7 @@ export default function SideBar() {
                 key={item.id}
                 to={item.path}
                 className={styles.navIcons}
-                onClick={() => handleClick(item.id)}
+                onClick={item.onClick}
               >
                 <div
                   className={`${styles.navContainer} ${
