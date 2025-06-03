@@ -1,5 +1,4 @@
-.signUpForm {
-  /* background-color: black; */
+.formContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,6 +6,14 @@
   width: 50%;
   height: 100vh;
   background-color: #f8f8f8;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .headerText {
@@ -44,4 +51,9 @@
   font-weight: 500;
   color: #1c2d5e;
   margin-left: 0.25rem;
+}
+
+.errorMsg {
+  font-size: 0.875rem;
+  color: #fa2e2e;
 }

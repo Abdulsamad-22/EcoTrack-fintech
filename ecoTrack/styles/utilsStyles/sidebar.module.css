@@ -99,6 +99,11 @@
   background-color: #1c2d5e;
 }
 
+.active:hover {
+  background-color: #1c2d5e;
+  cursor: default;
+}
+
 .icons {
   width: 2rem;
 }

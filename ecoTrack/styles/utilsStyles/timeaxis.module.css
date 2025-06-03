@@ -32,3 +32,9 @@
   background-color: #e4e4e4;
   color: #1c2d5e;
 }
+
+.selected:hover {
+  background-color: #1c2d5e;
+  color: #f9f9f9;
+  cursor: default;
+}

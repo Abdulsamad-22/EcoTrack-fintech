@@ -5,6 +5,44 @@ import axios from "axios";
 import { useBudget } from "../budget/BudgetProvider";
 import Select from "react-select";
 
+const customStyles = {
+  control: (base, state) => ({
+    ...base,
+    backgroundColor: "#e7e7e7",
+    border: "none",
+    boxShadow: state.isFocused ? "none" : "none",
+    "&:hover": {
+      borderColor: "#2563eb",
+    },
+    borderRadius: "8px",
+    padding: "4px",
+  }),
+  option: (base, state) => ({
+    ...base,
+    backgroundColor: state.isSelected
+      ? "#1c2d5e"
+      : state.isFocused
+      ? "#e2e8f0"
+      : "white",
+    color: state.isSelected ? "white" : "#1a202c",
+    padding: "10px",
+  }),
+  menu: (base) => ({
+    ...base,
+    borderRadius: "8px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  }),
+  placeholder: (base) => ({
+    ...base,
+    color: "#6b7280",
+    fontSize: "0.875rem",
+  }),
+  singleValue: (base) => ({
+    ...base,
+    fontSize: "0.975rem",
+  }),
+};
+
 export default function TransferMoney({
   setOpenTransfer,
   setSelectedBankName,
@@ -80,7 +118,7 @@ export default function TransferMoney({
           "https://api.budpay.com/api/v2/bank_list/NGN",
           {
             headers: {
-              Authorization: `Bearer sk_test_txs4wrjnhrzuxqa1y8dc9jp0vx0rifkznpxqipm`,
+              Authorization: `Bearer apiKey,
             },
           }
         );
@@ -132,30 +170,13 @@ export default function TransferMoney({
 
           {!loading && !error2 && (
             <Select
-              className={styles.bankInput}
-              classNamePrefix={styles.bankInput}
+              styles={customStyles}
               options={bankOptions}
               onChange={handleBankChange}
               placeholder="Select a Bank"
               menuPlacement="bottom"
               value={bankOptions.find((opt) => opt.value === selectedBankCode)}
             />
-            // <select
-            //   onFocus={(e) =>
-            //     e.target.scrollIntoView({ behavior: "smooth", block: "center" })
-            //   }
-            //   className={styles.inputField}
-            //   value={selectedBankCode}
-            //   onChange={handleBankChange}
-            //   menuPlacement="bottom"
-            // >
-            //   <option value=""> Select a Bank </option>
-            //   {banks.map((bank) => (
-            //     <option key={bank.id} value={bank.code}>
-            //       {bank.name}
-            //     </option>
-            //   ))}
-            // </select>
           )}
           {errors.selectedBankCode && (
             <p className={styles.errorText}>{errors.selectedBankCode}</p>

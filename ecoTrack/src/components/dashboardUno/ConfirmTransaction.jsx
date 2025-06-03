@@ -72,8 +72,10 @@ export default function ConfirmTransaction({
           onChange={(e) => setPin(e.target.value)}
           className={styles.inputField}
           value={pin}
-          type="text"
-          placeholder="Pin"
+          type="password"
+          pattern="[0-9]*"
+          maxLength={4}
+          placeholder="Enter 4 digit pin"
         />
         {error.pin && (
           <div style={{ color: "red", fontSize: "0.875rem" }}>{error.pin}</div>

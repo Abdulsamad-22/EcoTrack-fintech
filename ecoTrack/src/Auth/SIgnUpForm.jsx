@@ -1,9 +1,11 @@
 import { signUp } from "./useAuth";
 import { login } from "./useAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../styles/authStyles/signUpForm.module.css";
 import { useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
+const auth = getAuth();
 const errorMessages = {
   "auth/email-already-in-use": "This account already exist, login instead.",
   "auth/invalid-email": "Please enter a valid email address.",
@@ -11,13 +13,27 @@ const errorMessages = {
   "auth/user-not-found": "No account found with this email.",
   "auth/wrong-password": "Incorrect password. Please try again.",
   "auth/network-request-failed": "Network error. Please check your connection.",
-  // Add more as needed
 };
 export default function SignUpForm({ heading, buttonLabels }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
+  const [userProfile, setUserProfile] = useState(null);
+  const auth = getAuth();
+
+  useEffect(() => {
+    const unsubscribe =
+      (auth,
+      (user) => {
+        if (user) {
+          const { displayName, email, photoURL, emailVerified } = user;
+          setUserProfile({ displayName, email, photoURL, emailVerified });
+        } else {
+          setUserProfile(null);
+        }
+      });
+  }, [auth]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -37,42 +53,45 @@ export default function SignUpForm({ heading, buttonLabels }) {
   }
   console.log(buttonLabels);
   return (
-    <form onSubmit={handleSubmit} className={styles.signUpForm}>
+    <div className={styles.formContainer}>
       <h1 className={styles.headerText}>{heading}</h1>
-      <input
-        className={styles.emailInput}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        type="email"
-        placeholder="Email Address"
-      />
-      <br />
-      <input
-        className={styles.password}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        type="password"
-        placeholder="Password"
-      />
-      <br />
-      <button className={styles.signUpBtn} type="submit">
-        {buttonLabels}
-      </button>
-      <p className={styles.toggleOption}>
-        {buttonLabels === "Sign up" ? (
-          "Already have an account?"
-        ) : (
-          <button>Forgot password?</button>
-        )}
-        <button
-          type="button"
-          className={styles.toggleBtn}
-          onClick={() => navigate("/login")}
-        >
-          {buttonLabels === "Sign up" ? "Login" : ""}
+
+      <form onSubmit={handleSubmit} className={styles.signUpForm}>
+        <input
+          className={styles.emailInput}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Email Address"
+        />
+        <br />
+        <input
+          className={styles.password}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
+        />
+        <br />
+        <button className={styles.signUpBtn} type="submit">
+          {buttonLabels}
         </button>
-      </p>
-      <p className={styles.errorMsg}>{msg}</p>
-    </form>
+        <p className={styles.toggleOption}>
+          {buttonLabels === "Sign up" ? (
+            "Already have an account?"
+          ) : (
+            <button>Forgot password?</button>
+          )}
+          <button
+            type="button"
+            className={styles.toggleBtn}
+            onClick={() => navigate("/login")}
+          >
+            {buttonLabels === "Sign up" ? "Login" : ""}
+          </button>
+        </p>
+        <p className={styles.errorMsg}>{msg}</p>
+      </form>
+    </div>
   );
 }

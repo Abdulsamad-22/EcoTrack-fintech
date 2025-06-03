@@ -35,7 +35,11 @@ export default function UserProfile() {
 
             <div className={styles.nameInfo}>
               <p className={styles.userName}>Daniel Frank</p>
-              <p className={styles.userMail}>{currentUser.email}</p>
+              <p className={styles.userMail}>
+                {currentUser.email.length > 21
+                  ? currentUser.email.slice(0, 21) + "..."
+                  : currentUser.email}
+              </p>
             </div>
           </div>
 
