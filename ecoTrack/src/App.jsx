@@ -10,6 +10,7 @@ import { useAuth } from "./Auth/AuthProvider";
 import { useState } from "react";
 import RouteWrapper from "./RouteWrapper";
 import useAutoLogout from "./Auth/useAutoLogout";
+import Settings from "./pages/Settings";
 
 function App() {
   const [heading, setHeading] = useState("");
@@ -75,6 +76,15 @@ function App() {
           element={
             <RouteWrapper>
               <Tracking />
+            </RouteWrapper>
+          }
+        />
+
+        <Route
+          path="/settings"
+          element={
+            <RouteWrapper>
+              <Settings />
             </RouteWrapper>
           }
         />

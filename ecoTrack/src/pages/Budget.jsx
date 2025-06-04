@@ -15,7 +15,7 @@ import FluctuatingPrices from "../components/dashboardUno/FluctuatingPrices";
 
 export default function Budget() {
   return (
-    <div>
+    <>
       <BudgetWrapper>
         <SideBar />
         <DashboardBody>
@@ -36,6 +36,6 @@ export default function Budget() {
           </OuterContainer>
         </DashboardBody>
       </BudgetWrapper>
-    </div>
+    </>
   );
 }

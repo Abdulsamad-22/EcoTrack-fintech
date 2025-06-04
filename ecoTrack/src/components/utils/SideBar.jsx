@@ -56,6 +56,7 @@ export default function SideBar({
     {
       id: 6,
       icon: "/images/Gear.svg",
+      path: "/settings",
       label: "Settings",
       toolTip: "Settings",
     },
@@ -136,7 +137,7 @@ export default function SideBar({
               <Link
                 key={item.id}
                 to={item.path}
-                className={styles.navIcons}
+                className={`${styles.navIcons}`}
                 onClick={item.onClick}
               >
                 <div

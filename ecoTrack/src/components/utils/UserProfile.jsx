@@ -2,6 +2,7 @@ import styles from "../../../styles/utilsStyles/userprofile.module.css";
 import { useAuth } from "../../Auth/AuthProvider";
 export default function UserProfile() {
   const { currentUser } = useAuth();
+  const savedName = localStorage.getItem("displayName");
   return (
     <div>
       <div className={styles.completeRightSide}>
@@ -34,7 +35,9 @@ export default function UserProfile() {
             </div>
 
             <div className={styles.nameInfo}>
-              <p className={styles.userName}>Daniel Frank</p>
+              <p className={styles.userName}>
+                {savedName || "No display name"}
+              </p>
               <p className={styles.userMail}>
                 {currentUser.email.length > 21
                   ? currentUser.email.slice(0, 21) + "..."

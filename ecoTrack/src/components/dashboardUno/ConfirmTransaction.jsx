@@ -18,11 +18,15 @@ export default function ConfirmTransaction({
   } = useBudget();
   const [pin, setPin] = useState("");
   const [error, setError] = useState({});
+  const savedPin = localStorage.getItem("pin");
+
   function validatePin() {
     const error = {};
     pin === ""
       ? (error.pin = "Please Enter your pin")
-      : pin.length !== 4
+      : savedPin === ""
+      ? (error.pin = "Set transaction pin and try again")
+      : pin.length !== 4 || pin !== savedPin
       ? (error.pin = "Incorrect pin, try again")
       : "";
     return error;

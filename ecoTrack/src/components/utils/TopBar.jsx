@@ -7,6 +7,7 @@ const pageTitles = {
   "/": "Dashboard",
   "/budget": "Budget",
   "/tracking": "Inflation Tracking",
+  "/settings": "Settings",
 };
 export default function TopBar() {
   const [query, setQuery] = useState("");

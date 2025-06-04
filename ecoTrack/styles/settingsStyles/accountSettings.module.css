@@ -1,0 +1,78 @@
+.accountContainer {
+  width: 50%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.accountHeader {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-color: #1c2d5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #f9f9f9;
+}
+
+.profile {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #444242;
+  margin-top: 0.5rem;
+}
+
+.removeBtn,
+.uploadBtn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #444242;
+  color: #444242;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.uploadBtn {
+  background-color: #1c2d5e;
+  color: #f9f9f9;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+input {
+  padding: 0.625rem 1rem;
+  background-color: #dfdfdf;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: 2px solid #1c2d5e;
+  border-radius: 4px;
+}
+
+.saveButton {
+  background-color: #1c2d5e;
+  border-radius: 4px;
+  padding: 0.625rem 1rem;
+  color: #f9f9f9;
+  width: 100%;
+  margin-top: 2rem;
+}
