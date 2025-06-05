@@ -54,7 +54,7 @@ label {
   margin-bottom: 0.25rem;
 }
 
-input {
+.inputFields {
   padding: 0.625rem 1rem;
   background-color: #dfdfdf;
   border: none;
@@ -63,7 +63,7 @@ input {
   margin-bottom: 1rem;
 }
 
-input:focus {
+.inputFields:focus {
   outline: 2px solid #1c2d5e;
   border-radius: 4px;
 }
@@ -75,4 +75,10 @@ input:focus {
   color: #f9f9f9;
   width: 100%;
   margin-top: 2rem;
+}
+
+.errorText {
+  color: #fa2e2e;
+  margin: 0;
+  padding-left: 1rem;
 }

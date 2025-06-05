@@ -19,21 +19,7 @@ export default function SignUpForm({ heading, buttonLabels }) {
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
-  const [userProfile, setUserProfile] = useState(null);
   const auth = getAuth();
-
-  useEffect(() => {
-    const unsubscribe =
-      (auth,
-      (user) => {
-        if (user) {
-          const { displayName, email, photoURL, emailVerified } = user;
-          setUserProfile({ displayName, email, photoURL, emailVerified });
-        } else {
-          setUserProfile(null);
-        }
-      });
-  }, [auth]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -50,6 +36,32 @@ export default function SignUpForm({ heading, buttonLabels }) {
         errorMessages[error.code] || "Something went wrong. Please try again.";
       setMsg(friendlyMessage);
     }
+
+    useEffect(() => {
+      const auth = getAuth();
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const { creationTime, lastSignInTime } = user.metadata;
+          const isNewUser = creationTime !== lastSignInTime;
+
+          // Clear existing values if new user
+          if (isNewUser) {
+            localStorage.setItem("isFirstTimeUser", "true");
+            localStorage.removeItem("pin"); // Better than setting empty string
+            localStorage.removeItem("displayName");
+          } else {
+            // For returning users, ensure we don't overwrite existing values
+            const existingPin = localStorage.getItem("pin");
+            const existingName = localStorage.getItem("displayName");
+
+            if (!existingPin) localStorage.setItem("pin", "");
+            if (!existingName) localStorage.setItem("displayName", "");
+          }
+        }
+      });
+
+      return () => unsubscribe(); // Cleanup subscription
+    }, []);
   }
   console.log(buttonLabels);
   return (

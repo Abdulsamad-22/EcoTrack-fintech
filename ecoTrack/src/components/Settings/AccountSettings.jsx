@@ -26,6 +26,7 @@ export default function AccountSettings({ activeButton }) {
         <div className={styles.formGroup}>
           <label htmlFor="displayName">Display Name</label>
           <input
+            className={styles.inputFields}
             type="text"
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
@@ -35,6 +36,7 @@ export default function AccountSettings({ activeButton }) {
         <div className={styles.formGroup}>
           <label htmlFor="fullName">Full Name</label>
           <input
+            className={styles.inputFields}
             type="text"
             value={fullname}
             onChange={(e) => setFullName(e.target.value)}
@@ -44,6 +46,7 @@ export default function AccountSettings({ activeButton }) {
         <div className={styles.formGroup}>
           <label htmlFor="phoneNo">Phone Number</label>
           <input
+            className={styles.inputFields}
             type="tel"
             value={phoneNo}
             onChange={(e) => setPhoneNo(e.target.value)}

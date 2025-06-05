@@ -7,10 +7,11 @@ import Tracking from "./pages/Tracking";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import { useAuth } from "./Auth/AuthProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RouteWrapper from "./RouteWrapper";
 import useAutoLogout from "./Auth/useAutoLogout";
 import Settings from "./pages/Settings";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App() {
   const [heading, setHeading] = useState("");
@@ -20,6 +21,7 @@ function App() {
 
   useAutoLogout();
   if (loading) return <div>Loading...</div>;
+
   return (
     <BrowserRouter>
       <Routes>

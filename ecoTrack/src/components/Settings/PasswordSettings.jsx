@@ -13,7 +13,7 @@ export default function PasswordSettings() {
       console.log(error);
       return;
     }
-    localStorage.setItem("pin", confirmPin);
+    // localStorage.setItem("pin", confirmPin);
   }
   return (
     <div className={styles.accountContainer}>
@@ -22,6 +22,7 @@ export default function PasswordSettings() {
         <div>
           <label for="pin">Set transaction pin</label>
           <input
+            className={styles.inputFields}
             onChange={(e) => setPin(e.target.value)}
             type="password"
             value={pin}
@@ -31,12 +32,14 @@ export default function PasswordSettings() {
         <div>
           <label for="confirmPin">Confirm transaction pin</label>
           <input
+            className={styles.inputFields}
             onChange={(e) => setConfirmPin(e.target.value)}
+            maxLength={4}
             type="password"
             value={confirmPin}
           />
         </div>
-        {error && <p>{error}</p>}
+        {error && <p className={styles.errorText}>{error}</p>}
 
         <button type="submit" className={styles.saveButton}>
           Save
