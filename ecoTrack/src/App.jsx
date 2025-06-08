@@ -7,7 +7,7 @@ import Tracking from "./pages/Tracking";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import { useAuth } from "./Auth/AuthProvider";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import RouteWrapper from "./RouteWrapper";
 import useAutoLogout from "./Auth/useAutoLogout";
 import Settings from "./pages/Settings";
@@ -18,6 +18,8 @@ function App() {
   const [buttonLabels, setButtonLabels] = useState("");
   const [message, setMessage] = useState("");
   const { currentUser, loading } = useAuth();
+  const [confirmLogout, setConfirmLogout] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   useAutoLogout();
   if (loading) return <div>Loading...</div>;
@@ -59,7 +61,12 @@ function App() {
           path="/"
           element={
             <RouteWrapper>
-              <Dashboard />
+              <Dashboard
+                confirmLogout={confirmLogout}
+                setConfirmLogout={setConfirmLogout}
+                setShowOverlay={setShowOverlay}
+                showOverlay={showOverlay}
+              />
             </RouteWrapper>
           }
         ></Route>
@@ -68,7 +75,12 @@ function App() {
           path="/budget"
           element={
             <RouteWrapper>
-              <Budget />
+              <Budget
+                confirmLogout={confirmLogout}
+                setConfirmLogout={setConfirmLogout}
+                setShowOverlay={setShowOverlay}
+                showOverlay={showOverlay}
+              />
             </RouteWrapper>
           }
         />
@@ -77,7 +89,12 @@ function App() {
           path="/tracking"
           element={
             <RouteWrapper>
-              <Tracking />
+              <Tracking
+                confirmLogout={confirmLogout}
+                setConfirmLogout={setConfirmLogout}
+                setShowOverlay={setShowOverlay}
+                showOverlay={showOverlay}
+              />
             </RouteWrapper>
           }
         />
@@ -86,7 +103,12 @@ function App() {
           path="/settings"
           element={
             <RouteWrapper>
-              <Settings />
+              <Settings
+                confirmLogout={confirmLogout}
+                setConfirmLogout={setConfirmLogout}
+                setShowOverlay={setShowOverlay}
+                showOverlay={showOverlay}
+              />
             </RouteWrapper>
           }
         />

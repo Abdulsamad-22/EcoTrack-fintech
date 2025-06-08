@@ -16,7 +16,7 @@ export default function SideBar({
   const checkLogout = () => {
     setConfirmLogout(!confirmLogout);
     setShowOverlay(!showOverlay);
-    console.log(confirmLogout);
+    console.log("confirm Logout");
   };
 
   const navItems = [
@@ -134,25 +134,49 @@ export default function SideBar({
         <div className={styles.bottomContainer}>
           {navItems.map((item) =>
             item.id > 5 ? (
-              <Link
-                key={item.id}
-                to={item.path}
-                className={`${styles.navIcons}`}
-                onClick={item.onClick}
-              >
+              item.label === "Log Out" ? (
                 <div
-                  className={`${styles.navContainer} ${
-                    activeItem === item.path ? styles.active : ""
-                  }`}
+                  key={item.id}
+                  className={styles.navIcons}
+                  onClick={(e) => {
+                    item.onClick();
+                  }}
+                  style={{ cursor: "pointer" }}
                 >
-                  <img
-                    className={styles.navIcon}
-                    src={item.icon}
-                    alt="nav-bar"
-                  />
-                  {expanded && <p>{item.label}</p>}
+                  <div
+                    className={`${styles.navContainer} ${
+                      activeItem === item.path ? styles.active : ""
+                    }`}
+                  >
+                    <img
+                      className={styles.navIcon}
+                      src={item.icon}
+                      alt="nav-bar"
+                    />
+                    {expanded && <p>{item.label}</p>}
+                  </div>
                 </div>
-              </Link>
+              ) : (
+                <Link
+                  key={item.id}
+                  to={item.path}
+                  className={`${styles.navIcons}`}
+                  onClick={item.onClick}
+                >
+                  <div
+                    className={`${styles.navContainer} ${
+                      activeItem === item.path ? styles.active : ""
+                    }`}
+                  >
+                    <img
+                      className={styles.navIcon}
+                      src={item.icon}
+                      alt="nav-bar"
+                    />
+                    {expanded && <p>{item.label}</p>}
+                  </div>
+                </Link>
+              )
             ) : (
               ""
             )

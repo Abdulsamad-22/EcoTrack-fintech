@@ -17,25 +17,17 @@ import FluctuatingPrices from "../components/dashboardUno/FluctuatingPrices";
 
 import { useState } from "react";
 import { useBudget } from "../components/budget/BudgetProvider";
-import { getAuth, signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import Logout from "../components/logout/Logout";
 
-export default function Dashboard() {
-  const [showOverlay, setShowOverlay] = useState(false);
+export default function Dashboard({
+  confirmLogout,
+  setConfirmLogout,
+  setShowOverlay,
+  showOverlay,
+}) {
   const [openTransfer, setOpenTransfer] = useState("initial");
-  const [confirmLogout, setConfirmLogout] = useState(false);
   const { setSentAmount, setCategory, setAccountNum } = useBudget();
-  const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    const auth = getAuth();
-    try {
-      signOut(auth);
-      navigate("/login");
-    } catch (error) {
-      console.log("error log out", error);
-    }
-  };
   return (
     <section className={styles.dashboard}>
       {showOverlay && (
@@ -46,38 +38,23 @@ export default function Dashboard() {
             setCategory("");
             setSentAmount("");
             setAccountNum("");
+            setConfirmLogout(false);
           }}
           className={styles.overlayContainer}
         ></div>
       )}
 
       {confirmLogout && (
-        <div className={styles.logOutContainer}>
-          <h1 className={styles.logOutHeader}>
-            Are you sure you want to log out?
-          </h1>
-          <div className={styles.buttonContainer}>
-            <button
-              onClick={() => {
-                setShowOverlay(false);
-                setConfirmLogout(false);
-              }}
-              className={styles.cancelButton}
-            >
-              Cancel
-            </button>
-            <button onClick={handleLogout} className={styles.logoutButton}>
-              Log out
-            </button>
-          </div>
-        </div>
+        <Logout
+          setConfirmLogout={setConfirmLogout}
+          setShowOverlay={setShowOverlay}
+        />
       )}
 
       <SideBar
         setConfirmLogout={setConfirmLogout}
         confirmLogout={confirmLogout}
         setShowOverlay={setShowOverlay}
-        showOverlay={showOverlay}
       />
       <DashboardBody>
         <TopBar />

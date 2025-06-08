@@ -9,12 +9,40 @@ import CheaperStore from "../components/tracking/CheaperStore";
 import EcoBotInsights from "../components/tracking/EcoBotInsights";
 import DefenseExpenseContainer from "../components/tracking/DefenseExpenseContainer";
 import TrendChartContainer from "../components/tracking/TrendChartContainer";
+import Logout from "../components/logout/Logout";
+import styles from "./dashboard.module.css";
 
-export default function Tracking() {
+export default function Tracking({
+  confirmLogout,
+  setConfirmLogout,
+  setShowOverlay,
+  showOverlay,
+}) {
   return (
-    <div>
+    <section>
+      {showOverlay && (
+        <div
+          onClick={() => {
+            setShowOverlay(false);
+            setConfirmLogout(false);
+          }}
+          className={styles.overlayContainer}
+        ></div>
+      )}
+
+      {confirmLogout && (
+        <Logout
+          setConfirmLogout={setConfirmLogout}
+          setShowOverlay={setShowOverlay}
+        />
+      )}
+
       <TrackingBody>
-        <SideBar />
+        <SideBar
+          setConfirmLogout={setConfirmLogout}
+          confirmLogout={confirmLogout}
+          setShowOverlay={setShowOverlay}
+        />
         <DashboardBody>
           <TopBar />
           <OuterContainer>
@@ -31,6 +59,6 @@ export default function Tracking() {
           </OuterContainer>
         </DashboardBody>
       </TrackingBody>
-    </div>
+    </section>
   );
 }
