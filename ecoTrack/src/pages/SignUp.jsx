@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SignUpForm from "../Auth/SIgnUpForm";
-import WelcomeBackScreen from "../Auth/WelcomeBackScreen";
+import SignUpForm from "../components/forms/SIgnUpForm";
+import WelcomeBackScreen from "../components/forms/WelcomeBackScreen";
 import styles from "./login.module.css";
 
 export default function signUp({ heading, buttonLabels, message }) {

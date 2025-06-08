@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../../styles/authStyles/welcomeBack.module.css";
+import styles from "../../../styles/authStyles/welcomeBack.module.css";
 export default function WelcomeBackScreen({ buttonLabels, message }) {
   function handleLogin() {
     console.log("login");

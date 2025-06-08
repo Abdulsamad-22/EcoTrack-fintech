@@ -1,7 +1,7 @@
-import { signUp } from "./useAuth";
-import { login } from "./useAuth";
+import { signUp } from "../../Auth/useAuth";
+import { login } from "../../Auth/useAuth";
 import { useEffect, useState } from "react";
-import styles from "../../styles/authStyles/signUpForm.module.css";
+import styles from "../../../styles/authStyles/signUpForm.module.css";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
